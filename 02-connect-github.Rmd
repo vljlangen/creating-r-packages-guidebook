@@ -1,0 +1,33 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+ 
+
+# Setting Up Git and GitHub
+
+For distributing your package to your friends or colleagues and for backup purposes, it is always advisable to push your package to a code repository. In this tutorial, we will use the GitHub service.
+
+If you have never used GitHub before or don't have a working connection between GitHub and your computer, you'll need to follow a tutorial to set up Git and GitHub. There are many excellent tutorials available online, and I recommend starting with one to get familiar with the process.
+
+One such tutorial is available on Medium and provides a simple guide for setting up Git on MacOS:
+
+[Setting Up Git on Mac](https://medium.com/@mateus2050/setting-up-git-on-mac-c14d70e278b8)
+
+Similar tutorials are available for other platforms, such as Windows.
+
+Disclaimer: I have not tried the above tutorial myself. While the above tutorial seems like a good one, it's always a good idea to explore multiple resources to find the approach that works best for you.
+ 
+
+
+\
+
+\
+
+\
+
+
+ <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating R Packages: A Step-by-Step Guide</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville Langén</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p> 
+ 

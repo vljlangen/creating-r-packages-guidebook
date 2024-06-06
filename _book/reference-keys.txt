@@ -1,0 +1,11 @@
+introduction
+writing-basic-functions
+example-function-1
+example-function-2
+saving-your-code
+setting-up-git-and-github
+creating-a-repo-for-an-r-package
+create-a-new-repo-on-github
+clone-the-repo-to-computer
+modify-.gitignore-file
+initial-commit-to-github
