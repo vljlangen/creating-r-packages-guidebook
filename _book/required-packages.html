@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Initiating an R Package | Creating R Packages: A Step-by-Step Guide</title>
+  <title>2 Required Packages | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Initiating an R Package | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="2 Required Packages | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Initiating an R Package | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="2 Required Packages | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="creating-a-repo-for-an-r-package.html"/>
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="writing-basic-functions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -136,10 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="required-packages.html"><a href="required-packages.html"><i class="fa fa-check"></i><b>2</b> Required Packages</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="required-packages.html"><a href="required-packages.html#installing-packages"><i class="fa fa-check"></i><b>2.1</b> Installing Packages</a></li>
-</ul></li>
+<li class="chapter" data-level="2" data-path="required-packages.html"><a href="required-packages.html"><i class="fa fa-check"></i><b>2</b> Required Packages</a></li>
 <li class="chapter" data-level="3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html"><i class="fa fa-check"></i><b>3</b> Writing Basic Functions</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
@@ -190,36 +187,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="initiating-an-r-package" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Initiating an R Package<a href="initiating-an-r-package.html#initiating-an-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we’ll learn how to turn an existing R project into an R package. We’ll use the <code>usethis</code> package to set up the necessary package structure and files.</p>
-<p>This tutorial assumes that you have a freshly cloned, mostly blank GitHub repository, as explained in the previous chapter. We will now build upon it.</p>
-<p>The following commands are to be run in the Console in RStudio.</p>
-<div id="prerequisites" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Prerequisites<a href="initiating-an-r-package.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Before you start, make sure you have the <code>devtools</code> package installed, which includes <code>usethis</code>. If you haven’t installed it yet, you can do so by running:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="initiating-an-r-package.html#cb13-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
-</div>
-<div id="step-by-step-guide" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Step-by-Step Guide<a href="initiating-an-r-package.html#step-by-step-guide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Load the <code>devtools</code> Package</li>
-</ol>
-<p>Load the <code>devtools</code> package, which automatically loads <code>usethis</code>, by running the following command in your R console:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="initiating-an-r-package.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li>Create the Package</li>
-</ol>
-<p>Use the create_package function to initialize the package structure in your current working directory:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="initiating-an-r-package.html#cb15-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
-<p>This function will set up the basic structure needed for an R package. Your directory should now look something like this:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="initiating-an-r-package.html#cb16-1" tabindex="-1"></a>.</span>
-<span id="cb16-2"><a href="initiating-an-r-package.html#cb16-2" tabindex="-1"></a>├── DESCRIPTION</span>
-<span id="cb16-3"><a href="initiating-an-r-package.html#cb16-3" tabindex="-1"></a>├── NAMESPACE</span>
-<span id="cb16-4"><a href="initiating-an-r-package.html#cb16-4" tabindex="-1"></a>├── R<span class="sc">/</span></span>
-<span id="cb16-5"><a href="initiating-an-r-package.html#cb16-5" tabindex="-1"></a>├── man<span class="sc">/</span></span>
-<span id="cb16-6"><a href="initiating-an-r-package.html#cb16-6" tabindex="-1"></a>├── .Rbuildignore</span>
-<span id="cb16-7"><a href="initiating-an-r-package.html#cb16-7" tabindex="-1"></a>├── ...</span></code></pre></div>
+<div id="required-packages" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Required Packages<a href="required-packages.html#required-packages" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>To follow along with this tutorial, you’ll need to have certain packages installed in your R environment. Specifically, we’ll be using <code>devtools</code> and <code>tidyverse</code>.</p>
+<p>You can install these packages using the <code>install.packages()</code> function in R. Here’s how you can do it:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="required-packages.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb1-2"><a href="required-packages.html#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>Once installed, load these packages into your R session using the library() function:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="required-packages.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb2-2"><a href="required-packages.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Now that you have these packages installed and loaded, you’re ready to proceed with the tutorial.</p>
 <p><br />
 </p>
 <p><br />
@@ -227,24 +204,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 </p>
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<p><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
-R Packages: A Step-by-Step Guide</a> by
-<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
-Langén</a> is licensed under
-<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
-BY-SA
-4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
+<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating R Packages: A Step-by-Step Guide</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville Langén</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
 </p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="creating-a-repo-for-an-r-package.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="writing-basic-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

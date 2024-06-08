@@ -3,25 +3,32 @@ editor_options:
   markdown: 
     wrap: 72
 ---
+ 
+\
+
+# Required Packages
+
+To follow along with this tutorial, you'll need to have certain packages installed in your R environment. Specifically, we'll be using `devtools` and `tidyverse`. 
+
+You can install these packages using the `install.packages()` function in R. Here's how you can do it:
+
+```r
+install.packages("devtools")
+install.packages("tidyverse")
+```
+
+
+Once installed, load these packages into your R session using the library() function:
+
+
+```r
+library(devtools)
+library(tidyverse)
+```
+
+Now that you have these packages installed and loaded, you're ready to proceed with the tutorial.
 
  
-
-# Setting Up Git and GitHub
-
-For distributing your package to your friends or colleagues and for backup purposes, it is always advisable to push your package to a code repository. In this tutorial, we will use the GitHub service.
-
-If you have never used GitHub before or don't have a working connection between GitHub and your computer, you'll need to follow a tutorial to set up Git and GitHub. There are many excellent tutorials available online, and I recommend starting with one to get familiar with the process.
-
-One such tutorial is available on Medium and provides a simple guide for setting up Git on MacOS:
-
-[Setting Up Git on Mac](https://medium.com/@mateus2050/setting-up-git-on-mac-c14d70e278b8)
-
-Similar tutorials are available for other platforms, such as Windows.
-
-Disclaimer: I have not tried the above tutorial myself. While the above tutorial seems like a good one, it's always a good idea to explore multiple resources to find the approach that works best for you.
- 
-
-
 \
 
 \

@@ -8,7 +8,7 @@ editor_options:
 
 In this chapter, we'll start by writing a couple of simple functions. These functions will be used later on in the R package we are creating.
 
-You can write these functions in any R environment, such as RStudio. Below is a screenshot of writing these functions in RStudio. Further down on this page, you will find the code in a text format, which you can copy and paste into your editor.
+Below is a screenshot of writing these functions in RStudio. Further down on this page, you will find the code in a text format, which you can copy and paste into your editor.
 
 \
 

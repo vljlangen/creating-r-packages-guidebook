@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Writing Basic Functions | Creating R Packages: A Step-by-Step Guide</title>
+  <title>3 Writing Basic Functions | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Writing Basic Functions | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="3 Writing Basic Functions | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Writing Basic Functions | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="3 Writing Basic Functions | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
+<link rel="prev" href="required-packages.html"/>
 <link rel="next" href="setting-up-git-and-github.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -136,19 +136,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html"><i class="fa fa-check"></i><b>2</b> Writing Basic Functions</a>
+<li class="chapter" data-level="2" data-path="required-packages.html"><a href="required-packages.html"><i class="fa fa-check"></i><b>2</b> Required Packages</a></li>
+<li class="chapter" data-level="3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html"><i class="fa fa-check"></i><b>3</b> Writing Basic Functions</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-1"><i class="fa fa-check"></i><b>2.1</b> Example function 1</a></li>
-<li class="chapter" data-level="2.2" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-2"><i class="fa fa-check"></i><b>2.2</b> Example function 2</a></li>
-<li class="chapter" data-level="2.3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#saving-your-code"><i class="fa fa-check"></i><b>2.3</b> Saving Your Code</a></li>
+<li class="chapter" data-level="3.1" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
+<li class="chapter" data-level="3.2" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-2"><i class="fa fa-check"></i><b>3.2</b> Example function 2</a></li>
+<li class="chapter" data-level="3.3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#saving-your-code"><i class="fa fa-check"></i><b>3.3</b> Saving Your Code</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html"><i class="fa fa-check"></i><b>3</b> Setting Up Git and GitHub</a></li>
-<li class="chapter" data-level="4" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html"><i class="fa fa-check"></i><b>4</b> Creating a repo for an R package</a>
+<li class="chapter" data-level="4" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Setting Up Git and GitHub</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#create-a-new-repo-on-github"><i class="fa fa-check"></i><b>4.1</b> Create a new repo on GitHub</a></li>
-<li class="chapter" data-level="4.2" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#clone-the-repo-to-computer"><i class="fa fa-check"></i><b>4.2</b> Clone the repo to computer</a></li>
-<li class="chapter" data-level="4.3" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#modify-.gitignore-file"><i class="fa fa-check"></i><b>4.3</b> Modify .gitignore file</a></li>
-<li class="chapter" data-level="4.4" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#initial-commit-to-github"><i class="fa fa-check"></i><b>4.4</b> Initial commit to GitHub</a></li>
+<li class="chapter" data-level="4.1" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#installing-git"><i class="fa fa-check"></i><b>4.1</b> Installing Git</a></li>
+<li class="chapter" data-level="4.2" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#tell-git-your-credentials"><i class="fa fa-check"></i><b>4.2</b> Tell Git your credentials</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#on-mac"><i class="fa fa-check"></i><b>4.2.1</b> On Mac</a></li>
+<li class="chapter" data-level="4.2.2" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#on-windows"><i class="fa fa-check"></i><b>4.2.2</b> On Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#signing-up-for-github"><i class="fa fa-check"></i><b>4.3</b> Signing Up for GitHub</a></li>
+<li class="chapter" data-level="4.4" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#setting-up-a-personal-access-token-pat"><i class="fa fa-check"></i><b>4.4</b> Setting Up a Personal Access Token (PAT)</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#creating-a-pat-in-r"><i class="fa fa-check"></i><b>4.4.1</b> Creating a PAT in R</a></li>
+<li class="chapter" data-level="4.4.2" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#storing-the-pat-using-gitcreds"><i class="fa fa-check"></i><b>4.4.2</b> Storing the PAT Using <code>gitcreds()</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html"><i class="fa fa-check"></i><b>5</b> Creating a repo for an R package</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#create-a-new-repo-on-github"><i class="fa fa-check"></i><b>5.1</b> Create a new repo on GitHub</a></li>
+<li class="chapter" data-level="5.2" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#clone-the-repo-to-computer"><i class="fa fa-check"></i><b>5.2</b> Clone the repo to computer</a></li>
+<li class="chapter" data-level="5.3" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#modify-.gitignore-file"><i class="fa fa-check"></i><b>5.3</b> Modify .gitignore file</a></li>
+<li class="chapter" data-level="5.4" data-path="creating-a-repo-for-an-r-package.html"><a href="creating-a-repo-for-an-r-package.html#initial-commit-to-github"><i class="fa fa-check"></i><b>5.4</b> Initial commit to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="initiating-an-r-package.html"><a href="initiating-an-r-package.html"><i class="fa fa-check"></i><b>6</b> Initiating an R Package</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="initiating-an-r-package.html"><a href="initiating-an-r-package.html#prerequisites"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="6.2" data-path="initiating-an-r-package.html"><a href="initiating-an-r-package.html#step-by-step-guide"><i class="fa fa-check"></i><b>6.2</b> Step-by-Step Guide</a></li>
 </ul></li>
 </ul>
 
@@ -167,15 +187,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="writing-basic-functions" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Writing Basic Functions<a href="writing-basic-functions.html#writing-basic-functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="writing-basic-functions" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Writing Basic Functions<a href="writing-basic-functions.html#writing-basic-functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter, we’ll start by writing a couple of simple functions. These functions will be used later on in the R package we are creating.</p>
-<p>You can write these functions in any R environment, such as RStudio. Below is a screenshot of writing these functions in RStudio. Further down on this page, you will find the code in a text format, which you can copy and paste into your editor.</p>
+<p>Below is a screenshot of writing these functions in RStudio. Further down on this page, you will find the code in a text format, which you can copy and paste into your editor.</p>
 <p><br />
 </p>
 <p><img src="pics/example_functions.png" /></p>
-<div id="example-function-1" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Example function 1<a href="writing-basic-functions.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="example-function-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Example function 1<a href="writing-basic-functions.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <code>say_hello_to()</code> function takes one argument, a name, and prints a greeting message.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="writing-basic-functions.html#cb1-1" tabindex="-1"></a>say_hello_to <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
 <span id="cb1-2"><a href="writing-basic-functions.html#cb1-2" tabindex="-1"></a>  message <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</span>
@@ -186,8 +206,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-7"><a href="writing-basic-functions.html#cb1-7" tabindex="-1"></a><span class="fu">say_hello_to</span>(<span class="st">&quot;John&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, John!&quot;</code></pre>
 </div>
-<div id="example-function-2" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Example function 2<a href="writing-basic-functions.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="example-function-2" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Example function 2<a href="writing-basic-functions.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The throw_dice() function simulates rolling a six-sided die. It generates a random number between 1 and 6 and prints the result.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="writing-basic-functions.html#cb3-1" tabindex="-1"></a>throw_dice <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb3-2"><a href="writing-basic-functions.html#cb3-2" tabindex="-1"></a>  roll <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1</span>)</span>
@@ -199,8 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-8"><a href="writing-basic-functions.html#cb3-8" tabindex="-1"></a><span class="fu">throw_dice</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;You rolled a 6.&quot;</code></pre>
 </div>
-<div id="saving-your-code" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Saving Your Code<a href="writing-basic-functions.html#saving-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="saving-your-code" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Saving Your Code<a href="writing-basic-functions.html#saving-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>After writing these functions and testing them in an R environment like RStudio, make sure to save or copy-paste them somewhere. This way, you can introduce them to your R package once we progress further in this tutorial.</p>
 <p>In this example, I copied the functions to Visual Studio Code (as shown in the screenshot below), but you can use any text editor, such as TextEdit on MacOS or Notepad on Windows, or simply save the code somewhere on your computer.</p>
 <p><br />
@@ -223,7 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="required-packages.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="setting-up-git-and-github.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

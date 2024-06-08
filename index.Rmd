@@ -34,6 +34,8 @@ In this book, you'll learn how to:
 
 Each chapter is designed to be practical and hands-on, with step-by-step instructions and examples. By the end of this book, you'll have a fully functioning R package that you can share with the world.
 
+Throughout this tutorial, we'll be using RStudio, a popular integrated development environment (IDE) for R, to perform various tasks.
+
 Let's get started on your journey to becoming an R package developer!
 
 
