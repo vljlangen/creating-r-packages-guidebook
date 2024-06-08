@@ -114,7 +114,7 @@ version control.
 
 \
 
-3.  When you will see the following message, click the Close button.
+3.  When you see the following message, click the Close button.
 
 \
 

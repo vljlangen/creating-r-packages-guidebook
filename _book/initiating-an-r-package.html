@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Creating R Packages: A Step-by-Step Guide</title>
+  <title>5 Initiating an R Package | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="5 Initiating an R Package | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="5 Initiating an R Package | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
+<link rel="prev" href="creating-a-repo-for-an-r-package.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -172,18 +172,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="initiating-an-r-package" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Initiating an R Package<a href="initiating-an-r-package.html#initiating-an-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter, we’ll learn how to turn an existing R project into an R package. We’ll use the <code>usethis</code> package to set up the necessary package structure and files.</p>
+<p>This tutorial assumes that you have a freshly cloned, mostly blank GitHub repository, as explained in the previous chapter. We will now build upon it.</p>
+<p>The following commands are to be run in the Console in RStudio.</p>
+<div id="prerequisites" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Prerequisites<a href="initiating-an-r-package.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before you start, make sure you have the <code>devtools</code> package installed, which includes <code>usethis</code>. If you haven’t installed it yet, you can do so by running:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="initiating-an-r-package.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
+</div>
+<div id="step-by-step-guide" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Step-by-Step Guide<a href="initiating-an-r-package.html#step-by-step-guide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Load the devtools Package</li>
+</ol>
+<p>Load the devtools package, which automatically loads usethis, by running the following command in your R console:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="initiating-an-r-package.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Create the Package</li>
+</ol>
+<p>Use the create_package function to initialize the package structure in your current working directory:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="initiating-an-r-package.html#cb3-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+<p>This function will set up the basic structure needed for an R package. Your directory should now look something like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="initiating-an-r-package.html#cb4-1" tabindex="-1"></a>.</span>
+<span id="cb4-2"><a href="initiating-an-r-package.html#cb4-2" tabindex="-1"></a>├── DESCRIPTION</span>
+<span id="cb4-3"><a href="initiating-an-r-package.html#cb4-3" tabindex="-1"></a>├── NAMESPACE</span>
+<span id="cb4-4"><a href="initiating-an-r-package.html#cb4-4" tabindex="-1"></a>├── R<span class="sc">/</span></span>
+<span id="cb4-5"><a href="initiating-an-r-package.html#cb4-5" tabindex="-1"></a>├── man<span class="sc">/</span></span>
+<span id="cb4-6"><a href="initiating-an-r-package.html#cb4-6" tabindex="-1"></a>├── .Rbuildignore</span>
+<span id="cb4-7"><a href="initiating-an-r-package.html#cb4-7" tabindex="-1"></a>├── ...</span></code></pre></div>
+<p><br />
+</p>
+<p><br />
+</p>
+<p><br />
+</p>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+<p><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
+</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
+<a href="creating-a-repo-for-an-r-package.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

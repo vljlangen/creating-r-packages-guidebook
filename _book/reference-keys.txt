@@ -9,3 +9,6 @@ create-a-new-repo-on-github
 clone-the-repo-to-computer
 modify-.gitignore-file
 initial-commit-to-github
+initiating-an-r-package
+prerequisites
+step-by-step-guide
