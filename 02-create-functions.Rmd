@@ -12,7 +12,7 @@ Below is a screenshot of writing these functions in RStudio. Further down on thi
 
 \
 
-![](pics/example_functions.png)
+![](images/example_functions.png)
 
 
 ## Example function 1
@@ -58,7 +58,7 @@ In this example, I copied the functions to Visual Studio Code (as shown in the s
 
 \
 
-![](pics/copy_paste_functions_to_vcode.png)
+![](images/copy_paste_functions_to_vcode.png)
 
 
 

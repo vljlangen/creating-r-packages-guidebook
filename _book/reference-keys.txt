@@ -1,6 +1,5 @@
 introduction
 required-packages
-installing-packages
 writing-basic-functions
 example-function-1
 example-function-2
@@ -14,11 +13,3 @@ signing-up-for-github
 setting-up-a-personal-access-token-pat
 creating-a-pat-in-r
 storing-the-pat-using-gitcreds
-creating-a-repo-for-an-r-package
-create-a-new-repo-on-github
-clone-the-repo-to-computer
-modify-.gitignore-file
-initial-commit-to-github
-initiating-an-r-package
-prerequisites
-step-by-step-guide
