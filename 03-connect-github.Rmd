@@ -100,7 +100,7 @@ will create a Personal Access Token (PAT) from within RStudio.
 \
 \
 
-## Setting Up a Personal Access Token (PAT)
+## Personal Access Token (PAT)
 
 We will now set up a Personal Access Token (PAT) which will be used to
 authenticate your actions on GitHub.

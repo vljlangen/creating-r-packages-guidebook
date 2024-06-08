@@ -10,6 +10,9 @@ tell-git-your-credentials
 on-mac
 on-windows
 signing-up-for-github
-setting-up-a-personal-access-token-pat
+personal-access-token-pat
 creating-a-pat-in-r
 storing-the-pat-using-gitcreds
+verifying-the-git-setup
+github-authentication
+git-configuration

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Creating R Packages: A Step-by-Step Guide</title>
+  <title>5 Verifying the Git Setup | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="5 Verifying the Git Setup | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="5 Verifying the Git Setup | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="setting-up-git-and-github.html"/>
 
-<link rel="next" href="required-packages.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -180,45 +180,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Creating R Packages: A Step-by-Step Guide</h1>
-<p class="author"><em>Ville Langén</em></p>
-<p class="date"><em>08.06.2024</em></p>
+<div id="verifying-the-git-setup" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Verifying the Git Setup<a href="verifying-the-git-setup.html#verifying-the-git-setup" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter, we’ll verify that your setup is working correctly.
+We’ll use functions from the <code>gh</code> and <code>usethis</code> packages to ensure that
+everything is configured properly.</p>
+<p>The following commands are to be run in the Console in RStudio.</p>
+<div id="github-authentication" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> GitHub Authentication<a href="verifying-the-git-setup.html#github-authentication" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, let’s check if your GitHub authentication is set up correctly.
+You can use the <code>gh::gh_whoami()</code> function to see the GitHub user that
+your R session is authenticated as.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="verifying-the-git-setup.html#cb13-1" tabindex="-1"></a>gh<span class="sc">::</span><span class="fu">gh_whoami</span>()</span></code></pre></div>
+<p>If your setup is correct, this function should return your GitHub
+username and other details about your GitHub account.</p>
+<p><br />
+</p>
+<p><img src="images/who_am_i-01.png" /></p>
+<p><br />
+</p>
 </div>
-<div id="introduction" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome to “Creating R Packages: A Step-by-Step Guide”. This book is designed to help beginners dive into the world of R package development. Whether you’re a data scientist, a statistician, or a hobbyist R programmer, this guide will provide you with the knowledge and skills to create your own R packages.</p>
-<p>In this book, you’ll learn how to:</p>
+<div id="git-configuration" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Git Configuration<a href="verifying-the-git-setup.html#git-configuration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Next, we’ll check the Git configuration using the usethis::git_sitrep()
+function. This function provides a situational report on your Git
+configuration and GitHub connection.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="verifying-the-git-setup.html#cb14-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div>
+<p>This function will output information about your Git configuration, such
+as:</p>
 <ul>
-<li>Set up your development environment</li>
-<li>Create the basic structure of an R package</li>
-<li>Write and document functions</li>
-<li>Add and document data</li>
-<li>Test your package to ensure reliability</li>
-<li>Build and check your package</li>
-<li>Share your package with others through GitHub</li>
+<li>Your Git username and email</li>
+<li>The remote URLs for your repository</li>
+<li>GitHub PAT status</li>
+<li>GitHub personal details</li>
 </ul>
-<p>Each chapter is designed to be practical and hands-on, with step-by-step instructions and examples. By the end of this book, you’ll have a fully functioning R package that you can share with the world.</p>
-<p>Throughout this tutorial, we’ll be using RStudio, a popular integrated development environment (IDE) for R, to perform various tasks.</p>
-<p>Let’s get started on your journey to becoming an R package developer!</p>
+<p><br />
+</p>
+<p><img src="images/git_sitrep.png" /></p>
+<p><br />
+</p>
+<p>Review the output to ensure that your Git and GitHub configurations are
+correctly set up.</p>
+<p><br />
+</p>
 <p><br />
 </p>
 <p><br />
 </p>
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating R Packages: A Step-by-Step Guide</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville Langén</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
+<p><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
 </p>
 
-<p><br />
-</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="setting-up-git-and-github.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="required-packages.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

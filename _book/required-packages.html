@@ -152,11 +152,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2.2" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#on-windows"><i class="fa fa-check"></i><b>4.2.2</b> On Windows</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#signing-up-for-github"><i class="fa fa-check"></i><b>4.3</b> Signing Up for GitHub</a></li>
-<li class="chapter" data-level="4.4" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#setting-up-a-personal-access-token-pat"><i class="fa fa-check"></i><b>4.4</b> Setting Up a Personal Access Token (PAT)</a>
+<li class="chapter" data-level="4.4" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#personal-access-token-pat"><i class="fa fa-check"></i><b>4.4</b> Personal Access Token (PAT)</a>
 <ul>
 <li class="chapter" data-level="4.4.1" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#creating-a-pat-in-r"><i class="fa fa-check"></i><b>4.4.1</b> Creating a PAT in R</a></li>
 <li class="chapter" data-level="4.4.2" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html#storing-the-pat-using-gitcreds"><i class="fa fa-check"></i><b>4.4.2</b> Storing the PAT Using <code>gitcreds()</code></a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="verifying-the-git-setup.html"><a href="verifying-the-git-setup.html"><i class="fa fa-check"></i><b>5</b> Verifying the Git Setup</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="verifying-the-git-setup.html"><a href="verifying-the-git-setup.html#github-authentication"><i class="fa fa-check"></i><b>5.1</b> GitHub Authentication</a></li>
+<li class="chapter" data-level="5.2" data-path="verifying-the-git-setup.html"><a href="verifying-the-git-setup.html#git-configuration"><i class="fa fa-check"></i><b>5.2</b> Git Configuration</a></li>
 </ul></li>
 </ul>
 
@@ -177,13 +182,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="required-packages" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Required Packages<a href="required-packages.html#required-packages" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To follow along with this tutorial, you’ll need to have certain packages installed in your R environment. Specifically, we’ll be using <code>devtools</code> and <code>tidyverse</code>.</p>
-<p>You can install these packages using the <code>install.packages()</code> function in R. Here’s how you can do it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="required-packages.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb1-2"><a href="required-packages.html#cb1-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
+<p>To follow along with this tutorial, you’ll need to have certain packages installed in your R environment. Specifically, we’ll install <code>devtools</code>.</p>
+<p>You can install it using the <code>install.packages()</code> function in R. Here’s how you can do it:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="required-packages.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
+<p>This command will also ensure that <code>usethis</code> is installed. It is is a very important package for package development in R, as it automates many setup tasks. When <code>usethis</code> is installed, another important package, <code>gh</code>, is automatically installed as well.</p>
 <p>Once installed, load these packages into your R session using the library() function:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="required-packages.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb2-2"><a href="required-packages.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="required-packages.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div>
 <p>Now that you have these packages installed and loaded, you’re ready to proceed with the tutorial.</p>
 <p><br />
 </p>
