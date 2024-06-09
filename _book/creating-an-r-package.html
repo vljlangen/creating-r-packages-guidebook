@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="verifying-the-git-setup.html"/>
-
+<link rel="next" href="committing-and-pushing-to-github.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -137,11 +137,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="required-packages.html"><a href="required-packages.html"><i class="fa fa-check"></i><b>2</b> Required Packages</a></li>
-<li class="chapter" data-level="3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html"><i class="fa fa-check"></i><b>3</b> Writing Basic Functions</a>
+<li class="chapter" data-level="3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html"><i class="fa fa-check"></i><b>3</b> Creating Functions and Datasets</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
-<li class="chapter" data-level="3.2" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-2"><i class="fa fa-check"></i><b>3.2</b> Example function 2</a></li>
-<li class="chapter" data-level="3.3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#saving-your-code"><i class="fa fa-check"></i><b>3.3</b> Saving Your Code</a></li>
+<li class="chapter" data-level="3.1" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
+<li class="chapter" data-level="3.2" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-data-set"><i class="fa fa-check"></i><b>3.2</b> Example Data Set</a></li>
+<li class="chapter" data-level="3.3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-2"><i class="fa fa-check"></i><b>3.3</b> Example Function 2</a></li>
+<li class="chapter" data-level="3.4" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#saving-your-code"><i class="fa fa-check"></i><b>3.4</b> Saving Your Code</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Setting Up Git and GitHub</a>
 <ul>
@@ -167,6 +168,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#prerequisites"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
 <li class="chapter" data-level="6.2" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#the-create_package-function"><i class="fa fa-check"></i><b>6.2</b> The <code>create_package()</code> function</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html"><i class="fa fa-check"></i><b>7</b> Committing and Pushing to GitHub</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#gitignore-file"><i class="fa fa-check"></i><b>7.1</b> .gitignore File</a></li>
+<li class="chapter" data-level="7.2" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#initializing-git"><i class="fa fa-check"></i><b>7.2</b> Initializing Git</a></li>
+<li class="chapter" data-level="7.3" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#committing-files"><i class="fa fa-check"></i><b>7.3</b> Committing Files</a></li>
+<li class="chapter" data-level="7.4" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#changing-the-default-branch"><i class="fa fa-check"></i><b>7.4</b> Changing the Default Branch</a></li>
+<li class="chapter" data-level="7.5" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#pushing-to-github"><i class="fa fa-check"></i><b>7.5</b> Pushing to GitHub</a></li>
 </ul></li>
 </ul>
 
@@ -213,7 +222,7 @@ your package.</li>
 from the <code>usethis</code> package. This function automates the process of
 setting up the basic structure of an R package.</p>
 <p>Here’s how you can create a new package:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="creating-an-r-package.html#cb1-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">&quot;~/yourpath/yourpackagename&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="creating-an-r-package.html#cb17-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">&quot;~/yourpath/yourpackagename&quot;</span>)</span></code></pre></div>
 <p>Replace “~/yourpath/yourpackagename” with the desired directory path
 and package name. This command will create a new directory with the
 specified package name and set up the necessary files and folders for
@@ -276,8 +285,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="verifying-the-git-setup.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="verifying-the-git-setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="committing-and-pushing-to-github.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

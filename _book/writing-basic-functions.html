@@ -140,8 +140,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html"><i class="fa fa-check"></i><b>3</b> Writing Basic Functions</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
-<li class="chapter" data-level="3.2" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-2"><i class="fa fa-check"></i><b>3.2</b> Example function 2</a></li>
-<li class="chapter" data-level="3.3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#saving-your-code"><i class="fa fa-check"></i><b>3.3</b> Saving Your Code</a></li>
+<li class="chapter" data-level="3.2" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-data-set"><i class="fa fa-check"></i><b>3.2</b> Example Data Set</a></li>
+<li class="chapter" data-level="3.3" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-2"><i class="fa fa-check"></i><b>3.3</b> Example function 2</a></li>
+<li class="chapter" data-level="3.4" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#example-function-3-calculate-group-statistics"><i class="fa fa-check"></i><b>3.4</b> Example Function 3: Calculate Group Statistics</a></li>
+<li class="chapter" data-level="3.5" data-path="writing-basic-functions.html"><a href="writing-basic-functions.html#saving-your-code"><i class="fa fa-check"></i><b>3.5</b> Saving Your Code</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="setting-up-git-and-github.html"><a href="setting-up-git-and-github.html"><i class="fa fa-check"></i><b>4</b> Setting Up Git and GitHub</a>
 <ul>
@@ -166,7 +168,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html"><i class="fa fa-check"></i><b>6</b> Creating an R Package</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#prerequisites"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
-<li class="chapter" data-level="6.2" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#creating-a-new-package"><i class="fa fa-check"></i><b>6.2</b> Creating a New Package</a></li>
+<li class="chapter" data-level="6.2" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#the-create_package-function"><i class="fa fa-check"></i><b>6.2</b> The <code>create_package()</code> function</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html"><i class="fa fa-check"></i><b>7</b> Committing and Pushing to GitHub</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#gitignore-file"><i class="fa fa-check"></i><b>7.1</b> .gitignore File</a></li>
+<li class="chapter" data-level="7.2" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#initializing-git"><i class="fa fa-check"></i><b>7.2</b> Initializing Git</a></li>
+<li class="chapter" data-level="7.3" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#committing-files"><i class="fa fa-check"></i><b>7.3</b> Committing Files</a></li>
+<li class="chapter" data-level="7.4" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#changing-the-default-branch"><i class="fa fa-check"></i><b>7.4</b> Changing the Default Branch</a></li>
+<li class="chapter" data-level="7.5" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#pushing-to-github"><i class="fa fa-check"></i><b>7.5</b> Pushing to GitHub</a></li>
 </ul></li>
 </ul>
 
@@ -195,17 +205,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="example-function-1" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Example function 1<a href="writing-basic-functions.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <code>say_hello_to()</code> function takes one argument, a name, and prints a greeting message.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="writing-basic-functions.html#cb3-1" tabindex="-1"></a>say_hello_to <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
-<span id="cb3-2"><a href="writing-basic-functions.html#cb3-2" tabindex="-1"></a>  message <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</span>
-<span id="cb3-3"><a href="writing-basic-functions.html#cb3-3" tabindex="-1"></a>  <span class="fu">print</span>(message)</span>
-<span id="cb3-4"><a href="writing-basic-functions.html#cb3-4" tabindex="-1"></a>}</span>
-<span id="cb3-5"><a href="writing-basic-functions.html#cb3-5" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="writing-basic-functions.html#cb3-6" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb3-7"><a href="writing-basic-functions.html#cb3-7" tabindex="-1"></a><span class="fu">say_hello_to</span>(<span class="st">&quot;John&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="writing-basic-functions.html#cb1-1" tabindex="-1"></a>say_hello_to <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
+<span id="cb1-2"><a href="writing-basic-functions.html#cb1-2" tabindex="-1"></a>  message <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb1-3"><a href="writing-basic-functions.html#cb1-3" tabindex="-1"></a>  <span class="fu">print</span>(message)</span>
+<span id="cb1-4"><a href="writing-basic-functions.html#cb1-4" tabindex="-1"></a>}</span>
+<span id="cb1-5"><a href="writing-basic-functions.html#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="writing-basic-functions.html#cb1-6" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb1-7"><a href="writing-basic-functions.html#cb1-7" tabindex="-1"></a><span class="fu">say_hello_to</span>(<span class="st">&quot;John&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, John!&quot;</code></pre>
 </div>
-<div id="example-function-2" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Example function 2<a href="writing-basic-functions.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="example-data-set" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Example Data Set<a href="writing-basic-functions.html#example-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In addition to functions, it’s often helpful to include example datasets in your package to demonstrate how your functions can be used. We’ll now create a small example dataset called example_data and add it to our package.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="writing-basic-functions.html#cb3-1" tabindex="-1"></a><span class="co"># Create example dataset</span></span>
+<span id="cb3-2"><a href="writing-basic-functions.html#cb3-2" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb3-3"><a href="writing-basic-functions.html#cb3-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">&quot;01&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;03&quot;</span>, <span class="st">&quot;04&quot;</span>, <span class="st">&quot;05&quot;</span>),</span>
+<span id="cb3-4"><a href="writing-basic-functions.html#cb3-4" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>),</span>
+<span id="cb3-5"><a href="writing-basic-functions.html#cb3-5" tabindex="-1"></a>  <span class="at">Likes_Coffee =</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)))</span>
+<span id="cb3-6"><a href="writing-basic-functions.html#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="writing-basic-functions.html#cb3-7" tabindex="-1"></a><span class="co"># Display the dataset</span></span>
+<span id="cb3-8"><a href="writing-basic-functions.html#cb3-8" tabindex="-1"></a>example_data</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 3
+##   ID      Age Likes_Coffee
+##   &lt;chr&gt; &lt;dbl&gt; &lt;fct&gt;       
+## 1 01       25 TRUE        
+## 2 02       30 FALSE       
+## 3 03       35 TRUE        
+## 4 04       40 TRUE        
+## 5 05       45 FALSE</code></pre>
+</div>
+<div id="example-function-2" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Example function 2<a href="writing-basic-functions.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The throw_dice() function simulates rolling a six-sided die. It generates a random number between 1 and 6 and prints the result.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="writing-basic-functions.html#cb5-1" tabindex="-1"></a>throw_dice <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb5-2"><a href="writing-basic-functions.html#cb5-2" tabindex="-1"></a>  roll <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1</span>)</span>
@@ -215,10 +245,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-6"><a href="writing-basic-functions.html#cb5-6" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="writing-basic-functions.html#cb5-7" tabindex="-1"></a><span class="co"># Example usage</span></span>
 <span id="cb5-8"><a href="writing-basic-functions.html#cb5-8" tabindex="-1"></a><span class="fu">throw_dice</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;You rolled a 4.&quot;</code></pre>
+<pre><code>## [1] &quot;You rolled a 2.&quot;</code></pre>
 </div>
-<div id="saving-your-code" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Saving Your Code<a href="writing-basic-functions.html#saving-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="example-function-3-calculate-group-statistics" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Example Function 3: Calculate Group Statistics<a href="writing-basic-functions.html#example-function-3-calculate-group-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This function calculates the mean of a numeric variable (like age) for rows where another variable (like ‘Likes_Coffee’) has the value TRUE. In our example dataset, it can be used to find the mean age of people who like coffee.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="writing-basic-functions.html#cb7-1" tabindex="-1"></a>calculate_group_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(df, numeric_var, factor_var) {</span>
+<span id="cb7-2"><a href="writing-basic-functions.html#cb7-2" tabindex="-1"></a>  <span class="co"># Filter the dataframe for rows where the factor variable is TRUE</span></span>
+<span id="cb7-3"><a href="writing-basic-functions.html#cb7-3" tabindex="-1"></a>  filtered_df <span class="ot">&lt;-</span> df[df[[factor_var]] <span class="sc">==</span> <span class="cn">TRUE</span>, ]</span>
+<span id="cb7-4"><a href="writing-basic-functions.html#cb7-4" tabindex="-1"></a>  </span>
+<span id="cb7-5"><a href="writing-basic-functions.html#cb7-5" tabindex="-1"></a>  <span class="co"># Calculate the mean of the numeric variable for the filtered dataframe</span></span>
+<span id="cb7-6"><a href="writing-basic-functions.html#cb7-6" tabindex="-1"></a>  mean_val <span class="ot">&lt;-</span> <span class="fu">mean</span>(filtered_df[[numeric_var]])</span>
+<span id="cb7-7"><a href="writing-basic-functions.html#cb7-7" tabindex="-1"></a>  </span>
+<span id="cb7-8"><a href="writing-basic-functions.html#cb7-8" tabindex="-1"></a>  <span class="co"># Return the mean value</span></span>
+<span id="cb7-9"><a href="writing-basic-functions.html#cb7-9" tabindex="-1"></a>  <span class="fu">return</span>(mean_val)</span>
+<span id="cb7-10"><a href="writing-basic-functions.html#cb7-10" tabindex="-1"></a>}</span>
+<span id="cb7-11"><a href="writing-basic-functions.html#cb7-11" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="writing-basic-functions.html#cb7-12" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb7-13"><a href="writing-basic-functions.html#cb7-13" tabindex="-1"></a><span class="fu">calculate_group_stats</span>(example_data, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Likes_Coffee&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 33.33333</code></pre>
+</div>
+<div id="saving-your-code" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Saving Your Code<a href="writing-basic-functions.html#saving-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>After writing these functions and testing them in an R environment like RStudio, make sure to save or copy-paste them somewhere. This way, you can introduce them to your R package once we progress further in this tutorial.</p>
 <p>In this example, I copied the functions to Visual Studio Code (as shown in the screenshot below), but you can use any text editor, such as TextEdit on MacOS or Notepad on Windows, or simply save the code somewhere on your computer.</p>
 <p><br />

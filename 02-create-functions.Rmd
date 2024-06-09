@@ -4,15 +4,15 @@ editor_options:
     wrap: 72
 ---
 
-# Writing Basic Functions
+# Creating Functions and Datasets
 
-In this chapter, we'll start by writing a couple of simple functions. These functions will be used later on in the R package we are creating.
+In this chapter, we'll create a couple of simple functions and an example dataframe.
 
-Below is a screenshot of writing these functions in RStudio. Further down on this page, you will find the code in a text format, which you can copy and paste into your editor.
+Below is a screenshot of writing these functions in RStudio. Further down on this page, you will find the codes in a text format, which you can copy and paste into your editor.
 
 \
 
-![](images/example_functions.png)
+![](images/example_codes.png)
 
 
 ## Example function 1
@@ -32,22 +32,56 @@ say_hello_to("John")
 ```
 
 
+## Example Data Set
 
-## Example function 2
+In addition to functions, it's often helpful to include example datasets in your package to demonstrate how your functions can be used. We'll now create a small example dataset called example_data and add it to our package.
 
-The throw_dice() function simulates rolling a six-sided die. It generates a random number between 1 and 6 and prints the result.
 
-```{r throwdice}
-throw_dice <- function() {
-  roll <- sample(1:6, 1)
-  message <- paste0("You rolled a ", roll, ".")
-  print(message)
+
+```{r exampledata}
+
+# Create example dataset
+example_data <- tibble::tibble(
+  ID = c("01", "02", "03", "04", "05"),
+  Age = c(25, 30, 35, 40, 45),
+  Likes_Coffee = as.factor(c(TRUE, FALSE, TRUE, TRUE, FALSE)))
+
+# Display the dataset
+example_data
+
+```
+
+ 
+
+## Example Function 2
+
+This function calculates the mean of a numeric variable (like age) for rows where another variable (like 'Likes_Coffee') has the value TRUE. In our example dataset, it can be used to find the mean age of people who like coffee.
+
+
+```{r groupstats}
+
+calculate_group_stats <- function(df, numeric_var, factor_var) {
+  # Filter the dataframe for rows where the factor variable is TRUE
+  filtered_df <- df[df[[factor_var]] == TRUE, ]
+  
+  # Calculate the mean of the numeric variable for the filtered dataframe
+  mean_val <- mean(filtered_df[[numeric_var]])
+  
+  # Return the mean value
+  return(mean_val)
 }
 
 # Example usage
-throw_dice()
+calculate_group_stats(example_data, "Age", "Likes_Coffee")
+
+
+
 
 ```
+
+
+
+
 
 
 ## Saving Your Code
@@ -58,7 +92,7 @@ In this example, I copied the functions to Visual Studio Code (as shown in the s
 
 \
 
-![](images/copy_paste_functions_to_vcode.png)
+![](images/example_codes_to_vcode.gif)
 
 
 
