@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="creating-an-r-package.html"/>
-
+<link rel="next" href="package-metadata-and-license.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -139,7 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="required-packages.html"><a href="required-packages.html"><i class="fa fa-check"></i><b>2</b> Required Packages</a></li>
 <li class="chapter" data-level="3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html"><i class="fa fa-check"></i><b>3</b> Creating Functions and Datasets</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
+<li class="chapter" data-level="3.1" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example Function 1</a></li>
 <li class="chapter" data-level="3.2" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-data-set"><i class="fa fa-check"></i><b>3.2</b> Example Data Set</a></li>
 <li class="chapter" data-level="3.3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-2"><i class="fa fa-check"></i><b>3.3</b> Example Function 2</a></li>
 <li class="chapter" data-level="3.4" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#saving-your-code"><i class="fa fa-check"></i><b>3.4</b> Saving Your Code</a></li>
@@ -176,6 +176,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#committing-files"><i class="fa fa-check"></i><b>7.3</b> Committing Files</a></li>
 <li class="chapter" data-level="7.4" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#changing-the-default-branch"><i class="fa fa-check"></i><b>7.4</b> Changing the Default Branch</a></li>
 <li class="chapter" data-level="7.5" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#pushing-to-github"><i class="fa fa-check"></i><b>7.5</b> Pushing to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html"><i class="fa fa-check"></i><b>8</b> Package Metadata and License</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#license-file"><i class="fa fa-check"></i><b>8.1</b> License File</a></li>
+<li class="chapter" data-level="8.2" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#description-file"><i class="fa fa-check"></i><b>8.2</b> DESCRIPTION File</a></li>
+<li class="chapter" data-level="8.3" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#readme-file"><i class="fa fa-check"></i><b>8.3</b> README File</a></li>
+<li class="chapter" data-level="8.4" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#pushing-metadata-to-github"><i class="fa fa-check"></i><b>8.4</b> Pushing metadata to Github</a></li>
+<li class="chapter" data-level="8.5" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#viewing-your-changes-on-github"><i class="fa fa-check"></i><b>8.5</b> Viewing Your Changes on GitHub</a></li>
 </ul></li>
 </ul>
 
@@ -226,7 +234,7 @@ RStudio, add the entries listed above, and then click the save icon.</p>
 <code>usethis::use_git()</code> function. This function sets up Git for your
 package and creates an initial commit.</p>
 <p>Run the following command in your R console:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="committing-and-pushing-to-github.html#cb18-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="committing-and-pushing-to-github.html#cb20-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
 <p>When prompted for permission to commit files, say “Absolutely not”, as
 committing at this stage can interfere with the next steps. If asked
 whether to restart your R session, answer “Yeah”.</p>
@@ -270,7 +278,7 @@ use the terminal within RStudio. Here’s how:</p>
 <li>Open the Terminal tab next to the Console tab in RStudio.</li>
 <li>Type the following command to rename the branch:</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="committing-and-pushing-to-github.html#cb19-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="committing-and-pushing-to-github.html#cb21-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code></pre></div>
 <p>Please see my animated example below:</p>
 <p><br />
 </p>
@@ -284,7 +292,7 @@ use the terminal within RStudio. Here’s how:</p>
 using the usethis::use_github() function. This function creates a new
 GitHub repository and pushes your local Git repository to GitHub.</p>
 <p>Run the following command in your R console:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="committing-and-pushing-to-github.html#cb20-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="committing-and-pushing-to-github.html#cb22-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div>
 <p>Follow the prompts to complete the process. This will create a new
 repository on GitHub and push your local commits to the remote
 repository.</p>
@@ -318,8 +326,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="creating-an-r-package.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="creating-an-r-package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="package-metadata-and-license.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

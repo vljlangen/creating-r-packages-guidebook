@@ -139,7 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="required-packages.html"><a href="required-packages.html"><i class="fa fa-check"></i><b>2</b> Required Packages</a></li>
 <li class="chapter" data-level="3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html"><i class="fa fa-check"></i><b>3</b> Creating Functions and Datasets</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
+<li class="chapter" data-level="3.1" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example Function 1</a></li>
 <li class="chapter" data-level="3.2" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-data-set"><i class="fa fa-check"></i><b>3.2</b> Example Data Set</a></li>
 <li class="chapter" data-level="3.3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-2"><i class="fa fa-check"></i><b>3.3</b> Example Function 2</a></li>
 <li class="chapter" data-level="3.4" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#saving-your-code"><i class="fa fa-check"></i><b>3.4</b> Saving Your Code</a></li>
@@ -177,6 +177,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#changing-the-default-branch"><i class="fa fa-check"></i><b>7.4</b> Changing the Default Branch</a></li>
 <li class="chapter" data-level="7.5" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#pushing-to-github"><i class="fa fa-check"></i><b>7.5</b> Pushing to GitHub</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html"><i class="fa fa-check"></i><b>8</b> Package Metadata and License</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#license-file"><i class="fa fa-check"></i><b>8.1</b> License File</a></li>
+<li class="chapter" data-level="8.2" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#description-file"><i class="fa fa-check"></i><b>8.2</b> DESCRIPTION File</a></li>
+<li class="chapter" data-level="8.3" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#readme-file"><i class="fa fa-check"></i><b>8.3</b> README File</a></li>
+<li class="chapter" data-level="8.4" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#pushing-metadata-to-github"><i class="fa fa-check"></i><b>8.4</b> Pushing metadata to Github</a></li>
+<li class="chapter" data-level="8.5" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#viewing-your-changes-on-github"><i class="fa fa-check"></i><b>8.5</b> Viewing Your Changes on GitHub</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -205,7 +213,7 @@ everything is configured properly.</p>
 <p>First, let’s check if your GitHub authentication is set up correctly.
 You can use the <code>gh::gh_whoami()</code> function to see the GitHub user that
 your R session is authenticated as.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="verifying-the-git-setup.html#cb15-1" tabindex="-1"></a>gh<span class="sc">::</span><span class="fu">gh_whoami</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="verifying-the-git-setup.html#cb17-1" tabindex="-1"></a>gh<span class="sc">::</span><span class="fu">gh_whoami</span>()</span></code></pre></div>
 <p>If your setup is correct, this function should return your GitHub
 username and other details about your GitHub account.</p>
 <p><br />
@@ -219,7 +227,7 @@ username and other details about your GitHub account.</p>
 <p>Next, we’ll check the Git configuration using the usethis::git_sitrep()
 function. This function provides a situational report on your Git
 configuration and GitHub connection.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="verifying-the-git-setup.html#cb16-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="verifying-the-git-setup.html#cb18-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div>
 <p>This function will output information about your Git configuration, such
 as:</p>
 <ul>

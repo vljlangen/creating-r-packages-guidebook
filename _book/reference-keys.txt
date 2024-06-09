@@ -26,4 +26,9 @@ initializing-git
 committing-files
 changing-the-default-branch
 pushing-to-github
-example-function-3
+package-metadata-and-license
+license-file
+description-file
+readme-file
+pushing-metadata-to-github
+viewing-your-changes-on-github
