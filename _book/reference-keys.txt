@@ -26,3 +26,4 @@ initializing-git
 committing-files
 changing-the-default-branch
 pushing-to-github
+example-function-3

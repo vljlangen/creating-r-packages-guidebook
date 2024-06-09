@@ -139,7 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="required-packages.html"><a href="required-packages.html"><i class="fa fa-check"></i><b>2</b> Required Packages</a></li>
 <li class="chapter" data-level="3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html"><i class="fa fa-check"></i><b>3</b> Creating Functions and Datasets</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example function 1</a></li>
+<li class="chapter" data-level="3.1" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-1"><i class="fa fa-check"></i><b>3.1</b> Example Function 1</a></li>
 <li class="chapter" data-level="3.2" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-data-set"><i class="fa fa-check"></i><b>3.2</b> Example Data Set</a></li>
 <li class="chapter" data-level="3.3" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#example-function-2"><i class="fa fa-check"></i><b>3.3</b> Example Function 2</a></li>
 <li class="chapter" data-level="3.4" data-path="creating-functions-and-datasets.html"><a href="creating-functions-and-datasets.html#saving-your-code"><i class="fa fa-check"></i><b>3.4</b> Saving Your Code</a></li>
@@ -196,46 +196,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="creating-functions-and-datasets" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Creating Functions and Datasets<a href="creating-functions-and-datasets.html#creating-functions-and-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we’ll create a couple of simple functions and an example dataframe.</p>
-<p>Below is a screenshot of writing these functions in RStudio. Further down on this page, you will find the codes in a text format, which you can copy and paste into your editor.</p>
+<p>In this chapter, we’ll create a couple of simple functions and an
+example dataframe.</p>
+<p>Below is a screenshot of writing these functions in RStudio. Further
+down on this page, you will find the codes in a text format, which you
+can copy and paste into your editor.</p>
 <p><br />
 </p>
-<p><img src="images/example_codes.png" /></p>
+<p><img src="images/example_codes-01.png" /><br />
+</p>
+<p><br />
+</p>
 <div id="example-function-1" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Example function 1<a href="creating-functions-and-datasets.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <code>say_hello_to()</code> function takes one argument, a name, and prints a greeting message.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="creating-functions-and-datasets.html#cb3-1" tabindex="-1"></a>say_hello_to <span class="ot">&lt;-</span> <span class="cf">function</span>(name) {</span>
-<span id="cb3-2"><a href="creating-functions-and-datasets.html#cb3-2" tabindex="-1"></a>  message <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</span>
-<span id="cb3-3"><a href="creating-functions-and-datasets.html#cb3-3" tabindex="-1"></a>  <span class="fu">print</span>(message)</span>
-<span id="cb3-4"><a href="creating-functions-and-datasets.html#cb3-4" tabindex="-1"></a>}</span>
+<h2><span class="header-section-number">3.1</span> Example Function 1<a href="creating-functions-and-datasets.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We’ll now create a simple function that randomly recommends a movie from
+the “ggplot2movies” dataset.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="creating-functions-and-datasets.html#cb1-1" tabindex="-1"></a><span class="co"># Not to be included in the package but run here on this tutorial page</span></span>
+<span id="cb1-2"><a href="creating-functions-and-datasets.html#cb1-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(ggplot2movies)) {</span>
+<span id="cb1-3"><a href="creating-functions-and-datasets.html#cb1-3" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2movies&quot;</span>)</span>
+<span id="cb1-4"><a href="creating-functions-and-datasets.html#cb1-4" tabindex="-1"></a>  <span class="fu">library</span>(ggplot2movies)</span>
+<span id="cb1-5"><a href="creating-functions-and-datasets.html#cb1-5" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## Loading required package: ggplot2movies</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="creating-functions-and-datasets.html#cb3-1" tabindex="-1"></a><span class="co"># Function to randomly recommend a movie</span></span>
+<span id="cb3-2"><a href="creating-functions-and-datasets.html#cb3-2" tabindex="-1"></a>random_movie_recommendation <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb3-3"><a href="creating-functions-and-datasets.html#cb3-3" tabindex="-1"></a>  <span class="co"># Load the movies dataset</span></span>
+<span id="cb3-4"><a href="creating-functions-and-datasets.html#cb3-4" tabindex="-1"></a>  <span class="fu">data</span>(movies, <span class="at">package =</span> <span class="st">&quot;ggplot2movies&quot;</span>)</span>
 <span id="cb3-5"><a href="creating-functions-and-datasets.html#cb3-5" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="creating-functions-and-datasets.html#cb3-6" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb3-7"><a href="creating-functions-and-datasets.html#cb3-7" tabindex="-1"></a><span class="fu">say_hello_to</span>(<span class="st">&quot;John&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Hello, John!&quot;</code></pre>
+<span id="cb3-6"><a href="creating-functions-and-datasets.html#cb3-6" tabindex="-1"></a>  <span class="co"># Get the movie title at the random index</span></span>
+<span id="cb3-7"><a href="creating-functions-and-datasets.html#cb3-7" tabindex="-1"></a>  recommended_movie <span class="ot">&lt;-</span> <span class="fu">sample</span>(movies<span class="sc">$</span>title, <span class="dv">1</span>)</span>
+<span id="cb3-8"><a href="creating-functions-and-datasets.html#cb3-8" tabindex="-1"></a>  </span>
+<span id="cb3-9"><a href="creating-functions-and-datasets.html#cb3-9" tabindex="-1"></a>  <span class="co"># Return the recommended movie</span></span>
+<span id="cb3-10"><a href="creating-functions-and-datasets.html#cb3-10" tabindex="-1"></a>  <span class="fu">return</span>(recommended_movie)</span>
+<span id="cb3-11"><a href="creating-functions-and-datasets.html#cb3-11" tabindex="-1"></a>}</span>
+<span id="cb3-12"><a href="creating-functions-and-datasets.html#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="creating-functions-and-datasets.html#cb3-13" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb3-14"><a href="creating-functions-and-datasets.html#cb3-14" tabindex="-1"></a><span class="fu">random_movie_recommendation</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;Yam yeung lo ji sing goon faat choi&quot;</code></pre>
 </div>
 <div id="example-data-set" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Example Data Set<a href="creating-functions-and-datasets.html#example-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In addition to functions, it’s often helpful to include example datasets in your package to demonstrate how your functions can be used. We’ll now create a small example dataset called example_data and add it to our package.</p>
+<p>In addition to functions, it’s often helpful to include example datasets
+in your package to demonstrate how your functions can be used. We’ll now
+create a small example dataset called example_data and add it to our
+package.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="creating-functions-and-datasets.html#cb5-1" tabindex="-1"></a><span class="co"># Create example dataset</span></span>
-<span id="cb5-2"><a href="creating-functions-and-datasets.html#cb5-2" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb5-2"><a href="creating-functions-and-datasets.html#cb5-2" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb5-3"><a href="creating-functions-and-datasets.html#cb5-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">&quot;01&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;03&quot;</span>, <span class="st">&quot;04&quot;</span>, <span class="st">&quot;05&quot;</span>),</span>
 <span id="cb5-4"><a href="creating-functions-and-datasets.html#cb5-4" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>),</span>
-<span id="cb5-5"><a href="creating-functions-and-datasets.html#cb5-5" tabindex="-1"></a>  <span class="at">Likes_Coffee =</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)))</span>
-<span id="cb5-6"><a href="creating-functions-and-datasets.html#cb5-6" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="creating-functions-and-datasets.html#cb5-7" tabindex="-1"></a><span class="co"># Display the dataset</span></span>
-<span id="cb5-8"><a href="creating-functions-and-datasets.html#cb5-8" tabindex="-1"></a>example_data</span></code></pre></div>
-<pre><code>## # A tibble: 5 × 3
-##   ID      Age Likes_Coffee
-##   &lt;chr&gt; &lt;dbl&gt; &lt;fct&gt;       
-## 1 01       25 TRUE        
-## 2 02       30 FALSE       
-## 3 03       35 TRUE        
-## 4 04       40 TRUE        
-## 5 05       45 FALSE</code></pre>
+<span id="cb5-5"><a href="creating-functions-and-datasets.html#cb5-5" tabindex="-1"></a>  <span class="at">Likes_Coffee =</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
+<span id="cb5-6"><a href="creating-functions-and-datasets.html#cb5-6" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="creating-functions-and-datasets.html#cb5-7" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="creating-functions-and-datasets.html#cb5-8" tabindex="-1"></a><span class="co"># Display the dataset</span></span>
+<span id="cb5-9"><a href="creating-functions-and-datasets.html#cb5-9" tabindex="-1"></a>example_data</span></code></pre></div>
+<pre><code>##   ID Age Likes_Coffee
+## 1 01  25         TRUE
+## 2 02  30        FALSE
+## 3 03  35         TRUE
+## 4 04  40         TRUE
+## 5 05  45        FALSE</code></pre>
 </div>
 <div id="example-function-2" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Example Function 2<a href="creating-functions-and-datasets.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This function calculates the mean of a numeric variable (like age) for rows where another variable (like ‘Likes_Coffee’) has the value TRUE. In our example dataset, it can be used to find the mean age of people who like coffee.</p>
+<p>This function calculates the mean of a numeric variable (like age) for
+rows where another variable (like ‘Likes_Coffee’) has the value TRUE. In
+our example dataset, it can be used to find the mean age of people who
+like coffee.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="creating-functions-and-datasets.html#cb7-1" tabindex="-1"></a>calculate_group_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(df, numeric_var, factor_var) {</span>
 <span id="cb7-2"><a href="creating-functions-and-datasets.html#cb7-2" tabindex="-1"></a>  <span class="co"># Filter the dataframe for rows where the factor variable is TRUE</span></span>
 <span id="cb7-3"><a href="creating-functions-and-datasets.html#cb7-3" tabindex="-1"></a>  filtered_df <span class="ot">&lt;-</span> df[df[[factor_var]] <span class="sc">==</span> <span class="cn">TRUE</span>, ]</span>
@@ -253,19 +278,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="saving-your-code" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Saving Your Code<a href="creating-functions-and-datasets.html#saving-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>After writing these functions and testing them in an R environment like RStudio, make sure to save or copy-paste them somewhere. This way, you can introduce them to your R package once we progress further in this tutorial.</p>
-<p>In this example, I copied the functions to Visual Studio Code (as shown in the screenshot below), but you can use any text editor, such as TextEdit on MacOS or Notepad on Windows, or simply save the code somewhere on your computer.</p>
+<p>After writing these functions and testing them in an R environment like
+RStudio, make sure to save or copy-paste them somewhere. This way, you
+can introduce them to your R package once we progress further in this
+tutorial.</p>
+<p>In this example, I copied the functions to Visual Studio Code (as shown
+in the screenshot below), but you can use any text editor, such as
+TextEdit on MacOS or Notepad on Windows, or simply save the code
+somewhere on your computer.</p>
 <p><br />
 </p>
-<p><img src="images/example_codes_to_vcode.gif" /></p>
-<p><br />
-</p>
-<p><br />
+<p><img src="images/rstudio_2_vcode-01.gif" /><br />
 </p>
 <p><br />
 </p>
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating R Packages: A Step-by-Step Guide</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville Langén</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
+<p><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
 </p>
 
 </div>
