@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Required Packages | Creating R Packages: A Step-by-Step Guide</title>
+  <title>10 Testing Functions | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Required Packages | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="10 Testing Functions | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Required Packages | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="10 Testing Functions | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="creating-functions-and-datasets.html"/>
+<link rel="prev" href="adding-functions-and-data.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -222,15 +222,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="required-packages" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Required Packages<a href="required-packages.html#required-packages" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To follow along with this tutorial, you’ll need to have certain packages installed in your R environment. Specifically, we’ll install <code>devtools</code>.</p>
-<p>You can install it using the <code>install.packages()</code> function in R. Here’s how you can do it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="required-packages.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
-<p>This command will also ensure that <code>usethis</code> is installed. It is is a very important package for package development in R, as it automates many setup tasks. When <code>usethis</code> is installed, another important package, <code>gh</code>, is automatically installed as well.</p>
-<p>Once installed, load these packages into your R session using the library() function:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="required-packages.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div>
-<p>Now that you have these packages installed and loaded, you’re ready to proceed with the tutorial.</p>
+<div id="testing-functions" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Testing Functions<a href="testing-functions.html#testing-functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter, we’ll focus on testing the functions and example data
+we have incorporated into our package. Ensuring that everything works as
+expected is a crucial step in package development.</p>
+<div id="loading-the-package" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Loading the Package<a href="testing-functions.html#loading-the-package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before testing, we need to load our package. We can do this using the
+<code>devtools::load_all()</code> function, or alternatively, by clicking the “Load
+All” button in the top-right pane of RStudio.</p>
+<div id="using-devtoolsload_all" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Using devtools::load_all()<a href="testing-functions.html#using-devtoolsload_all" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To load your package <code>using devtools::load_all()</code>, simply run the
+following code in your R console:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="testing-functions.html#cb31-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>()</span></code></pre></div>
+</div>
+<div id="using-the-load-all-button" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Using the Load All Button<a href="testing-functions.html#using-the-load-all-button" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Alternatively, you can load your package using the “Load All” button in
+the top-right pane of RStudio. It can be found in the Build tab. Click
+the gear-looking “More” icon and select “Load All” to load all the
+functions and data in your package.</p>
+<p><br />
+</p>
+<p>Here’s a visual guide:</p>
+<p><br />
+</p>
+<p><img src="images/load_all-01.gif" /></p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="testing-the-functions" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Testing the Functions<a href="testing-functions.html#testing-the-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once the package is loaded, we can start testing our functions to ensure
+they work as expected.</p>
+<div id="testing-random_movie_recommendation" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Testing random_movie_recommendation<a href="testing-functions.html#testing-random_movie_recommendation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To test the <code>random_movie_recommendation</code> function, simply call it in
+the R console:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="testing-functions.html#cb32-1" tabindex="-1"></a><span class="fu">random_movie_recommendation</span>()</span></code></pre></div>
+<p>You should see a random movie title from the ggplot2movies dataset. See
+visual guide below:</p>
+<p><br />
+</p>
+<p><img src="images/terminal_velocity-01.gif" /></p>
+<p><br />
+</p>
+</div>
+<div id="verifying-the-example-data" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Verifying the Example Data<a href="testing-functions.html#verifying-the-example-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can also verify that our example data has been correctly incorporated
+by simply viewing it:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="testing-functions.html#cb33-1" tabindex="-1"></a>example_data</span></code></pre></div>
+<p>This should display the dataset we created earlier. See visual guide
+below:</p>
+<p><br />
+</p>
+<p><img src="images/example_data-01.gif" /></p>
+<p><br />
+</p>
+</div>
+<div id="testing-calculate_group_mean" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Testing calculate_group_mean<a href="testing-functions.html#testing-calculate_group_mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To test the calculate_group_mean function, call it with the example_data
+dataset:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="testing-functions.html#cb34-1" tabindex="-1"></a><span class="fu">calculate_group_mean</span>(example_data, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Likes_Coffee&quot;</span>)</span></code></pre></div>
+<p>This should return the mean age of the group who likes coffee (denoted
+by the <code>Likes_Coffee</code> variable). See visual guide below:</p>
+<p><br />
+</p>
+<p><img src="images/calculate_group_mean-01.gif" /></p>
+<p><br />
+</p>
+<p><br />
+</p>
+<p>In the next section, we will document our functions and example data
+properly.</p>
 <p><br />
 </p>
 <p><br />
@@ -238,17 +307,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 </p>
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating R Packages: A Step-by-Step Guide</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville Langén</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
+<p><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
 </p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="creating-functions-and-datasets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="adding-functions-and-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

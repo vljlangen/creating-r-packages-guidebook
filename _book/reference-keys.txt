@@ -36,3 +36,11 @@ adding-functions-and-data
 adding-functions
 adding-example-data
 pushing-again-to-github
+testing-functions
+loading-the-package
+using-devtoolsload_all
+using-the-load-all-button
+testing-the-functions
+testing-random_movie_recommendation
+verifying-the-example-data
+testing-calculate_group_mean

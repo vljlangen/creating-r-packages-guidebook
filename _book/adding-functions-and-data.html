@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="package-metadata-and-license.html"/>
-
+<link rel="next" href="testing-functions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -191,6 +191,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="adding-functions-and-data.html"><a href="adding-functions-and-data.html#adding-example-data"><i class="fa fa-check"></i><b>9.2</b> Adding Example Data</a></li>
 <li class="chapter" data-level="9.3" data-path="adding-functions-and-data.html"><a href="adding-functions-and-data.html#pushing-again-to-github"><i class="fa fa-check"></i><b>9.3</b> Pushing again to GitHub</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="testing-functions.html"><a href="testing-functions.html"><i class="fa fa-check"></i><b>10</b> Testing Functions</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="testing-functions.html"><a href="testing-functions.html#loading-the-package"><i class="fa fa-check"></i><b>10.1</b> Loading the Package</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="testing-functions.html"><a href="testing-functions.html#using-devtoolsload_all"><i class="fa fa-check"></i><b>10.1.1</b> Using devtools::load_all()</a></li>
+<li class="chapter" data-level="10.1.2" data-path="testing-functions.html"><a href="testing-functions.html#using-the-load-all-button"><i class="fa fa-check"></i><b>10.1.2</b> Using the Load All Button</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="testing-functions.html"><a href="testing-functions.html#testing-the-functions"><i class="fa fa-check"></i><b>10.2</b> Testing the Functions</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="testing-functions.html"><a href="testing-functions.html#testing-random_movie_recommendation"><i class="fa fa-check"></i><b>10.2.1</b> Testing random_movie_recommendation</a></li>
+<li class="chapter" data-level="10.2.2" data-path="testing-functions.html"><a href="testing-functions.html#verifying-the-example-data"><i class="fa fa-check"></i><b>10.2.2</b> Verifying the Example Data</a></li>
+<li class="chapter" data-level="10.2.3" data-path="testing-functions.html"><a href="testing-functions.html#testing-calculate_group_mean"><i class="fa fa-check"></i><b>10.2.3</b> Testing calculate_group_mean</a></li>
+</ul></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -248,16 +262,17 @@ should be placed in a folder called “data-raw”. You certainly want that
 folder and script in your GitHub repository but not to be compiled with
 your package. Thus, that folder has to be included in a special file
 called <code>.Rbuildignore</code>.</p>
-<p>Luckily, there is a convenience function called <code>usethis::use_data_raw()</code>
-in the <code>usethis</code> package that does all this. You can run this function and
-provide your example dataset’s name as an argument, particularly if
-there is only one dataset, but <code>use_data_raw()</code> can also be run without
-any argument.</p>
+<p>Luckily, there is a convenience function called
+<code>usethis::use_data_raw()</code> in the <code>usethis</code> package that does all this.
+You can run this function and provide your example dataset’s name as an
+argument, particularly if there is only one dataset, but
+<code>use_data_raw()</code> can also be run without any argument.</p>
 <p>When you run <code>use_data_raw()</code>, it:</p>
 <ul>
 <li>Creates the <code>data-raw</code> folder.</li>
 <li>Adds <code>data-raw</code> to <code>.Rbuildignore</code>.</li>
-<li>Creates a data script where you can paste the script that creates your example data.</li>
+<li>Creates a data script where you can paste the script that creates
+your example data.</li>
 </ul>
 <p>In the data script, you will want to have <code>use_data(your_dataset_name)</code>
 as the last line, which converts the dataset into an <code>.rda</code> file and
@@ -280,19 +295,26 @@ the dataset:</p>
 <img src="images/add_data_raw_and_add_data-01.gif" /></p>
 <p><br />
 </p>
-<p>Run the whole script to incorporate your data into your package. This will ensure your dataset is properly saved and included in your package.</p>
+<p>Run the whole script to incorporate your data into your package. This
+will ensure your dataset is properly saved and included in your package.</p>
+<p>Remember to save that <code>example_data.R</code> script file before closing it.</p>
 </div>
 <div id="pushing-again-to-github" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">9.3</span> Pushing again to GitHub<a href="adding-functions-and-data.html#pushing-again-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>At this point, it is wise to commit and push all the changes to GitHub to keep your project up-to-date and ensure you have a backup of your progress. Follow these steps to do so:</p>
+<p>At this point, it is wise to commit and push all the changes to GitHub
+to keep your project up-to-date and ensure you have a backup of your
+progress. Follow these steps to do so:</p>
 <ol style="list-style-type: decimal">
 <li>Commit your changes:</li>
 </ol>
 <ul>
 <li>In RStudio, go to the top-right pane and click on the “Git” tab.</li>
-<li>You will see a list of the files that have been changed. Check the boxes next to all the files you want to commit.</li>
+<li>You will see a list of the files that have been changed. Check the
+boxes next to all the files you want to commit.</li>
 <li>Click on the “Commit” button.</li>
-<li>In the “Commit message” field, write a descriptive message about the changes you made, for example, “Added example functions and dataset.”</li>
+<li>In the “Commit message” field, write a descriptive message about the
+changes you made, for example, “Added example functions and
+dataset”.</li>
 <li>Click on the “Commit” button at the bottom right of the window.</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
@@ -302,6 +324,14 @@ the dataset:</p>
 <li>After committing, click on the “Push” button in the Git tab.</li>
 <li>This will upload your committed changes to your GitHub repository.</li>
 </ul>
+<p><br />
+</p>
+<p>Here is a visual guide:</p>
+<p><br />
+</p>
+<p><img src="images/push_functions_and_data-01.gif" /></p>
+<p><br />
+</p>
 <p>In the next section, we will document our functions and example data
 properly.</p>
 <p><br />
@@ -327,8 +357,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="package-metadata-and-license.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="package-metadata-and-license.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="testing-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

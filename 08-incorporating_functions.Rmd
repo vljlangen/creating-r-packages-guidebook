@@ -55,17 +55,18 @@ folder and script in your GitHub repository but not to be compiled with
 your package. Thus, that folder has to be included in a special file
 called `.Rbuildignore`.
 
-Luckily, there is a convenience function called `usethis::use_data_raw()`
-in the `usethis` package that does all this. You can run this function and
-provide your example dataset's name as an argument, particularly if
-there is only one dataset, but `use_data_raw()` can also be run without
-any argument.
+Luckily, there is a convenience function called
+`usethis::use_data_raw()` in the `usethis` package that does all this.
+You can run this function and provide your example dataset's name as an
+argument, particularly if there is only one dataset, but
+`use_data_raw()` can also be run without any argument.
 
 When you run `use_data_raw()`, it:
 
-- Creates the `data-raw` folder.
-- Adds `data-raw` to `.Rbuildignore`.
-- Creates a data script where you can paste the script that creates your example data.
+-   Creates the `data-raw` folder.
+-   Adds `data-raw` to `.Rbuildignore`.
+-   Creates a data script where you can paste the script that creates
+    your example data.
 
 In the data script, you will want to have `use_data(your_dataset_name)`
 as the last line, which converts the dataset into an `.rda` file and
@@ -99,25 +100,40 @@ Here’s a visual guide:
 
 \
 
-Run the whole script to incorporate your data into your package. This will ensure your dataset is properly saved and included in your package.
+Run the whole script to incorporate your data into your package. This
+will ensure your dataset is properly saved and included in your package.
 
+Remember to save that `example_data.R` script file before closing it.
 
 ## Pushing again to GitHub
 
-At this point, it is wise to commit and push all the changes to GitHub to keep your project up-to-date and ensure you have a backup of your progress. Follow these steps to do so:
+At this point, it is wise to commit and push all the changes to GitHub
+to keep your project up-to-date and ensure you have a backup of your
+progress. Follow these steps to do so:
 
-1. Commit your changes:
+1.  Commit your changes:
 
-- In RStudio, go to the top-right pane and click on the "Git" tab.
-- You will see a list of the files that have been changed. Check the boxes next to all the files you want to commit.
-- Click on the "Commit" button.
-- In the "Commit message" field, write a descriptive message about the changes you made, for example, "Added example functions and dataset".
-- Click on the "Commit" button at the bottom right of the window.
+-   In RStudio, go to the top-right pane and click on the "Git" tab.
+-   You will see a list of the files that have been changed. Check the
+    boxes next to all the files you want to commit.
+-   Click on the "Commit" button.
+-   In the "Commit message" field, write a descriptive message about the
+    changes you made, for example, "Added example functions and
+    dataset".
+-   Click on the "Commit" button at the bottom right of the window.
 
-2. Push your changes:
+2.  Push your changes:
 
-- After committing, click on the "Push" button in the Git tab.
-- This will upload your committed changes to your GitHub repository.
+-   After committing, click on the "Push" button in the Git tab.
+-   This will upload your committed changes to your GitHub repository.
+
+\
+
+Here is a visual guide:
+
+\
+
+![](images/push_functions_and_data-01.gif)
 
 \
 
