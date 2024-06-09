@@ -163,6 +163,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="verifying-the-git-setup.html"><a href="verifying-the-git-setup.html#github-authentication"><i class="fa fa-check"></i><b>5.1</b> GitHub Authentication</a></li>
 <li class="chapter" data-level="5.2" data-path="verifying-the-git-setup.html"><a href="verifying-the-git-setup.html#git-configuration"><i class="fa fa-check"></i><b>5.2</b> Git Configuration</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html"><i class="fa fa-check"></i><b>6</b> Creating an R Package</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#prerequisites"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="6.2" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#creating-a-new-package"><i class="fa fa-check"></i><b>6.2</b> Creating a New Package</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -187,15 +192,17 @@ backup purposes, it is always advisable to push your package to a code
 repository. In this tutorial, we will use the GitHub service and set up
 a secure connection between it and your computer using a Personal Access
 Token (PAT). If you already have this set up, you can jump right to the
-next chapter. Otherwise, read on.</p>
+next chapter. If you already have an SSH connection set up between your computer and GitHub, you can still set up a connection using a PAT. So, read on.</p>
+<p>And particularly if you didn’t grasp much of what was mentioned above, please continue reading.</p>
 <div id="installing-git" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Installing Git<a href="setting-up-git-and-github.html#installing-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you are on Mac, you don’t have to install anything. If you are on Windows, go to the following webpage and download Git and install it (preferably with default settings):</p>
+<p>First of all, ensure that Git is installed on your computer.</p>
+<p>If you are on Mac, you’re all set, as Git comes pre-installed. However, if you’re on Windows and don’t have Git installed yet, head to the following webpage to download and install it (preferably with default settings):</p>
 <p><a href="https://git-scm.com/">Download Git for Windows</a></p>
 </div>
 <div id="tell-git-your-credentials" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Tell Git your credentials<a href="setting-up-git-and-github.html#tell-git-your-credentials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If you have already set up your name and email in Git, you can skip below to signing up for GitHub.</p>
+<p>If you’ve already configured your name and email in Git, you can skip this part and jump to the subheader “Signing up for GitHub”.</p>
 <div id="on-mac" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> On Mac<a href="setting-up-git-and-github.html#on-mac" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>

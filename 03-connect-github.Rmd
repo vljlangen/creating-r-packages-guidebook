@@ -11,11 +11,15 @@ backup purposes, it is always advisable to push your package to a code
 repository. In this tutorial, we will use the GitHub service and set up
 a secure connection between it and your computer using a Personal Access
 Token (PAT). If you already have this set up, you can jump right to the
-next chapter. Otherwise, read on.
+next chapter. If you already have an SSH connection set up between your computer and GitHub, you can still set up a connection using a PAT. So, read on.
+
+And particularly if you didn't grasp much of what was mentioned above, please continue reading.
 
 ## Installing Git
 
-If you are on Mac, you don’t have to install anything. If you are on Windows, go to the following webpage and download Git and install it (preferably with default settings):
+First of all, ensure that Git is installed on your computer.
+
+If you are on Mac, you're all set, as Git comes pre-installed. However, if you're on Windows and don't have Git installed yet, head to the following webpage to download and install it (preferably with default settings):
 
 [Download Git for Windows](https://git-scm.com/)
 
@@ -25,7 +29,7 @@ If you are on Mac, you don’t have to install anything. If you are on Windows, 
 
 ## Tell Git your credentials
 
-If you have already set up your name and email in Git, you can skip below to signing up for GitHub.
+If you've already configured your name and email in Git, you can skip this part and jump to the subheader "Signing up for GitHub".
 
 ### On Mac
 
