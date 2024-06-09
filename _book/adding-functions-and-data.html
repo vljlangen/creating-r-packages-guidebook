@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Package Metadata and License | Creating R Packages: A Step-by-Step Guide</title>
+  <title>9 Adding Functions and Data | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Package Metadata and License | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="9 Adding Functions and Data | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Package Metadata and License | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="9 Adding Functions and Data | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="committing-and-pushing-to-github.html"/>
-<link rel="next" href="adding-functions-and-data.html"/>
+<link rel="prev" href="package-metadata-and-license.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -208,187 +208,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="package-metadata-and-license" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">8</span> Package Metadata and License<a href="package-metadata-and-license.html#package-metadata-and-license" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we will focus on refining the metadata of our package
-and ensuring it complies with best practices for package development.</p>
-<div id="license-file" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> License File<a href="package-metadata-and-license.html#license-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Including a license in our package ensures that users understand the
-terms under which they can use, modify, and distribute our code. We can
-generate a license file using the
-<code>usethis::use_mit_license("Your Name")</code> function, where “Your Name”
-should be replaced with our name or the name of the package author. This
-function creates a LICENSE file in the package directory containing the
-MIT License text.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="package-metadata-and-license.html#cb23-1" tabindex="-1"></a><span class="co"># Generating License File</span></span>
-<span id="cb23-2"><a href="package-metadata-and-license.html#cb23-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_mit_license</span>(<span class="st">&quot;Your Name&quot;</span>)</span></code></pre></div>
+<div id="adding-functions-and-data" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Adding Functions and Data<a href="adding-functions-and-data.html#adding-functions-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter, we will integrate the functions and example dataset
+that we previously created into our package using the <code>use_r()</code> approach
+provided by the <code>usethis</code> package.</p>
+<div id="adding-functions" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Adding Functions<a href="adding-functions-and-data.html#adding-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To add the functions to our package, we will first create an R script
+file for each function. We can use the <code>use_r()</code> function to automate
+this process. This function creates a new R script file in the R/
+directory of our package.</p>
 <p><br />
 </p>
-<p>Please see my animated example below:</p>
+<p>Please see visual guides below:</p>
 <p><br />
 </p>
-<p><img src="images/use_mit_license-01.gif" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="adding-functions-and-data.html#cb27-1" tabindex="-1"></a><span class="co"># Adding the random movie recommendation function</span></span>
+<span id="cb27-2"><a href="adding-functions-and-data.html#cb27-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">&quot;random_movie_recommendation.R&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
-</div>
-<div id="description-file" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> DESCRIPTION File<a href="package-metadata-and-license.html#description-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The DESCRIPTION file provides metadata about our package, including its
-title, version, author, and dependencies. If you have followed along
-with this tutorial, you should already have a partially completed
-DESCRIPTION file. This file includes essential information about your
-package, such as the package’s name, title, version, author details, and
-license.</p>
-<p>If you don’t have a DESCRIPTION file yet, you can create one using the
-usethis::use_description() function. This function generates a basic
-DESCRIPTION file, which you can then edit to include additional details.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="package-metadata-and-license.html#cb24-1" tabindex="-1"></a><span class="co"># Modifying DESCRIPTION File</span></span>
-<span id="cb24-2"><a href="package-metadata-and-license.html#cb24-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_description</span>()</span></code></pre></div>
+<p><img src="images/random_movie_function-01.gif" /></p>
 <p><br />
 </p>
-<p>Please see my animated example below:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="adding-functions-and-data.html#cb28-1" tabindex="-1"></a><span class="co"># Adding the calculate group mean function</span></span>
+<span id="cb28-2"><a href="adding-functions-and-data.html#cb28-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">&quot;calculate_group_mean.R&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
-<p><img src="images/use_description-01.gif" /></p>
-<p><br />
-</p>
-<p>For this example package that we are writing, we could use the following
-DESCRIPTION file text. Click on the DESCRIPTION file in the bottom-right
-pane and replace its contents with these contents. Make sure to type in
-your name instead of mine.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="package-metadata-and-license.html#cb25-1" tabindex="-1"></a>Package<span class="sc">:</span> myPackage</span>
-<span id="cb25-2"><a href="package-metadata-and-license.html#cb25-2" tabindex="-1"></a>Type<span class="sc">:</span> Package</span>
-<span id="cb25-3"><a href="package-metadata-and-license.html#cb25-3" tabindex="-1"></a>Title<span class="sc">:</span> My Awesome R Package</span>
-<span id="cb25-4"><a href="package-metadata-and-license.html#cb25-4" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="fl">1.0</span></span>
-<span id="cb25-5"><a href="package-metadata-and-license.html#cb25-5" tabindex="-1"></a>Author<span class="sc">:</span> Ville Langén</span>
-<span id="cb25-6"><a href="package-metadata-and-license.html#cb25-6" tabindex="-1"></a>Maintainer<span class="sc">:</span> Ville Langén <span class="sc">&lt;</span>email address here<span class="sc">&gt;</span></span>
-<span id="cb25-7"><a href="package-metadata-and-license.html#cb25-7" tabindex="-1"></a>Description<span class="sc">:</span> This package provides functions to work with movie data and calculate group means based on binary variables. It also includes an example dataset.</span>
-<span id="cb25-8"><a href="package-metadata-and-license.html#cb25-8" tabindex="-1"></a>License<span class="sc">:</span> MIT <span class="sc">+</span> file LICENSE</span>
-<span id="cb25-9"><a href="package-metadata-and-license.html#cb25-9" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
-<span id="cb25-10"><a href="package-metadata-and-license.html#cb25-10" tabindex="-1"></a>LazyData<span class="sc">:</span> true</span>
-<span id="cb25-11"><a href="package-metadata-and-license.html#cb25-11" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">7</span>.<span class="fl">1.1</span></span>
-<span id="cb25-12"><a href="package-metadata-and-license.html#cb25-12" tabindex="-1"></a>Imports<span class="sc">:</span> </span>
-<span id="cb25-13"><a href="package-metadata-and-license.html#cb25-13" tabindex="-1"></a>    ggplot2movies</span></code></pre></div>
-<p>Remember to write out dependencies, in this case ggplot2movies, because our function random_movie_recommendation() will use it.</p>
-<p><br />
-</p>
-<p><img src="images/replace_description.gif" /></p>
+<p><img src="images/random_movie_function-01-01.gif" /></p>
 <p><br />
 </p>
 </div>
-<div id="readme-file" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> README File<a href="package-metadata-and-license.html#readme-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A README file is essential for providing an overview of the package, its
-functionality, and how to use it. We can generate a README file using
-the usethis::use_readme_md() function. This function creates a README.md
-file in the package directory, which we can then edit to include
-relevant information about our package, including installation
-instructions, usage examples, and acknowledgments.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="package-metadata-and-license.html#cb26-1" tabindex="-1"></a><span class="co"># Generating README File</span></span>
-<span id="cb26-2"><a href="package-metadata-and-license.html#cb26-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_readme_md</span>()</span></code></pre></div>
+<div id="adding-example-data" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Adding Example Data<a href="adding-functions-and-data.html#adding-example-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Similarly, we can add the example dataset to our package by creating an
+R script file containing the dataset. It is generally a good idea to
+save the original script that creates your example dataset. This script
+should be placed in a folder called “data-raw”. You certainly want that
+folder and script in your GitHub repository but not to be compiled with
+your package. Thus, that folder has to be included in a special file
+called <code>.Rbuildignore</code>.</p>
+<p>Luckily, there is a convenience function called <code>usethis::use_data_raw()</code>
+in the <code>usethis</code> package that does all this. You can run this function and
+provide your example dataset’s name as an argument, particularly if
+there is only one dataset, but <code>use_data_raw()</code> can also be run without
+any argument.</p>
+<p>When you run <code>use_data_raw()</code>, it:</p>
+<ul>
+<li>Creates the <code>data-raw</code> folder.</li>
+<li>Adds <code>data-raw</code> to <code>.Rbuildignore</code>.</li>
+<li>Creates a data script where you can paste the script that creates your example data.</li>
+</ul>
+<p>In the data script, you will want to have <code>use_data(your_dataset_name)</code>
+as the last line, which converts the dataset into an <code>.rda</code> file and
+places it into the data/ folder.</p>
+<p>Here’s how you can do it:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="adding-functions-and-data.html#cb29-1" tabindex="-1"></a><span class="co"># Adding the example dataset</span></span>
+<span id="cb29-2"><a href="adding-functions-and-data.html#cb29-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>(<span class="st">&quot;example_data&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
-<p>Please see my animated example below:</p>
-<p><br />
-</p>
-<p><img src="images/use_read_me-01.gif" /></p>
-<p><br />
-</p>
-</div>
-<div id="pushing-metadata-to-github" class="section level2 hasAnchor" number="8.4">
-<h2><span class="header-section-number">8.4</span> Pushing metadata to Github<a href="package-metadata-and-license.html#pushing-metadata-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>After making changes to the DESCRIPTION file, README, and other package
-files, it’s important to commit and push these changes to your GitHub
-repository. This ensures that your work is saved and synchronized with
-the remote repository.</p>
-<p>Here’s how you can do it using the upper right pane of RStudio:</p>
-<ol style="list-style-type: decimal">
-<li>Open the Git Pane:</li>
-</ol>
-<ul>
-<li>In RStudio, you’ll see the Git tab in the upper right pane. Click on
-it to view your current repository status.</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Stage Your Changes:</li>
-</ol>
-<ul>
-<li>You’ll see a list of files that have been modified. Check the boxes
-next to the files you want to stage for the commit (e.g.,
-DESCRIPTION, README.md, LICENSE).</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Commit Your Changes:</li>
-</ol>
-<ul>
-<li>Click the “Commit” button. This will open a new window where you can
-review your changes.</li>
-<li>Enter a meaningful commit message summarizing the changes you made
-(e.g., “Create metadata and license files”).</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Push Your Changes to GitHub:</li>
-</ol>
-<ul>
-<li>After committing, click the “Push” button to send your changes to
-the remote repository on GitHub.</li>
-</ul>
+<p>After running this function, the script file (“example_data.R”) will be
+opened automatically. Paste the code that creates your example dataset
+into this file. At the end of the script, add the following line to save
+the dataset:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="adding-functions-and-data.html#cb30-1" tabindex="-1"></a><span class="co"># Add prepared data to package</span></span>
+<span id="cb30-2"><a href="adding-functions-and-data.html#cb30-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(example_data)</span></code></pre></div>
 <p><br />
 </p>
 <p>Here’s a visual guide:</p>
 <p><br />
-</p>
-<p><img src="images/commit_metadata_and_license-01.gif" /></p>
+<img src="images/add_data_raw_and_add_data-01.gif" /></p>
 <p><br />
 </p>
+<p>Run the whole script to incorporate your data into your package. This will ensure your dataset is properly saved and included in your package.</p>
 </div>
-<div id="viewing-your-changes-on-github" class="section level2 hasAnchor" number="8.5">
-<h2><span class="header-section-number">8.5</span> Viewing Your Changes on GitHub<a href="package-metadata-and-license.html#viewing-your-changes-on-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>After committing and pushing your changes, you can view the updated
-metadata files and README on your GitHub repository. Follow these steps:</p>
+<div id="pushing-again-to-github" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Pushing again to GitHub<a href="adding-functions-and-data.html#pushing-again-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At this point, it is wise to commit and push all the changes to GitHub to keep your project up-to-date and ensure you have a backup of your progress. Follow these steps to do so:</p>
 <ol style="list-style-type: decimal">
-<li>Navigate to Your GitHub Repository:</li>
+<li>Commit your changes:</li>
 </ol>
 <ul>
-<li>Open your web browser and go to the GitHub repository where you have
-pushed your changes.</li>
+<li>In RStudio, go to the top-right pane and click on the “Git” tab.</li>
+<li>You will see a list of the files that have been changed. Check the boxes next to all the files you want to commit.</li>
+<li>Click on the “Commit” button.</li>
+<li>In the “Commit message” field, write a descriptive message about the changes you made, for example, “Added example functions and dataset.”</li>
+<li>Click on the “Commit” button at the bottom right of the window.</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Refresh the Page:</li>
+<li>Push your changes:</li>
 </ol>
 <ul>
-<li>Click the refresh button on your browser to reload the repository
-page and ensure the latest changes are visible.</li>
+<li>After committing, click on the “Push” button in the Git tab.</li>
+<li>This will upload your committed changes to your GitHub repository.</li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li>View the Updated Files:</li>
-</ol>
-<ul>
-<li>Scroll down to the file list in your repository. You should see the
-updated DESCRIPTION, README.md, and LICENSE files.</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Check the README:</li>
-</ol>
-<ul>
-<li>Scroll down to see how the README.md file is rendered. GitHub
-automatically formats Markdown files, so you will see a nicely
-formatted version of your README with headings, lists, and other
-Markdown elements.</li>
-</ul>
-<p><br />
-</p>
-<p>Here’s a visual guide:</p>
-<p><br />
-</p>
-<p><img src="images/view_metadata_on_github-01.gif" /></p>
-<p><br />
-</p>
-<p>By addressing these aspects of package development, we enhance the
-professionalism and usability of our package, making it more accessible
-to potential users and contributors.</p>
-<p>In the next section, we will incorporate into our package the functions and example data that we wrote earlier.</p>
+<p>In the next section, we will document our functions and example data
+properly.</p>
 <p><br />
 </p>
 <p><br />
@@ -412,8 +327,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="committing-and-pushing-to-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="adding-functions-and-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="package-metadata-and-license.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
