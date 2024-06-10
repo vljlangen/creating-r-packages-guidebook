@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Committing and Pushing to GitHub | Creating R Packages: A Step-by-Step Guide</title>
+  <title>12 Testing Your Documentation | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Committing and Pushing to GitHub | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="12 Testing Your Documentation | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Committing and Pushing to GitHub | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="12 Testing Your Documentation | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="creating-an-r-package.html"/>
-<link rel="next" href="metadata-and-license.html"/>
+<link rel="prev" href="documentation.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -243,112 +243,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="committing-and-pushing-to-github" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">7</span> Committing and Pushing to GitHub<a href="committing-and-pushing-to-github.html#committing-and-pushing-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we will initialize a local Git repository, add and
-commit the files of our package to the repository, and push our package
-to GitHub.</p>
-<div id="gitignore-file" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> .gitignore File<a href="committing-and-pushing-to-github.html#gitignore-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <code>.gitignore</code> file specifies which files and directories should be
-ignored by Git. This is useful for excluding files that are not relevant
-to your project, such as temporary files or sensitive information. It is
-a good practice to add the following files to your <code>.gitignore</code>:</p>
-<ul>
-<li><code>.DS_Store</code></li>
-<li><code>.Rhistory</code></li>
-<li><code>.RData</code></li>
-<li><code>.Ruserdata</code></li>
-</ul>
-<p>To modify the <code>.gitignore</code> file, click on it in the bottom-right pane of
-RStudio, add the entries listed above, and then click the save icon.</p>
-<p>Please see my animated example below:</p>
+<div id="testing-your-documentation" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">12</span> Testing Your Documentation<a href="testing-your-documentation.html#testing-your-documentation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Once you have documented your functions and datasets using <strong>roxygen2</strong>,
+it is important to test your documentation to ensure that it accurately
+reflects the functionality of your package. This chapter will guide you
+through testing your package’s documentation.</p>
+<p>If you have been following this tutorial chronologically, you should
+already have your package and its documentation loaded. However, if for
+any reason your package is not loaded, you can easily load everything
+using the following command:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="testing-your-documentation.html#cb40-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+<div id="documentation-for-functions" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Documentation for Functions<a href="testing-your-documentation.html#documentation-for-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can view the documentation for a particular function by using the ?
+followed by the function name.</p>
+<p>In other words, these help files you have created function just like those you would encounter with official packages on CRAN.</p>
+<p>For example, to view the documentation
+for the <code>random_movie_recommendation</code> function, you would use:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="testing-your-documentation.html#cb41-1" tabindex="-1"></a>?random_movie_recommendation</span></code></pre></div>
+<p>This will open the help page for the function, where you can review the
+descriptions, parameters, examples, and other relevant information
+included in your <strong>roxygen2</strong> comments.</p>
 <p><br />
 </p>
-<p><img src="images/modify_gitignore-01.gif" /></p>
-<p><br />
-</p>
-</div>
-<div id="initializing-git" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Initializing Git<a href="committing-and-pushing-to-github.html#initializing-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To initialize a Git repository for your package, you can use the
-<code>usethis::use_git()</code> function. This function sets up Git for your
-package and creates an initial commit.</p>
-<p>Run the following command in your R console:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="committing-and-pushing-to-github.html#cb20-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
-<p>When prompted for permission to commit files, say “Absolutely not”, as
-committing at this stage can interfere with the next steps. If asked
-whether to restart your R session, answer “Yeah”.</p>
-<p>Please see my animated example below:</p>
-<p><br />
-</p>
-<p><img src="images/initialize_git-01.gif" /></p>
+<p><img src="images/help_random_movie-01.gif" /></p>
 <p><br />
 </p>
 </div>
-<div id="committing-files" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Committing Files<a href="committing-and-pushing-to-github.html#committing-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>After initializing Git, you need to commit your files manually. In
-RStudio, follow these steps:</p>
-<ol style="list-style-type: decimal">
-<li>In the top-right pane, go to the “Git” tab.</li>
-<li>Select all the files you want to commit by clicking the checkboxes
-next to them.</li>
-<li>Click the “Commit” button.</li>
-<li>Write a commit message, such as “Initial commit”.</li>
-<li>Click the “Commit” button in the commit dialog box.</li>
-</ol>
-<p>This creates an initial commit with all your package files.</p>
-<p>Please see my animated example below:</p>
+<div id="documentation-for-datasets" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Documentation for Datasets<a href="testing-your-documentation.html#documentation-for-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To view the documentation for example datasets, you can use the help
+function with the dataset name. For example, to view the documentation
+for the example_data dataset, you would use:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="testing-your-documentation.html#cb42-1" tabindex="-1"></a>?example_data</span></code></pre></div>
 <p><br />
 </p>
-<p><img src="images/initial_commit-01.gif" /></p>
+<p><img src="images/help_example_data-01.gif" /></p>
 <p><br />
 </p>
-</div>
-<div id="changing-the-default-branch" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Changing the Default Branch<a href="committing-and-pushing-to-github.html#changing-the-default-branch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In recent years, it has become customary to use “main” instead of
-“master” as the default branch name for new repositories due to the
-inclusive language initiatives across the tech community. Additionally,
-using “main” aligns better with GitHub’s default settings, facilitating
-smoother integrations.</p>
-<p>To change the branch name in your local repository to “main,” you can
-use the terminal within RStudio. Here’s how:</p>
-<ol style="list-style-type: decimal">
-<li>Open the Terminal tab next to the Console tab in RStudio.</li>
-<li>Type the following command to rename the branch:</li>
-</ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="committing-and-pushing-to-github.html#cb21-1" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> master main</span></code></pre></div>
-<p>Please see my animated example below:</p>
 <p><br />
 </p>
-<p><img src="images/master_to_main-01.gif" /></p>
 <p><br />
-</p>
-</div>
-<div id="pushing-to-github" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Pushing to GitHub<a href="committing-and-pushing-to-github.html#pushing-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Once you have committed your files, you can push your package to GitHub
-using the usethis::use_github() function. This function creates a new
-GitHub repository and pushes your local Git repository to GitHub.</p>
-<p>Run the following command in your R console:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="committing-and-pushing-to-github.html#cb22-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div>
-<p>Follow the prompts to complete the process. This will create a new
-repository on GitHub and push your local commits to the remote
-repository.</p>
-<p>If prompted for permission to commit any further files at this point, say “Negative”.</p>
-<p>Please see my animated example below:</p>
-<p><br />
-</p>
-<p><img src="images/use_github-01.gif" /></p>
-<p><br />
-</p>
-<p>You have now successfully committed and pushed your package to GitHub!</p>
-<p>In the following chapter, we will start working on special files such as <code>DESCRIPTION</code>, <code>README.md</code>, and others, which are essential for documenting and detailing your package.</p>
-<p><br />
-<br />
-<br />
 </p>
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
 <p><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
@@ -367,8 +303,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="creating-an-r-package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="metadata-and-license.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="documentation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

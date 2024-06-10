@@ -54,3 +54,6 @@ documenting-datasets
 documenting-example_data
 generating-documentation
 documentation-to-github
+testing-your-documentation
+documentation-for-functions
+documentation-for-datasets
