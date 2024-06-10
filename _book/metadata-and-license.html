@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Creating Functions and Datasets | Creating R Packages: A Step-by-Step Guide</title>
+  <title>8 Metadata and License | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Creating Functions and Datasets | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="8 Metadata and License | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Creating Functions and Datasets | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="8 Metadata and License | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="required-packages.html"/>
-<link rel="next" href="setting-up-git-and-github.html"/>
+<link rel="prev" href="committing-and-pushing-to-github.html"/>
+<link rel="next" href="adding-functions-and-data.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -238,97 +238,190 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="creating-functions-and-datasets" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Creating Functions and Datasets<a href="creating-functions-and-datasets.html#creating-functions-and-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we’ll create a couple of simple functions and an
-example dataframe.</p>
-<p>Below is a screenshot of writing these functions in RStudio. Further
-down on this page, you will find the codes in a text format, which you
-can copy and paste into your editor.</p>
+<div id="metadata-and-license" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Metadata and License<a href="metadata-and-license.html#metadata-and-license" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter, we will focus on refining the metadata of our package
+and ensuring it complies with best practices for package development.</p>
+<div id="license-file" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> License File<a href="metadata-and-license.html#license-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Including a license in our package ensures that users understand the
+terms under which they can use, modify, and distribute our code. We can
+generate a license file using the
+<code>usethis::use_mit_license("Your Name")</code> function, where “Your Name”
+should be replaced with our name or the name of the package author. This
+function creates a LICENSE file in the package directory containing the
+MIT License text.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="metadata-and-license.html#cb23-1" tabindex="-1"></a><span class="co"># Generating License File</span></span>
+<span id="cb23-2"><a href="metadata-and-license.html#cb23-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_mit_license</span>(<span class="st">&quot;Your Name&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
-<p><img src="images/writing_functions.png" /><br />
-</p>
+<p>Please see my animated example below:</p>
 <p><br />
 </p>
-<div id="example-function-1" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Example Function 1<a href="creating-functions-and-datasets.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We’ll now create a simple function that randomly recommends a movie from
-the “ggplot2movies” dataset.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="creating-functions-and-datasets.html#cb3-1" tabindex="-1"></a><span class="co"># Not to be included in the package but run here on this tutorial page</span></span>
-<span id="cb3-2"><a href="creating-functions-and-datasets.html#cb3-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(ggplot2movies)) {</span>
-<span id="cb3-3"><a href="creating-functions-and-datasets.html#cb3-3" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2movies&quot;</span>)</span>
-<span id="cb3-4"><a href="creating-functions-and-datasets.html#cb3-4" tabindex="-1"></a>  <span class="fu">library</span>(ggplot2movies)</span>
-<span id="cb3-5"><a href="creating-functions-and-datasets.html#cb3-5" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## Loading required package: ggplot2movies</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="creating-functions-and-datasets.html#cb5-1" tabindex="-1"></a><span class="co"># Function to randomly recommend a movie</span></span>
-<span id="cb5-2"><a href="creating-functions-and-datasets.html#cb5-2" tabindex="-1"></a>random_movie_recommendation <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb5-3"><a href="creating-functions-and-datasets.html#cb5-3" tabindex="-1"></a>  <span class="co"># Load the movies dataset</span></span>
-<span id="cb5-4"><a href="creating-functions-and-datasets.html#cb5-4" tabindex="-1"></a>  <span class="fu">data</span>(movies, <span class="at">package =</span> <span class="st">&quot;ggplot2movies&quot;</span>)</span>
-<span id="cb5-5"><a href="creating-functions-and-datasets.html#cb5-5" tabindex="-1"></a>  <span class="co"># Get the movie title at the random index</span></span>
-<span id="cb5-6"><a href="creating-functions-and-datasets.html#cb5-6" tabindex="-1"></a>  recommended_movie <span class="ot">&lt;-</span> <span class="fu">sample</span>(movies<span class="sc">$</span>title, <span class="dv">1</span>)</span>
-<span id="cb5-7"><a href="creating-functions-and-datasets.html#cb5-7" tabindex="-1"></a>  <span class="co"># Return the recommended movie</span></span>
-<span id="cb5-8"><a href="creating-functions-and-datasets.html#cb5-8" tabindex="-1"></a>  <span class="fu">return</span>(recommended_movie)</span>
-<span id="cb5-9"><a href="creating-functions-and-datasets.html#cb5-9" tabindex="-1"></a>}</span>
-<span id="cb5-10"><a href="creating-functions-and-datasets.html#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="creating-functions-and-datasets.html#cb5-11" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb5-12"><a href="creating-functions-and-datasets.html#cb5-12" tabindex="-1"></a><span class="fu">random_movie_recommendation</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Pups&quot;</code></pre>
-</div>
-<div id="example-data-set" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Example Data Set<a href="creating-functions-and-datasets.html#example-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In addition to functions, it’s often helpful to include example datasets
-in your package to demonstrate how your functions can be used. We’ll now
-create a small example dataset called example_data and add it to our
-package.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="creating-functions-and-datasets.html#cb7-1" tabindex="-1"></a><span class="co"># Create example dataset</span></span>
-<span id="cb7-2"><a href="creating-functions-and-datasets.html#cb7-2" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-3"><a href="creating-functions-and-datasets.html#cb7-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">&quot;01&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;03&quot;</span>, <span class="st">&quot;04&quot;</span>, <span class="st">&quot;05&quot;</span>),</span>
-<span id="cb7-4"><a href="creating-functions-and-datasets.html#cb7-4" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>),</span>
-<span id="cb7-5"><a href="creating-functions-and-datasets.html#cb7-5" tabindex="-1"></a>  <span class="at">Likes_Coffee =</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
-<span id="cb7-6"><a href="creating-functions-and-datasets.html#cb7-6" tabindex="-1"></a>)</span>
-<span id="cb7-7"><a href="creating-functions-and-datasets.html#cb7-7" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="creating-functions-and-datasets.html#cb7-8" tabindex="-1"></a><span class="co"># Display the dataset</span></span>
-<span id="cb7-9"><a href="creating-functions-and-datasets.html#cb7-9" tabindex="-1"></a>example_data</span></code></pre></div>
-<pre><code>##   ID Age Likes_Coffee
-## 1 01  25         TRUE
-## 2 02  30        FALSE
-## 3 03  35         TRUE
-## 4 04  40         TRUE
-## 5 05  45        FALSE</code></pre>
-</div>
-<div id="example-function-2" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Example Function 2<a href="creating-functions-and-datasets.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This function calculates the mean of a numeric variable (like age) for
-rows where another variable (like ‘Likes_Coffee’) has the value TRUE. In
-our example dataset, it can be used to find the mean age of people who
-like coffee.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="creating-functions-and-datasets.html#cb9-1" tabindex="-1"></a>calculate_group_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, numeric_var, factor_var) {</span>
-<span id="cb9-2"><a href="creating-functions-and-datasets.html#cb9-2" tabindex="-1"></a>  <span class="co"># Filter the dataframe for rows where the factor variable is TRUE</span></span>
-<span id="cb9-3"><a href="creating-functions-and-datasets.html#cb9-3" tabindex="-1"></a>  filtered_df <span class="ot">&lt;-</span> df[df[[factor_var]] <span class="sc">==</span> <span class="cn">TRUE</span>, ]</span>
-<span id="cb9-4"><a href="creating-functions-and-datasets.html#cb9-4" tabindex="-1"></a>  <span class="co"># Calculate the mean of the numeric variable for the filtered dataframe</span></span>
-<span id="cb9-5"><a href="creating-functions-and-datasets.html#cb9-5" tabindex="-1"></a>  mean_val <span class="ot">&lt;-</span> <span class="fu">mean</span>(filtered_df[[numeric_var]])</span>
-<span id="cb9-6"><a href="creating-functions-and-datasets.html#cb9-6" tabindex="-1"></a>  <span class="co"># Return the mean value</span></span>
-<span id="cb9-7"><a href="creating-functions-and-datasets.html#cb9-7" tabindex="-1"></a>  <span class="fu">return</span>(mean_val)</span>
-<span id="cb9-8"><a href="creating-functions-and-datasets.html#cb9-8" tabindex="-1"></a>}</span>
-<span id="cb9-9"><a href="creating-functions-and-datasets.html#cb9-9" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="creating-functions-and-datasets.html#cb9-10" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb9-11"><a href="creating-functions-and-datasets.html#cb9-11" tabindex="-1"></a><span class="fu">calculate_group_mean</span>(example_data, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Likes_Coffee&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] 33.33333</code></pre>
-</div>
-<div id="saving-your-code" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Saving Your Code<a href="creating-functions-and-datasets.html#saving-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>After writing these functions and testing them in an R environment like
-RStudio, make sure to save or copy-paste them somewhere. This way, you
-can introduce them to your R package once we progress further in this
-tutorial.</p>
-<p>In this example, I copied the functions to Visual Studio Code (as shown
-in the screenshot below), but you can use any text editor, such as
-TextEdit on MacOS or Notepad on Windows, or simply save the code
-somewhere on your computer.</p>
+<p><img src="images/use_mit_license-01.gif" /></p>
 <p><br />
 </p>
-<p><img src="images/from_rstudio_to_vcode.gif" /><br />
+</div>
+<div id="description-file" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> DESCRIPTION File<a href="metadata-and-license.html#description-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The DESCRIPTION file provides metadata about our package, including its
+title, version, author, and dependencies. If you have followed along
+with this tutorial, you should already have a partially completed
+DESCRIPTION file. This file includes essential information about your
+package, such as the package’s name, title, version, author details, and
+license.</p>
+<p>If you don’t have a DESCRIPTION file yet, you can create one using the
+usethis::use_description() function. This function generates a basic
+DESCRIPTION file, which you can then edit to include additional details.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="metadata-and-license.html#cb24-1" tabindex="-1"></a><span class="co"># Modifying DESCRIPTION File</span></span>
+<span id="cb24-2"><a href="metadata-and-license.html#cb24-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_description</span>()</span></code></pre></div>
+<p><br />
+</p>
+<p>Please see my animated example below:</p>
+<p><br />
+</p>
+<p><img src="images/use_description-01.gif" /></p>
+<p><br />
+</p>
+<p>For this example package that we are writing, we could use the following
+DESCRIPTION file text. Click on the DESCRIPTION file in the bottom-right
+pane and replace its contents with these contents. Make sure to type in
+your name instead of mine.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="metadata-and-license.html#cb25-1" tabindex="-1"></a>Package<span class="sc">:</span> myPackage</span>
+<span id="cb25-2"><a href="metadata-and-license.html#cb25-2" tabindex="-1"></a>Type<span class="sc">:</span> Package</span>
+<span id="cb25-3"><a href="metadata-and-license.html#cb25-3" tabindex="-1"></a>Title<span class="sc">:</span> My Awesome R Package</span>
+<span id="cb25-4"><a href="metadata-and-license.html#cb25-4" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="fl">1.0</span></span>
+<span id="cb25-5"><a href="metadata-and-license.html#cb25-5" tabindex="-1"></a>Author<span class="sc">:</span> Ville Langén</span>
+<span id="cb25-6"><a href="metadata-and-license.html#cb25-6" tabindex="-1"></a>Maintainer<span class="sc">:</span> Ville Langén <span class="sc">&lt;</span>email address here<span class="sc">&gt;</span></span>
+<span id="cb25-7"><a href="metadata-and-license.html#cb25-7" tabindex="-1"></a>Description<span class="sc">:</span> This package provides functions to work with movie data and calculate group means based on binary variables. It also includes an example dataset.</span>
+<span id="cb25-8"><a href="metadata-and-license.html#cb25-8" tabindex="-1"></a>License<span class="sc">:</span> MIT <span class="sc">+</span> file LICENSE</span>
+<span id="cb25-9"><a href="metadata-and-license.html#cb25-9" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
+<span id="cb25-10"><a href="metadata-and-license.html#cb25-10" tabindex="-1"></a>LazyData<span class="sc">:</span> true</span>
+<span id="cb25-11"><a href="metadata-and-license.html#cb25-11" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">7</span>.<span class="fl">1.1</span></span>
+<span id="cb25-12"><a href="metadata-and-license.html#cb25-12" tabindex="-1"></a>Imports<span class="sc">:</span> </span>
+<span id="cb25-13"><a href="metadata-and-license.html#cb25-13" tabindex="-1"></a>    ggplot2movies</span></code></pre></div>
+<p>Remember to write out dependencies, in this case ggplot2movies, because our function random_movie_recommendation() will use it.</p>
+<p><br />
+</p>
+<p><img src="images/replace_description.gif" /></p>
+<p><br />
+</p>
+</div>
+<div id="readme-file" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> README File<a href="metadata-and-license.html#readme-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A README file is essential for providing an overview of the package, its
+functionality, and how to use it. We can generate a README file using
+the usethis::use_readme_md() function. This function creates a README.md
+file in the package directory, which we can then edit to include
+relevant information about our package, including installation
+instructions, usage examples, and acknowledgments.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="metadata-and-license.html#cb26-1" tabindex="-1"></a><span class="co"># Generating README File</span></span>
+<span id="cb26-2"><a href="metadata-and-license.html#cb26-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_readme_md</span>()</span></code></pre></div>
+<p><br />
+</p>
+<p>Please see my animated example below:</p>
+<p><br />
+</p>
+<p><img src="images/use_read_me-01.gif" /></p>
+<p><br />
+</p>
+</div>
+<div id="pushing-metadata-to-github" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Pushing metadata to Github<a href="metadata-and-license.html#pushing-metadata-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>After making changes to the DESCRIPTION file, README, and other package
+files, it’s important to commit and push these changes to your GitHub
+repository. This ensures that your work is saved and synchronized with
+the remote repository.</p>
+<p>Here’s how you can do it using the upper right pane of RStudio:</p>
+<ol style="list-style-type: decimal">
+<li>Open the Git Pane:</li>
+</ol>
+<ul>
+<li>In RStudio, you’ll see the Git tab in the upper right pane. Click on
+it to view your current repository status.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Stage Your Changes:</li>
+</ol>
+<ul>
+<li>You’ll see a list of files that have been modified. Check the boxes
+next to the files you want to stage for the commit (e.g.,
+DESCRIPTION, README.md, LICENSE).</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Commit Your Changes:</li>
+</ol>
+<ul>
+<li>Click the “Commit” button. This will open a new window where you can
+review your changes.</li>
+<li>Enter a meaningful commit message summarizing the changes you made
+(e.g., “Create metadata and license files”).</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Push Your Changes to GitHub:</li>
+</ol>
+<ul>
+<li>After committing, click the “Push” button to send your changes to
+the remote repository on GitHub.</li>
+</ul>
+<p><br />
+</p>
+<p>Here’s a visual guide:</p>
+<p><br />
+</p>
+<p><img src="images/commit_metadata_and_license-01.gif" /></p>
+<p><br />
+</p>
+</div>
+<div id="viewing-readme-on-github" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Viewing README on GitHub<a href="metadata-and-license.html#viewing-readme-on-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>After committing and pushing your changes, you can view the updated
+metadata files and README on your GitHub repository. Follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li>Navigate to Your GitHub Repository:</li>
+</ol>
+<ul>
+<li>Open your web browser and go to the GitHub repository where you have
+pushed your changes.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Refresh the Page:</li>
+</ol>
+<ul>
+<li>Click the refresh button on your browser to reload the repository
+page and ensure the latest changes are visible.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>View the Updated Files:</li>
+</ol>
+<ul>
+<li>Scroll down to the file list in your repository. You should see the
+updated DESCRIPTION, README.md, and LICENSE files.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Check the README:</li>
+</ol>
+<ul>
+<li>Scroll down to see how the README.md file is rendered. GitHub
+automatically formats Markdown files, so you will see a nicely
+formatted version of your README with headings, lists, and other
+Markdown elements.</li>
+</ul>
+<p><br />
+</p>
+<p>Here’s a visual guide:</p>
+<p><br />
+</p>
+<p><img src="images/view_metadata_on_github-01.gif" /></p>
+<p><br />
+</p>
+<p>By addressing these aspects of package development, we enhance the
+professionalism and usability of our package, making it more accessible
+to potential users and contributors.</p>
+<p>In the next section, we will incorporate into our package the functions and example data that we wrote earlier.</p>
+<p><br />
+</p>
+<p><br />
 </p>
 <p><br />
 </p>
@@ -349,8 +442,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="required-packages.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="setting-up-git-and-github.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="committing-and-pushing-to-github.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="adding-functions-and-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

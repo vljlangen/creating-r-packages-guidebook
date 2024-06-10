@@ -167,7 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html"><i class="fa fa-check"></i><b>6</b> Creating an R Package</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#prerequisites"><i class="fa fa-check"></i><b>6.1</b> Prerequisites</a></li>
-<li class="chapter" data-level="6.2" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#the-create_package-function"><i class="fa fa-check"></i><b>6.2</b> The <code>create_package()</code> function</a></li>
+<li class="chapter" data-level="6.2" data-path="creating-an-r-package.html"><a href="creating-an-r-package.html#create_package"><i class="fa fa-check"></i><b>6.2</b> <code>create_package()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html"><i class="fa fa-check"></i><b>7</b> Committing and Pushing to GitHub</a>
 <ul>
@@ -177,13 +177,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#changing-the-default-branch"><i class="fa fa-check"></i><b>7.4</b> Changing the Default Branch</a></li>
 <li class="chapter" data-level="7.5" data-path="committing-and-pushing-to-github.html"><a href="committing-and-pushing-to-github.html#pushing-to-github"><i class="fa fa-check"></i><b>7.5</b> Pushing to GitHub</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html"><i class="fa fa-check"></i><b>8</b> Package Metadata and License</a>
+<li class="chapter" data-level="8" data-path="metadata-and-license.html"><a href="metadata-and-license.html"><i class="fa fa-check"></i><b>8</b> Metadata and License</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#license-file"><i class="fa fa-check"></i><b>8.1</b> License File</a></li>
-<li class="chapter" data-level="8.2" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#description-file"><i class="fa fa-check"></i><b>8.2</b> DESCRIPTION File</a></li>
-<li class="chapter" data-level="8.3" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#readme-file"><i class="fa fa-check"></i><b>8.3</b> README File</a></li>
-<li class="chapter" data-level="8.4" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#pushing-metadata-to-github"><i class="fa fa-check"></i><b>8.4</b> Pushing metadata to Github</a></li>
-<li class="chapter" data-level="8.5" data-path="package-metadata-and-license.html"><a href="package-metadata-and-license.html#viewing-your-changes-on-github"><i class="fa fa-check"></i><b>8.5</b> Viewing Your Changes on GitHub</a></li>
+<li class="chapter" data-level="8.1" data-path="metadata-and-license.html"><a href="metadata-and-license.html#license-file"><i class="fa fa-check"></i><b>8.1</b> License File</a></li>
+<li class="chapter" data-level="8.2" data-path="metadata-and-license.html"><a href="metadata-and-license.html#description-file"><i class="fa fa-check"></i><b>8.2</b> DESCRIPTION File</a></li>
+<li class="chapter" data-level="8.3" data-path="metadata-and-license.html"><a href="metadata-and-license.html#readme-file"><i class="fa fa-check"></i><b>8.3</b> README File</a></li>
+<li class="chapter" data-level="8.4" data-path="metadata-and-license.html"><a href="metadata-and-license.html#pushing-metadata-to-github"><i class="fa fa-check"></i><b>8.4</b> Pushing metadata to Github</a></li>
+<li class="chapter" data-level="8.5" data-path="metadata-and-license.html"><a href="metadata-and-license.html#viewing-readme-on-github"><i class="fa fa-check"></i><b>8.5</b> Viewing README on GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="adding-functions-and-data.html"><a href="adding-functions-and-data.html"><i class="fa fa-check"></i><b>9</b> Adding Functions and Data</a>
 <ul>
@@ -195,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.1" data-path="testing-functions.html"><a href="testing-functions.html#loading-the-package"><i class="fa fa-check"></i><b>10.1</b> Loading the Package</a>
 <ul>
-<li class="chapter" data-level="10.1.1" data-path="testing-functions.html"><a href="testing-functions.html#using-devtoolsload_all"><i class="fa fa-check"></i><b>10.1.1</b> Using devtools::load_all()</a></li>
+<li class="chapter" data-level="10.1.1" data-path="testing-functions.html"><a href="testing-functions.html#using-devtoolsload_all"><i class="fa fa-check"></i><b>10.1.1</b> Using <code>devtools::load_all()</code></a></li>
 <li class="chapter" data-level="10.1.2" data-path="testing-functions.html"><a href="testing-functions.html#using-the-load-all-button"><i class="fa fa-check"></i><b>10.1.2</b> Using the Load All Button</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="testing-functions.html"><a href="testing-functions.html#testing-the-functions"><i class="fa fa-check"></i><b>10.2</b> Testing the Functions</a>
@@ -204,6 +204,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2.2" data-path="testing-functions.html"><a href="testing-functions.html#verifying-the-example-data"><i class="fa fa-check"></i><b>10.2.2</b> Verifying the Example Data</a></li>
 <li class="chapter" data-level="10.2.3" data-path="testing-functions.html"><a href="testing-functions.html#testing-calculate_group_mean"><i class="fa fa-check"></i><b>10.2.3</b> Testing calculate_group_mean</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>11</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="documentation.html"><a href="documentation.html#roxygen2-skeletons"><i class="fa fa-check"></i><b>11.1</b> <strong>roxygen2</strong> skeletons</a></li>
+<li class="chapter" data-level="11.2" data-path="documentation.html"><a href="documentation.html#generating-skeletons"><i class="fa fa-check"></i><b>11.2</b> Generating Skeletons</a></li>
+<li class="chapter" data-level="11.3" data-path="documentation.html"><a href="documentation.html#documenting-functions"><i class="fa fa-check"></i><b>11.3</b> Documenting Functions</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="documentation.html"><a href="documentation.html#documenting-random_movie_recommendation"><i class="fa fa-check"></i><b>11.3.1</b> Documenting <code>random_movie_recommendation</code></a></li>
+<li class="chapter" data-level="11.3.2" data-path="documentation.html"><a href="documentation.html#documenting-calculate_group_mean"><i class="fa fa-check"></i><b>11.3.2</b> Documenting <code>calculate_group_mean</code></a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="documentation.html"><a href="documentation.html#documenting-datasets"><i class="fa fa-check"></i><b>11.4</b> Documenting Datasets</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="documentation.html"><a href="documentation.html#documenting-example_data"><i class="fa fa-check"></i><b>11.4.1</b> Documenting example_data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="documentation.html"><a href="documentation.html#generating-documentation"><i class="fa fa-check"></i><b>11.5</b> Generating Documentation</a></li>
+<li class="chapter" data-level="11.6" data-path="documentation.html"><a href="documentation.html#documentation-to-github"><i class="fa fa-check"></i><b>11.6</b> Documentation to GitHub</a></li>
 </ul></li>
 </ul>
 
@@ -225,7 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Creating R Packages: A Step-by-Step Guide</h1>
 <p class="author"><em>Ville Langén</em></p>
-<p class="date"><em>09.06.2024</em></p>
+<p class="date"><em>10.06.2024</em></p>
 </div>
 <div id="introduction" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>

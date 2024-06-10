@@ -41,7 +41,7 @@ usethis::use_r("calculate_group_mean.R")
 
 \
 
-![](images/random_movie_function-01-01.gif)
+![](images/calculate_group_mean_function.gif)
 
 \
 
@@ -137,8 +137,8 @@ Here is a visual guide:
 
 \
 
-In the next section, we will document our functions and example data
-properly.
+In the next section, we’ll focus on testing the functions and example data we have incorporated into our package.
+
 
 \
 

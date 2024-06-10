@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Creating Functions and Datasets | Creating R Packages: A Step-by-Step Guide</title>
+  <title>11 Documentation | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Creating Functions and Datasets | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="11 Documentation | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Creating Functions and Datasets | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="11 Documentation | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="required-packages.html"/>
-<link rel="next" href="setting-up-git-and-github.html"/>
+<link rel="prev" href="testing-functions.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -238,97 +238,185 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="creating-functions-and-datasets" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Creating Functions and Datasets<a href="creating-functions-and-datasets.html#creating-functions-and-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we’ll create a couple of simple functions and an
-example dataframe.</p>
-<p>Below is a screenshot of writing these functions in RStudio. Further
-down on this page, you will find the codes in a text format, which you
-can copy and paste into your editor.</p>
+<div id="documentation" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> Documentation<a href="documentation.html#documentation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter, we’ll focus on documenting the functions and datasets
+in our package. Proper documentation is essential for helping users
+understand how to use your package effectively.</p>
+<div id="roxygen2-skeletons" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> <strong>roxygen2</strong> skeletons<a href="documentation.html#roxygen2-skeletons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When documenting functions and datasets in an R package, it is
+recommended to use <strong>roxygen2</strong> skeletons. These are snippets of a kind
+of markup language, written directly above your functions and dataset
+definitions. They serve as a convenient way to generate Rd (R
+documentation) files, which provide detailed information about the
+usage, parameters, and examples for your functions and datasets. In
+other words, <strong>roxygen2</strong> is the front end that produces Rd files from
+your comments in your .R files.</p>
+<p>So, the ground rule is:</p>
 <p><br />
 </p>
-<p><img src="images/writing_functions.png" /><br />
-</p>
+<p><strong><em>Thou shalt never directly create or edit Rd (R documentation)
+files</em></strong></p>
 <p><br />
 </p>
-<div id="example-function-1" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Example Function 1<a href="creating-functions-and-datasets.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We’ll now create a simple function that randomly recommends a movie from
-the “ggplot2movies” dataset.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="creating-functions-and-datasets.html#cb3-1" tabindex="-1"></a><span class="co"># Not to be included in the package but run here on this tutorial page</span></span>
-<span id="cb3-2"><a href="creating-functions-and-datasets.html#cb3-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(ggplot2movies)) {</span>
-<span id="cb3-3"><a href="creating-functions-and-datasets.html#cb3-3" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2movies&quot;</span>)</span>
-<span id="cb3-4"><a href="creating-functions-and-datasets.html#cb3-4" tabindex="-1"></a>  <span class="fu">library</span>(ggplot2movies)</span>
-<span id="cb3-5"><a href="creating-functions-and-datasets.html#cb3-5" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## Loading required package: ggplot2movies</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="creating-functions-and-datasets.html#cb5-1" tabindex="-1"></a><span class="co"># Function to randomly recommend a movie</span></span>
-<span id="cb5-2"><a href="creating-functions-and-datasets.html#cb5-2" tabindex="-1"></a>random_movie_recommendation <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb5-3"><a href="creating-functions-and-datasets.html#cb5-3" tabindex="-1"></a>  <span class="co"># Load the movies dataset</span></span>
-<span id="cb5-4"><a href="creating-functions-and-datasets.html#cb5-4" tabindex="-1"></a>  <span class="fu">data</span>(movies, <span class="at">package =</span> <span class="st">&quot;ggplot2movies&quot;</span>)</span>
-<span id="cb5-5"><a href="creating-functions-and-datasets.html#cb5-5" tabindex="-1"></a>  <span class="co"># Get the movie title at the random index</span></span>
-<span id="cb5-6"><a href="creating-functions-and-datasets.html#cb5-6" tabindex="-1"></a>  recommended_movie <span class="ot">&lt;-</span> <span class="fu">sample</span>(movies<span class="sc">$</span>title, <span class="dv">1</span>)</span>
-<span id="cb5-7"><a href="creating-functions-and-datasets.html#cb5-7" tabindex="-1"></a>  <span class="co"># Return the recommended movie</span></span>
-<span id="cb5-8"><a href="creating-functions-and-datasets.html#cb5-8" tabindex="-1"></a>  <span class="fu">return</span>(recommended_movie)</span>
-<span id="cb5-9"><a href="creating-functions-and-datasets.html#cb5-9" tabindex="-1"></a>}</span>
-<span id="cb5-10"><a href="creating-functions-and-datasets.html#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="creating-functions-and-datasets.html#cb5-11" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb5-12"><a href="creating-functions-and-datasets.html#cb5-12" tabindex="-1"></a><span class="fu">random_movie_recommendation</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Pups&quot;</code></pre>
+<p>— rather, always document your functions and example datasets using
+<strong>roxygen2</strong> comments.</p>
 </div>
-<div id="example-data-set" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Example Data Set<a href="creating-functions-and-datasets.html#example-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In addition to functions, it’s often helpful to include example datasets
-in your package to demonstrate how your functions can be used. We’ll now
-create a small example dataset called example_data and add it to our
-package.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="creating-functions-and-datasets.html#cb7-1" tabindex="-1"></a><span class="co"># Create example dataset</span></span>
-<span id="cb7-2"><a href="creating-functions-and-datasets.html#cb7-2" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-3"><a href="creating-functions-and-datasets.html#cb7-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="st">&quot;01&quot;</span>, <span class="st">&quot;02&quot;</span>, <span class="st">&quot;03&quot;</span>, <span class="st">&quot;04&quot;</span>, <span class="st">&quot;05&quot;</span>),</span>
-<span id="cb7-4"><a href="creating-functions-and-datasets.html#cb7-4" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>),</span>
-<span id="cb7-5"><a href="creating-functions-and-datasets.html#cb7-5" tabindex="-1"></a>  <span class="at">Likes_Coffee =</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
-<span id="cb7-6"><a href="creating-functions-and-datasets.html#cb7-6" tabindex="-1"></a>)</span>
-<span id="cb7-7"><a href="creating-functions-and-datasets.html#cb7-7" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="creating-functions-and-datasets.html#cb7-8" tabindex="-1"></a><span class="co"># Display the dataset</span></span>
-<span id="cb7-9"><a href="creating-functions-and-datasets.html#cb7-9" tabindex="-1"></a>example_data</span></code></pre></div>
-<pre><code>##   ID Age Likes_Coffee
-## 1 01  25         TRUE
-## 2 02  30        FALSE
-## 3 03  35         TRUE
-## 4 04  40         TRUE
-## 5 05  45        FALSE</code></pre>
+<div id="generating-skeletons" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Generating Skeletons<a href="documentation.html#generating-skeletons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To create <strong>roxygen2</strong> skeletons in RStudio:</p>
+<ol style="list-style-type: decimal">
+<li>Open the R script file that contains your function or dataset
+definition.</li>
+<li>Place the cursor inside the function or dataset definition.</li>
+<li>Navigate to the “Code” menu at the top of RStudio.</li>
+<li>Select “Insert Roxygen Skeleton” from the dropdown menu.</li>
+</ol>
+<p>RStudio will automatically generate a <strong>roxygen2</strong> comment skeleton with
+placeholders for you to fill out, such as <code>@param</code>, <code>@return</code>, and
+<code>@examples</code>.</p>
+<p>This process is explained in more detail and with videos below when I
+show how to create documentation for <code>random_movie_recommendation</code> and
+<code>calculate_group_mean</code>.</p>
 </div>
-<div id="example-function-2" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Example Function 2<a href="creating-functions-and-datasets.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This function calculates the mean of a numeric variable (like age) for
-rows where another variable (like ‘Likes_Coffee’) has the value TRUE. In
-our example dataset, it can be used to find the mean age of people who
-like coffee.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="creating-functions-and-datasets.html#cb9-1" tabindex="-1"></a>calculate_group_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, numeric_var, factor_var) {</span>
-<span id="cb9-2"><a href="creating-functions-and-datasets.html#cb9-2" tabindex="-1"></a>  <span class="co"># Filter the dataframe for rows where the factor variable is TRUE</span></span>
-<span id="cb9-3"><a href="creating-functions-and-datasets.html#cb9-3" tabindex="-1"></a>  filtered_df <span class="ot">&lt;-</span> df[df[[factor_var]] <span class="sc">==</span> <span class="cn">TRUE</span>, ]</span>
-<span id="cb9-4"><a href="creating-functions-and-datasets.html#cb9-4" tabindex="-1"></a>  <span class="co"># Calculate the mean of the numeric variable for the filtered dataframe</span></span>
-<span id="cb9-5"><a href="creating-functions-and-datasets.html#cb9-5" tabindex="-1"></a>  mean_val <span class="ot">&lt;-</span> <span class="fu">mean</span>(filtered_df[[numeric_var]])</span>
-<span id="cb9-6"><a href="creating-functions-and-datasets.html#cb9-6" tabindex="-1"></a>  <span class="co"># Return the mean value</span></span>
-<span id="cb9-7"><a href="creating-functions-and-datasets.html#cb9-7" tabindex="-1"></a>  <span class="fu">return</span>(mean_val)</span>
-<span id="cb9-8"><a href="creating-functions-and-datasets.html#cb9-8" tabindex="-1"></a>}</span>
-<span id="cb9-9"><a href="creating-functions-and-datasets.html#cb9-9" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="creating-functions-and-datasets.html#cb9-10" tabindex="-1"></a><span class="co"># Example usage</span></span>
-<span id="cb9-11"><a href="creating-functions-and-datasets.html#cb9-11" tabindex="-1"></a><span class="fu">calculate_group_mean</span>(example_data, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Likes_Coffee&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] 33.33333</code></pre>
-</div>
-<div id="saving-your-code" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Saving Your Code<a href="creating-functions-and-datasets.html#saving-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>After writing these functions and testing them in an R environment like
-RStudio, make sure to save or copy-paste them somewhere. This way, you
-can introduce them to your R package once we progress further in this
-tutorial.</p>
-<p>In this example, I copied the functions to Visual Studio Code (as shown
-in the screenshot below), but you can use any text editor, such as
-TextEdit on MacOS or Notepad on Windows, or simply save the code
-somewhere on your computer.</p>
+<div id="documenting-functions" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Documenting Functions<a href="documentation.html#documenting-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s start by documenting our functions using <strong>roxygen2</strong> skeletons.
+Below, we’ll add <strong>roxygen2</strong> comments to our
+<code>random_movie_recommendation</code> and <code>calculate_group_mean</code> functions.</p>
+<div id="documenting-random_movie_recommendation" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Documenting <code>random_movie_recommendation</code><a href="documentation.html#documenting-random_movie_recommendation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To document the <code>random_movie_recommendation</code> function, first navigate
+to the file containing this function in the bottom-right pane of RStudio
+and click on it to open it. Then, fill in the following <strong>roxygen2</strong>
+comments above your <code>random_movie_recommendation</code> function using the
+“Code” menu and selecting “Insert Roxygen Skeleton”. A video below the
+code will demonstrate these steps visually:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="documentation.html#cb35-1" tabindex="-1"></a><span class="co">#&#39; Random Movie Recommendation</span></span>
+<span id="cb35-2"><a href="documentation.html#cb35-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb35-3"><a href="documentation.html#cb35-3" tabindex="-1"></a><span class="co">#&#39; This function randomly recommends a movie from the `ggplot2movies` dataset.</span></span>
+<span id="cb35-4"><a href="documentation.html#cb35-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb35-5"><a href="documentation.html#cb35-5" tabindex="-1"></a><span class="co">#&#39; @return A character string representing the title of a randomly selected movie.</span></span>
+<span id="cb35-6"><a href="documentation.html#cb35-6" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb35-7"><a href="documentation.html#cb35-7" tabindex="-1"></a><span class="co">#&#39; @examples</span></span>
+<span id="cb35-8"><a href="documentation.html#cb35-8" tabindex="-1"></a><span class="co">#&#39; random_movie_recommendation()</span></span>
+<span id="cb35-9"><a href="documentation.html#cb35-9" tabindex="-1"></a>random_movie_recommendation <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb35-10"><a href="documentation.html#cb35-10" tabindex="-1"></a>  <span class="co"># Load the movies dataset</span></span>
+<span id="cb35-11"><a href="documentation.html#cb35-11" tabindex="-1"></a>  <span class="fu">data</span>(movies, <span class="at">package =</span> <span class="st">&quot;ggplot2movies&quot;</span>)</span>
+<span id="cb35-12"><a href="documentation.html#cb35-12" tabindex="-1"></a>  </span>
+<span id="cb35-13"><a href="documentation.html#cb35-13" tabindex="-1"></a>  <span class="co"># Get the movie title at the random index</span></span>
+<span id="cb35-14"><a href="documentation.html#cb35-14" tabindex="-1"></a>  recommended_movie <span class="ot">&lt;-</span> <span class="fu">sample</span>(movies<span class="sc">$</span>title, <span class="dv">1</span>)</span>
+<span id="cb35-15"><a href="documentation.html#cb35-15" tabindex="-1"></a>  </span>
+<span id="cb35-16"><a href="documentation.html#cb35-16" tabindex="-1"></a>  <span class="co"># Return the recommended movie</span></span>
+<span id="cb35-17"><a href="documentation.html#cb35-17" tabindex="-1"></a>  <span class="fu">return</span>(recommended_movie)</span>
+<span id="cb35-18"><a href="documentation.html#cb35-18" tabindex="-1"></a>}</span></code></pre></div>
 <p><br />
 </p>
-<p><img src="images/from_rstudio_to_vcode.gif" /><br />
+<p><img src="images/random_movie_roxygen-01.gif" /></p>
+<p><br />
+</p>
+</div>
+<div id="documenting-calculate_group_mean" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> Documenting <code>calculate_group_mean</code><a href="documentation.html#documenting-calculate_group_mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To document the <code>calculate_group_mean</code> function, first navigate to the
+file containing this function in the bottom-right pane of RStudio and
+click on it to open it. Then, fill in the following <strong>roxygen2</strong>
+comments above your <code>calculate_group_mean</code> function using the “Code”
+menu and selecting “Insert Roxygen Skeleton”. A video below the code
+will demonstrate these steps visually:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="documentation.html#cb36-1" tabindex="-1"></a><span class="co">#&#39; Calculate Group Mean</span></span>
+<span id="cb36-2"><a href="documentation.html#cb36-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb36-3"><a href="documentation.html#cb36-3" tabindex="-1"></a><span class="co">#&#39; This function calculates the mean of a numeric variable for rows where another variable has the value TRUE.</span></span>
+<span id="cb36-4"><a href="documentation.html#cb36-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb36-5"><a href="documentation.html#cb36-5" tabindex="-1"></a><span class="co">#&#39; @param df A data frame containing the data.</span></span>
+<span id="cb36-6"><a href="documentation.html#cb36-6" tabindex="-1"></a><span class="co">#&#39; @param numeric_var A string representing the name of the numeric variable.</span></span>
+<span id="cb36-7"><a href="documentation.html#cb36-7" tabindex="-1"></a><span class="co">#&#39; @param factor_var A string representing the name of the factor (binary) variable.</span></span>
+<span id="cb36-8"><a href="documentation.html#cb36-8" tabindex="-1"></a><span class="co">#&#39; @return A numeric value representing the mean of the specified numeric variable for the filtered rows.</span></span>
+<span id="cb36-9"><a href="documentation.html#cb36-9" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb36-10"><a href="documentation.html#cb36-10" tabindex="-1"></a><span class="co">#&#39; @examples</span></span>
+<span id="cb36-11"><a href="documentation.html#cb36-11" tabindex="-1"></a><span class="co">#&#39; calculate_group_mean(example_data, &quot;Age&quot;, &quot;Likes_Coffee&quot;)</span></span>
+<span id="cb36-12"><a href="documentation.html#cb36-12" tabindex="-1"></a>calculate_group_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, numeric_var, factor_var) {</span>
+<span id="cb36-13"><a href="documentation.html#cb36-13" tabindex="-1"></a>  <span class="co"># Filter the dataframe for rows where the factor variable is TRUE</span></span>
+<span id="cb36-14"><a href="documentation.html#cb36-14" tabindex="-1"></a>  filtered_df <span class="ot">&lt;-</span> df[df[[factor_var]] <span class="sc">==</span> <span class="cn">TRUE</span>, ]</span>
+<span id="cb36-15"><a href="documentation.html#cb36-15" tabindex="-1"></a>  </span>
+<span id="cb36-16"><a href="documentation.html#cb36-16" tabindex="-1"></a>  <span class="co"># Calculate the mean of the numeric variable for the filtered dataframe</span></span>
+<span id="cb36-17"><a href="documentation.html#cb36-17" tabindex="-1"></a>  mean_val <span class="ot">&lt;-</span> <span class="fu">mean</span>(filtered_df[[numeric_var]])</span>
+<span id="cb36-18"><a href="documentation.html#cb36-18" tabindex="-1"></a>  </span>
+<span id="cb36-19"><a href="documentation.html#cb36-19" tabindex="-1"></a>  <span class="co"># Return the mean value</span></span>
+<span id="cb36-20"><a href="documentation.html#cb36-20" tabindex="-1"></a>  <span class="fu">return</span>(mean_val)</span>
+<span id="cb36-21"><a href="documentation.html#cb36-21" tabindex="-1"></a>}</span></code></pre></div>
+<p><br />
+</p>
+<p><img src="images/calculate_mean_roxygen-01.gif" /></p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="documenting-datasets" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Documenting Datasets<a href="documentation.html#documenting-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Next, we’ll document our example dataset. <strong>Roxygen2</strong> provides a way to
+document datasets by adding comments in a separate R script file.</p>
+<div id="documenting-example_data" class="section level3 hasAnchor" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> Documenting example_data<a href="documentation.html#documenting-example_data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a new R script file named data.R in the R directory and add the
+following <strong>roxygen2</strong> comments. A video below the code will demonstrate
+these steps visually:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="documentation.html#cb37-1" tabindex="-1"></a><span class="co">#&#39; Example Data</span></span>
+<span id="cb37-2"><a href="documentation.html#cb37-2" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb37-3"><a href="documentation.html#cb37-3" tabindex="-1"></a><span class="co">#&#39; A dataset containing example data.</span></span>
+<span id="cb37-4"><a href="documentation.html#cb37-4" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb37-5"><a href="documentation.html#cb37-5" tabindex="-1"></a><span class="co">#&#39; @format A data frame with 5 rows and 3 variables:</span></span>
+<span id="cb37-6"><a href="documentation.html#cb37-6" tabindex="-1"></a><span class="co">#&#39; \describe{</span></span>
+<span id="cb37-7"><a href="documentation.html#cb37-7" tabindex="-1"></a><span class="co">#&#39;   \item{ID}{A character vector representing the ID of each observation.}</span></span>
+<span id="cb37-8"><a href="documentation.html#cb37-8" tabindex="-1"></a><span class="co">#&#39;   \item{Age}{A numeric vector representing the age of each observation.}</span></span>
+<span id="cb37-9"><a href="documentation.html#cb37-9" tabindex="-1"></a><span class="co">#&#39;   \item{Likes_Coffee}{A factor vector indicating whether the observation likes coffee (TRUE) or not (FALSE).}</span></span>
+<span id="cb37-10"><a href="documentation.html#cb37-10" tabindex="-1"></a><span class="co">#&#39; }</span></span>
+<span id="cb37-11"><a href="documentation.html#cb37-11" tabindex="-1"></a><span class="co">#&#39; @examples</span></span>
+<span id="cb37-12"><a href="documentation.html#cb37-12" tabindex="-1"></a><span class="co">#&#39; example_data</span></span>
+<span id="cb37-13"><a href="documentation.html#cb37-13" tabindex="-1"></a><span class="st">&quot;example_data&quot;</span></span></code></pre></div>
+<p><br />
+</p>
+<p><img src="images/data_r_documentation-01.gif" /></p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="generating-documentation" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> Generating Documentation<a href="documentation.html#generating-documentation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>After adding the <strong>roxygen2</strong> comments, we need to generate the
+documentation files. This can be done using the <code>devtools::document()</code>
+function, which processes the <strong>roxygen2</strong> comments and creates the Rd
+files.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="documentation.html#cb38-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span></code></pre></div>
+<p>Alternatively, you can use the “Document” button. It can be found in the Build tab. Click
+the gear-looking “More” icon and select “Document”.</p>
+<p><br />
+</p>
+<p><img src="images/devtools_document-01.gif" /></p>
+<p><br />
+</p>
+</div>
+<div id="documentation-to-github" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> Documentation to GitHub<a href="documentation.html#documentation-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>After updating and generating your documentation, it’s important to push
+these changes to your GitHub repository to keep your project up-to-date
+and allow others to see the latest developments.</p>
+<p>Refer to earlier sections for detailed instructions on how to commit and
+push changes using the Git pane in RStudio, or watch the video guide
+below for a visual walkthrough. A suitable commit message for
+documentation updates might be:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="documentation.html#cb39-1" tabindex="-1"></a>Update documentation <span class="cf">for</span> functions and datasets</span></code></pre></div>
+<p><br />
+</p>
+<p><img src="images/push_documentation-01.gif" /></p>
+<p><br />
+</p>
+<p>In the next chapter, we’ll test how these documents work to ensure that
+the documentation accurately reflects the functionality of your package.</p>
+<p><br />
+</p>
+<p><br />
 </p>
 <p><br />
 </p>
@@ -349,8 +437,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="required-packages.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="setting-up-git-and-github.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="testing-functions.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

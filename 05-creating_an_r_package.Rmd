@@ -26,7 +26,7 @@ package:
 -   **Directory Path**: Decide on a directory where you want to create
     your package.
 
-##  The `create_package()` function
+##  `create_package()`
 
 To create a new R package, we'll use the `create_package()` function
 from the `usethis` package. This function automates the process of

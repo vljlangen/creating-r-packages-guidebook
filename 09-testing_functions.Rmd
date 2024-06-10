@@ -16,7 +16,7 @@ Before testing, we need to load our package. We can do this using the
 `devtools::load_all()` function, or alternatively, by clicking the "Load
 All" button in the top-right pane of RStudio.
 
-### Using devtools::load_all()
+### Using `devtools::load_all()`
 
 To load your package `using devtools::load_all()`, simply run the
 following code in your R console:

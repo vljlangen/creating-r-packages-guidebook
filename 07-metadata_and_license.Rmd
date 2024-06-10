@@ -4,7 +4,7 @@ editor_options:
     wrap: 72
 ---
 
-# Package Metadata and License
+# Metadata and License
 
 In this chapter, we will focus on refining the metadata of our package
 and ensuring it complies with best practices for package development.
@@ -157,7 +157,7 @@ Here’s a visual guide:
 
 \
 
-## Viewing Your Changes on GitHub
+## Viewing README on GitHub
 
 After committing and pushing your changes, you can view the updated
 metadata files and README on your GitHub repository. Follow these steps:
