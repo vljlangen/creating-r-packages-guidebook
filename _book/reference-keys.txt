@@ -57,3 +57,15 @@ documentation-to-github
 testing-your-documentation
 documentation-for-functions
 documentation-for-datasets
+installing-the-package
+install-and-restart-button
+from-a-local-directory
+installing-from-github
+installing-vs.-load-all
+installing-the-package-1
+using-load-all
+vignettes
+creating-a-vignette
+ensuring-vignettes-are-built
+viewing-the-vignettes
+pushing-to-github-1

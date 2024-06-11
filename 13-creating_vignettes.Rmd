@@ -1,0 +1,151 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Vignettes
+
+In this chapter, we'll walk through the steps to create a vignette for your package. Vignettes are long-form documentation that provide comprehensive examples and explanations of how to use your package. They are particularly useful for tutorials and detailed use cases.
+
+If you have followed this tutorial chronologically, you will have your package and documentation loaded. However, if for some reason you don't anymore, you can load up everything with:
+
+``` r
+devtools::load_all(".")
+```
+
+You'll soon find that the vignettes you create will work just like those you would encounter with official packages on CRAN. Vignettes are a valuable addition to your package documentation, helping users understand the broader context and applications of your package.
+
+## Creating a Vignette
+
+First, let's create a vignette using the `usethis::use_vignette()` function. This function sets up the necessary infrastructure for vignettes in your package.
+
+```r
+usethis::use_vignette("my_vignette")
+```
+
+After running this command, a directory called `vignettes/` will be created in your package, and an .Rmd (R Markdown) file for your vignette will be added. It will also automatically update your DESCRIPTION file to include the required dependencies (knitr, markdown) for processing R Markdown files.
+
+The `usethis::use_vignette()` function will automatically open the created R Markdown vignette file. You can then write your vignette in this file using standard R Markdown syntax. Here is an example of what your vignette might look like:
+
+
+````markdown
+---
+title: "Introduction to myPackage"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to myPackage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+This is an example vignette for the `myPackage` package. This practice package contains a couple of functions. One of them, `random_movie_recommendation`, utilizes the `ggplot2movies` package from CRAN, which provides a dataset of movies. The other function, `calculate_group_mean`, uses example data that is included in this package.
+
+## Example Data
+
+The `example_data` dataset included in this package contains a small sample of data for demonstration purposes. It has three columns: `ID`, `Age`, and `Likes_Coffee`. Here is how you can load and view the dataset:
+
+`r ''````{r}
+# Load the example dataset
+data(example_data, package = "myPackage")
+
+# View the dataset
+example_data
+```
+
+# Random Movie Recommendation
+
+The `random_movie_recommendation` function randomly selects and returns the title of a movie from the `ggplot2movies` dataset. This function is useful for getting a random movie suggestion.
+
+Here is how you can use the `random_movie_recommendation` function:
+
+`r ''````{r}
+random_movie_recommendation()
+```
+
+# Calculate Group Mean
+
+The `calculate_group_mean` function calculates the mean of a numeric variable for rows where a specified binary variable is TRUE. In our example dataset, it can be used to find the mean age of people who like coffee.
+
+Here is how you can use the `calculate_group_mean` function:
+
+`r ''````{r}
+calculate_group_mean(example_data, "Age", "Likes_Coffee")
+```
+
+````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+## Ensuring Vignettes are Built
+
+By default, when you install a package using the `install` button in RStudio's Build tab, it doesn't build vignettes. To ensure that vignettes are built during installation, you can use the `devtools::install(build_vignettes = TRUE)` function:
+
+```r
+devtools::install(build_vignettes = TRUE)
+```
+
+## Viewing the Vignettes
+
+Once your package is installed with vignettes, you can view them using:
+
+```r
+browseVignettes("myPackage")
+```
+
+This will open a browser window displaying the available vignettes for your package.
+
+
+## Pushing to GitHub
+
+After creating and building your vignette, it's a good practice to push your changes to GitHub. Refer to earlier sections on how to do that or watch the video guide below. A suitable commit message could be "Add vignette for myPackage".
+
+
+\
+
+\
+
+\
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+
+<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>

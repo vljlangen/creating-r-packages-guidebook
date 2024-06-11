@@ -1,0 +1,76 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+
+
+# Installing the Package
+
+In this chapter, we'll cover how to install your package and explain the difference between installing it and using the "Load All" feature in RStudio.
+
+Once you have developed your package and are ready to use it or share it with others, you'll need to install it. RStudio provides a convenient way to install your package using the "Install and Restart" button.
+
+## "Install and Restart" Button
+
+1. In RStudio, go to the "Build" tab.
+2. Click on the "Install and Restart" button.
+
+This will compile your package, including all functions, data, and documentation, and install it into your R library. After installation, you can load your package using the `library` function:
+
+```r
+# Load your package
+library(myPackage)
+```
+
+## From a Local Directory
+
+Alternatively, you can install your package from a local directory using the devtools package. Here's how you can do it:
+
+```r
+devtools::install("path/to/your/package")
+```
+
+Replace "path/to/your/package" with the actual path to your package directory.
+
+
+## Installing from GitHub
+
+If your package is hosted on GitHub, you can install it directly from GitHub using:
+
+```r
+devtools::install_github("yourusername/yourrepository")
+```
+
+Replace "yourusername/yourrepository" with your actual GitHub username and repository name.
+
+## Installing vs. "Load All"
+
+### Installing the Package
+
+When you install a package using the "Install and Restart" button or the install function, R compiles the package and its documentation, and places it in the library directory where other installed packages are located. Once installed, you can load the package using the library function, and it becomes available for use in any R session.
+
+### Using "Load All"
+
+The "Load All" feature in RStudio, accessible via the `devtools::load_all()` function or through the "Build" tab by selecting "More" and then "Load All," is a convenient way to load all functions and data from your package into the R environment without formally installing it. This is particularly useful during development because it allows you to test and debug your package quickly without going through the installation process.
+
+However, "Load All" is specific to your current working environment and does not compile the package or its documentation. Therefore, it is not a substitute for installing the package when you are ready to distribute it or use it in a different environment.
+
+\
+
+\
+
+\
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+
+<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
