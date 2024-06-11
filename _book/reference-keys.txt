@@ -60,6 +60,7 @@ documentation-for-datasets
 installing-the-package
 install-and-restart-button
 from-a-local-directory
+troubleshooting-tips
 installing-from-github
 installing-vs.-load-all
 installing-the-package-1

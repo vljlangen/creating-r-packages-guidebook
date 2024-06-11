@@ -20,7 +20,8 @@ way to install your package using the "Install and Restart" button.
 2.  Click on the "Install and Restart" button.
 
 This will compile your package, including all functions, data, and
-documentation, and install it into your R library. Finally, this will also load your newly installed package using the `library` function:
+documentation, and install it into your R library. Finally, this will
+also load your newly installed package using the `library` function:
 
 \
 
@@ -28,30 +29,59 @@ documentation, and install it into your R library. Finally, this will also load 
 
 \
 
-
 ## From a Local Directory
 
 Alternatively, you can install your package from a local directory using
-the devtools package. Here's how you can do it:
+the `devtools` package. Here's how you can do it:
 
 ``` r
-devtools::install("path/to/your/package")
+devtools::install_local("path/to/your/package")
 ```
 
 Replace "path/to/your/package" with the actual path to your package
 directory.
+
+\
+
+![](images/devtools_install_local-01.gif)
+
+\
+
+### Troubleshooting Tips
+
+Note! If you encounter error messages such as "Error Retrieving Help"
+[...] and/or "...myPackage.rdb' is corrupt'", restart your RStudio
+session, and the issue should be resolved. See the videos below for more
+information:
+
+\
+
+![](images/mypackage_corrupt-01.png)
+
+\
+
+![](images/corrupt_then_new_session-01.gif)
+
+\
 
 ## Installing from GitHub
 
 If your package is hosted on GitHub, you can install it directly from
 GitHub using:
 
+
 ``` r
 devtools::install_github("yourusername/yourrepository")
 ```
 
+
+
 Replace "yourusername/yourrepository" with your actual GitHub username
 and repository name.
+
+\
+
+![](images/devtools_install_from_github-01.gif)
 
 ## Installing vs. "Load All"
 
@@ -77,6 +107,8 @@ However, "Load All" is specific to your current working environment and
 does not compile the package or its documentation. Therefore, it is not
 a substitute for installing the package when you are ready to distribute
 it or use it in a different environment.
+
+In the next chapter, we'll delve into creating vignettes.
 
 \
 

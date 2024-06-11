@@ -229,7 +229,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13" data-path="installing-the-package.html"><a href="installing-the-package.html"><i class="fa fa-check"></i><b>13</b> Installing the Package</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="installing-the-package.html"><a href="installing-the-package.html#install-and-restart-button"><i class="fa fa-check"></i><b>13.1</b> “Install and Restart” Button</a></li>
-<li class="chapter" data-level="13.2" data-path="installing-the-package.html"><a href="installing-the-package.html#from-a-local-directory"><i class="fa fa-check"></i><b>13.2</b> From a Local Directory</a></li>
+<li class="chapter" data-level="13.2" data-path="installing-the-package.html"><a href="installing-the-package.html#from-a-local-directory"><i class="fa fa-check"></i><b>13.2</b> From a Local Directory</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="installing-the-package.html"><a href="installing-the-package.html#troubleshooting-tips"><i class="fa fa-check"></i><b>13.2.1</b> Troubleshooting Tips</a></li>
+</ul></li>
 <li class="chapter" data-level="13.3" data-path="installing-the-package.html"><a href="installing-the-package.html#installing-from-github"><i class="fa fa-check"></i><b>13.3</b> Installing from GitHub</a></li>
 <li class="chapter" data-level="13.4" data-path="installing-the-package.html"><a href="installing-the-package.html#installing-vs.-load-all"><i class="fa fa-check"></i><b>13.4</b> Installing vs. “Load All”</a>
 <ul>
@@ -276,7 +279,8 @@ way to install your package using the “Install and Restart” button.</p>
 <li>Click on the “Install and Restart” button.</li>
 </ol>
 <p>This will compile your package, including all functions, data, and
-documentation, and install it into your R library. Finally, this will also load your newly installed package using the <code>library</code> function:</p>
+documentation, and install it into your R library. Finally, this will
+also load your newly installed package using the <code>library</code> function:</p>
 <p><br />
 </p>
 <p><img src="images/install_package-01.gif" /></p>
@@ -286,10 +290,30 @@ documentation, and install it into your R library. Finally, this will also load 
 <div id="from-a-local-directory" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> From a Local Directory<a href="installing-the-package.html#from-a-local-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Alternatively, you can install your package from a local directory using
-the devtools package. Here’s how you can do it:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="installing-the-package.html#cb43-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;path/to/your/package&quot;</span>)</span></code></pre></div>
+the <code>devtools</code> package. Here’s how you can do it:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="installing-the-package.html#cb43-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_local</span>(<span class="st">&quot;path/to/your/package&quot;</span>)</span></code></pre></div>
 <p>Replace “path/to/your/package” with the actual path to your package
 directory.</p>
+<p><br />
+</p>
+<p><img src="images/devtools_install_local-01.gif" /></p>
+<p><br />
+</p>
+<div id="troubleshooting-tips" class="section level3 hasAnchor" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> Troubleshooting Tips<a href="installing-the-package.html#troubleshooting-tips" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Note! If you encounter error messages such as “Error Retrieving Help”
+[…] and/or “…myPackage.rdb’ is corrupt’”, restart your RStudio
+session, and the issue should be resolved. See the videos below for more
+information:</p>
+<p><br />
+</p>
+<p><img src="images/mypackage_corrupt-01.png" /></p>
+<p><br />
+</p>
+<p><img src="images/corrupt_then_new_session-01.gif" /></p>
+<p><br />
+</p>
+</div>
 </div>
 <div id="installing-from-github" class="section level2 hasAnchor" number="13.3">
 <h2><span class="header-section-number">13.3</span> Installing from GitHub<a href="installing-the-package.html#installing-from-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -298,6 +322,9 @@ GitHub using:</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="installing-the-package.html#cb44-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;yourusername/yourrepository&quot;</span>)</span></code></pre></div>
 <p>Replace “yourusername/yourrepository” with your actual GitHub username
 and repository name.</p>
+<p><br />
+</p>
+<p><img src="images/devtools_install_from_github-01.gif" /></p>
 </div>
 <div id="installing-vs.-load-all" class="section level2 hasAnchor" number="13.4">
 <h2><span class="header-section-number">13.4</span> Installing vs. “Load All”<a href="installing-the-package.html#installing-vs.-load-all" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -322,6 +349,7 @@ the installation process.</p>
 does not compile the package or its documentation. Therefore, it is not
 a substitute for installing the package when you are ready to distribute
 it or use it in a different environment.</p>
+<p>In the next chapter, we’ll delve into creating vignettes.</p>
 <p><br />
 </p>
 <p><br />

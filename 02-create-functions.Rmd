@@ -109,6 +109,16 @@ somewhere on your computer.
 
 \
 
+
+In the next chapter, we'll discuss how to set up Git and GitHub for version control and sharing your package.
+
+
+\
+
+\
+
+\
+
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
 
 <a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating

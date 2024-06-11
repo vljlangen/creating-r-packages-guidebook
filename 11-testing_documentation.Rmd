@@ -61,6 +61,10 @@ for the example_data dataset, you would use:
 
 \
 
+In the next chapter, we will explore how to install your package.
+
+\
+
 \
 
 \
