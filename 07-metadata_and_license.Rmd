@@ -69,27 +69,34 @@ your name instead of mine.
 
 ``` r
 Package: myPackage
-Type: Package
 Title: My Awesome R Package
 Version: 0.1.0
-Author: Ville Langén
-Maintainer: Ville Langén <email address here>
+Authors@R: 
+    person("Ville", "Langén", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: This package provides functions to work with movie data and calculate group means based on binary variables. It also includes an example dataset.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+LazyData: yes
 Imports: 
     ggplot2movies
 ```
 
-Remember to write out dependencies, in this case ggplot2movies, because our function random_movie_recommendation() will use it.
+\
+
+![](images/overwrite_description-01.gif)
 
 \
 
-![](images/replace_description.gif)
+Remember to write out dependencies (under "Imports"), in this case
+`ggplot2movies`, because our function `random_movie_recommendation()`
+will use it.
 
-\
+Mind you that the `LazyData: true` line ensures that your `example_data` will be loaded automatically when the `library()` command is used.
+
+
 
 ## README File
 
@@ -198,8 +205,8 @@ By addressing these aspects of package development, we enhance the
 professionalism and usability of our package, making it more accessible
 to potential users and contributors.
 
-In the next section, we will incorporate into our package the functions and example data that we wrote earlier.
-
+In the next section, we will incorporate into our package the functions
+and example data that we wrote earlier.
 
 \
 

@@ -265,70 +265,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">14</span> Vignettes<a href="vignettes.html#vignettes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter, we’ll walk through the steps to create a vignette for your package. Vignettes are long-form documentation that provide comprehensive examples and explanations of how to use your package. They are particularly useful for tutorials and detailed use cases.</p>
 <p>If you have followed this tutorial chronologically, you will have your package and documentation loaded. However, if for some reason you don’t anymore, you can load up everything with:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="vignettes.html#cb46-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
-<p>You’ll soon find that the vignettes you create will work just like those you would encounter with official packages on CRAN. Vignettes are a valuable addition to your package documentation, helping users understand the broader context and applications of your package.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="vignettes.html#cb45-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>(<span class="st">&quot;.&quot;</span>)</span></code></pre></div>
+<p>You’ll soon find that the vignettes you create will work just like those you would encounter with official packages on CRAN.</p>
 <div id="creating-a-vignette" class="section level2 hasAnchor" number="14.1">
 <h2><span class="header-section-number">14.1</span> Creating a Vignette<a href="vignettes.html#creating-a-vignette" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First, let’s create a vignette using the <code>usethis::use_vignette()</code> function. This function sets up the necessary infrastructure for vignettes in your package.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="vignettes.html#cb47-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_vignette</span>(<span class="st">&quot;my_vignette&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="vignettes.html#cb46-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_vignette</span>(<span class="st">&quot;my_vignette&quot;</span>)</span></code></pre></div>
 <p>After running this command, a directory called <code>vignettes/</code> will be created in your package, and an .Rmd (R Markdown) file for your vignette will be added. It will also automatically update your DESCRIPTION file to include the required dependencies (knitr, markdown) for processing R Markdown files.</p>
 <p>The <code>usethis::use_vignette()</code> function will automatically open the created R Markdown vignette file. You can then write your vignette in this file using standard R Markdown syntax. Here is an example of what your vignette might look like:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb48-1"><a href="vignettes.html#cb48-1" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb48-2"><a href="vignettes.html#cb48-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Introduction to myPackage&quot;</span></span>
-<span id="cb48-3"><a href="vignettes.html#cb48-3" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Your Name&quot;</span></span>
-<span id="cb48-4"><a href="vignettes.html#cb48-4" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2024-06-11&quot;</span></span>
-<span id="cb48-5"><a href="vignettes.html#cb48-5" tabindex="-1"></a><span class="an">output:</span><span class="co"> rmarkdown::html_vignette</span></span>
-<span id="cb48-6"><a href="vignettes.html#cb48-6" tabindex="-1"></a><span class="an">vignette:</span><span class="co"> &gt;</span></span>
-<span id="cb48-7"><a href="vignettes.html#cb48-7" tabindex="-1"></a><span class="co">  %\VignetteIndexEntry{Introduction to myPackage}</span></span>
-<span id="cb48-8"><a href="vignettes.html#cb48-8" tabindex="-1"></a><span class="co">  %\VignetteEngine{knitr::rmarkdown}</span></span>
-<span id="cb48-9"><a href="vignettes.html#cb48-9" tabindex="-1"></a><span class="co">  %\VignetteEncoding{UTF-8}</span></span>
-<span id="cb48-10"><a href="vignettes.html#cb48-10" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb48-11"><a href="vignettes.html#cb48-11" tabindex="-1"></a></span>
-<span id="cb48-12"><a href="vignettes.html#cb48-12" tabindex="-1"></a><span class="fu"># Introduction</span></span>
-<span id="cb48-13"><a href="vignettes.html#cb48-13" tabindex="-1"></a></span>
-<span id="cb48-14"><a href="vignettes.html#cb48-14" tabindex="-1"></a>This is an example vignette for the <span class="in">`myPackage`</span> package. This practice package contains a couple of functions. One of them, <span class="in">`random_movie_recommendation`</span>, utilizes the <span class="in">`ggplot2movies`</span> package from CRAN, which provides a dataset of movies. The other function, <span class="in">`calculate_group_mean`</span>, uses example data that is included in this package.</span>
-<span id="cb48-15"><a href="vignettes.html#cb48-15" tabindex="-1"></a></span>
-<span id="cb48-16"><a href="vignettes.html#cb48-16" tabindex="-1"></a><span class="fu">## Example Data</span></span>
-<span id="cb48-17"><a href="vignettes.html#cb48-17" tabindex="-1"></a></span>
-<span id="cb48-18"><a href="vignettes.html#cb48-18" tabindex="-1"></a>The <span class="in">`example_data`</span> dataset included in this package contains a small sample of data for demonstration purposes. It has three columns: <span class="in">`ID`</span>, <span class="in">`Age`</span>, and <span class="in">`Likes_Coffee`</span>. Here is how you can load and view the dataset:</span>
-<span id="cb48-19"><a href="vignettes.html#cb48-19" tabindex="-1"></a></span>
-<span id="cb48-20"><a href="vignettes.html#cb48-20" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb48-21"><a href="vignettes.html#cb48-21" tabindex="-1"></a><span class="in"># Load the example dataset</span></span>
-<span id="cb48-22"><a href="vignettes.html#cb48-22" tabindex="-1"></a><span class="in">data(example_data, package = &quot;myPackage&quot;)</span></span>
-<span id="cb48-23"><a href="vignettes.html#cb48-23" tabindex="-1"></a></span>
-<span id="cb48-24"><a href="vignettes.html#cb48-24" tabindex="-1"></a><span class="in"># View the dataset</span></span>
-<span id="cb48-25"><a href="vignettes.html#cb48-25" tabindex="-1"></a><span class="in">example_data</span></span>
-<span id="cb48-26"><a href="vignettes.html#cb48-26" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb48-27"><a href="vignettes.html#cb48-27" tabindex="-1"></a></span>
-<span id="cb48-28"><a href="vignettes.html#cb48-28" tabindex="-1"></a><span class="fu"># Random Movie Recommendation</span></span>
-<span id="cb48-29"><a href="vignettes.html#cb48-29" tabindex="-1"></a></span>
-<span id="cb48-30"><a href="vignettes.html#cb48-30" tabindex="-1"></a>The <span class="in">`random_movie_recommendation`</span> function randomly selects and returns the title of a movie from the <span class="in">`ggplot2movies`</span> dataset. This function is useful for getting a random movie suggestion.</span>
-<span id="cb48-31"><a href="vignettes.html#cb48-31" tabindex="-1"></a></span>
-<span id="cb48-32"><a href="vignettes.html#cb48-32" tabindex="-1"></a>Here is how you can use the <span class="in">`random_movie_recommendation`</span> function:</span>
-<span id="cb48-33"><a href="vignettes.html#cb48-33" tabindex="-1"></a></span>
-<span id="cb48-34"><a href="vignettes.html#cb48-34" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb48-35"><a href="vignettes.html#cb48-35" tabindex="-1"></a><span class="in">random_movie_recommendation()</span></span>
-<span id="cb48-36"><a href="vignettes.html#cb48-36" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb48-37"><a href="vignettes.html#cb48-37" tabindex="-1"></a></span>
-<span id="cb48-38"><a href="vignettes.html#cb48-38" tabindex="-1"></a><span class="fu"># Calculate Group Mean</span></span>
-<span id="cb48-39"><a href="vignettes.html#cb48-39" tabindex="-1"></a></span>
-<span id="cb48-40"><a href="vignettes.html#cb48-40" tabindex="-1"></a>The <span class="in">`calculate_group_mean`</span> function calculates the mean of a numeric variable for rows where a specified binary variable is TRUE. In our example dataset, it can be used to find the mean age of people who like coffee.</span>
-<span id="cb48-41"><a href="vignettes.html#cb48-41" tabindex="-1"></a></span>
-<span id="cb48-42"><a href="vignettes.html#cb48-42" tabindex="-1"></a>Here is how you can use the <span class="in">`calculate_group_mean`</span> function:</span>
-<span id="cb48-43"><a href="vignettes.html#cb48-43" tabindex="-1"></a></span>
-<span id="cb48-44"><a href="vignettes.html#cb48-44" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb48-45"><a href="vignettes.html#cb48-45" tabindex="-1"></a><span class="in">calculate_group_mean(example_data, &quot;Age&quot;, &quot;Likes_Coffee&quot;)</span></span>
-<span id="cb48-46"><a href="vignettes.html#cb48-46" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb47-1"><a href="vignettes.html#cb47-1" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb47-2"><a href="vignettes.html#cb47-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Introduction to myPackage&quot;</span></span>
+<span id="cb47-3"><a href="vignettes.html#cb47-3" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Your Name&quot;</span></span>
+<span id="cb47-4"><a href="vignettes.html#cb47-4" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2024-06-11&quot;</span></span>
+<span id="cb47-5"><a href="vignettes.html#cb47-5" tabindex="-1"></a><span class="an">output:</span><span class="co"> rmarkdown::html_vignette</span></span>
+<span id="cb47-6"><a href="vignettes.html#cb47-6" tabindex="-1"></a><span class="an">vignette:</span><span class="co"> &gt;</span></span>
+<span id="cb47-7"><a href="vignettes.html#cb47-7" tabindex="-1"></a><span class="co">  %\VignetteIndexEntry{Introduction to myPackage}</span></span>
+<span id="cb47-8"><a href="vignettes.html#cb47-8" tabindex="-1"></a><span class="co">  %\VignetteEngine{knitr::rmarkdown}</span></span>
+<span id="cb47-9"><a href="vignettes.html#cb47-9" tabindex="-1"></a><span class="co">  %\VignetteEncoding{UTF-8}</span></span>
+<span id="cb47-10"><a href="vignettes.html#cb47-10" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb47-11"><a href="vignettes.html#cb47-11" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="vignettes.html#cb47-12" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb47-13"><a href="vignettes.html#cb47-13" tabindex="-1"></a></span>
+<span id="cb47-14"><a href="vignettes.html#cb47-14" tabindex="-1"></a>This is an example vignette for the <span class="in">`myPackage`</span> package. This practice package contains a couple of functions. One of them, <span class="in">`random_movie_recommendation`</span>, utilizes the <span class="in">`ggplot2movies`</span> package from CRAN, which provides a dataset of movies. The other function, <span class="in">`calculate_group_mean`</span>, uses example data that is included in this package.</span>
+<span id="cb47-15"><a href="vignettes.html#cb47-15" tabindex="-1"></a></span>
+<span id="cb47-16"><a href="vignettes.html#cb47-16" tabindex="-1"></a><span class="fu">## Example Data</span></span>
+<span id="cb47-17"><a href="vignettes.html#cb47-17" tabindex="-1"></a></span>
+<span id="cb47-18"><a href="vignettes.html#cb47-18" tabindex="-1"></a>The <span class="in">`example_data`</span> dataset included in this package contains a small sample of data for demonstration purposes. It has three columns: <span class="in">`ID`</span>, <span class="in">`Age`</span>, and <span class="in">`Likes_Coffee`</span>. Here is how you can load and view the dataset:</span>
+<span id="cb47-19"><a href="vignettes.html#cb47-19" tabindex="-1"></a></span>
+<span id="cb47-20"><a href="vignettes.html#cb47-20" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb47-21"><a href="vignettes.html#cb47-21" tabindex="-1"></a><span class="in"># Load the example dataset</span></span>
+<span id="cb47-22"><a href="vignettes.html#cb47-22" tabindex="-1"></a><span class="in">data(example_data, package = &quot;myPackage&quot;)</span></span>
+<span id="cb47-23"><a href="vignettes.html#cb47-23" tabindex="-1"></a></span>
+<span id="cb47-24"><a href="vignettes.html#cb47-24" tabindex="-1"></a><span class="in"># View the dataset</span></span>
+<span id="cb47-25"><a href="vignettes.html#cb47-25" tabindex="-1"></a><span class="in">example_data</span></span>
+<span id="cb47-26"><a href="vignettes.html#cb47-26" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb47-27"><a href="vignettes.html#cb47-27" tabindex="-1"></a></span>
+<span id="cb47-28"><a href="vignettes.html#cb47-28" tabindex="-1"></a><span class="fu"># Random Movie Recommendation</span></span>
+<span id="cb47-29"><a href="vignettes.html#cb47-29" tabindex="-1"></a></span>
+<span id="cb47-30"><a href="vignettes.html#cb47-30" tabindex="-1"></a>The <span class="in">`random_movie_recommendation`</span> function randomly selects and returns the title of a movie from the <span class="in">`ggplot2movies`</span> dataset. This function is useful for getting a random movie suggestion.</span>
+<span id="cb47-31"><a href="vignettes.html#cb47-31" tabindex="-1"></a></span>
+<span id="cb47-32"><a href="vignettes.html#cb47-32" tabindex="-1"></a>Here is how you can use the <span class="in">`random_movie_recommendation`</span> function:</span>
+<span id="cb47-33"><a href="vignettes.html#cb47-33" tabindex="-1"></a></span>
+<span id="cb47-34"><a href="vignettes.html#cb47-34" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb47-35"><a href="vignettes.html#cb47-35" tabindex="-1"></a><span class="in">random_movie_recommendation()</span></span>
+<span id="cb47-36"><a href="vignettes.html#cb47-36" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb47-37"><a href="vignettes.html#cb47-37" tabindex="-1"></a></span>
+<span id="cb47-38"><a href="vignettes.html#cb47-38" tabindex="-1"></a><span class="fu"># Calculate Group Mean</span></span>
+<span id="cb47-39"><a href="vignettes.html#cb47-39" tabindex="-1"></a></span>
+<span id="cb47-40"><a href="vignettes.html#cb47-40" tabindex="-1"></a>The <span class="in">`calculate_group_mean`</span> function calculates the mean of a numeric variable for rows where a specified binary variable is TRUE. In our example dataset, it can be used to find the mean age of people who like coffee.</span>
+<span id="cb47-41"><a href="vignettes.html#cb47-41" tabindex="-1"></a></span>
+<span id="cb47-42"><a href="vignettes.html#cb47-42" tabindex="-1"></a>Here is how you can use the <span class="in">`calculate_group_mean`</span> function:</span>
+<span id="cb47-43"><a href="vignettes.html#cb47-43" tabindex="-1"></a></span>
+<span id="cb47-44"><a href="vignettes.html#cb47-44" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb47-45"><a href="vignettes.html#cb47-45" tabindex="-1"></a><span class="in">calculate_group_mean(example_data, &quot;Age&quot;, &quot;Likes_Coffee&quot;)</span></span>
+<span id="cb47-46"><a href="vignettes.html#cb47-46" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 <div id="ensuring-vignettes-are-built" class="section level2 hasAnchor" number="14.2">
 <h2><span class="header-section-number">14.2</span> Ensuring Vignettes are Built<a href="vignettes.html#ensuring-vignettes-are-built" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>By default, when you install a package using the <code>install</code> button in RStudio’s Build tab, it doesn’t build vignettes. To ensure that vignettes are built during installation, you can use the <code>devtools::install(build_vignettes = TRUE)</code> function:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="vignettes.html#cb49-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>(<span class="at">build_vignettes =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="vignettes.html#cb48-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>(<span class="at">build_vignettes =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="viewing-the-vignettes" class="section level2 hasAnchor" number="14.3">
 <h2><span class="header-section-number">14.3</span> Viewing the Vignettes<a href="vignettes.html#viewing-the-vignettes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once your package is installed with vignettes, you can view them using:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="vignettes.html#cb50-1" tabindex="-1"></a><span class="fu">browseVignettes</span>(<span class="st">&quot;myPackage&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="vignettes.html#cb49-1" tabindex="-1"></a><span class="fu">browseVignettes</span>(<span class="st">&quot;myPackage&quot;</span>)</span></code></pre></div>
 <p>This will open a browser window displaying the available vignettes for your package.</p>
 </div>
 <div id="pushing-to-github-1" class="section level2 hasAnchor" number="14.4">

@@ -14,7 +14,7 @@ If you have followed this tutorial chronologically, you will have your package a
 devtools::load_all(".")
 ```
 
-You'll soon find that the vignettes you create will work just like those you would encounter with official packages on CRAN. Vignettes are a valuable addition to your package documentation, helping users understand the broader context and applications of your package.
+You'll soon find that the vignettes you create will work just like those you would encounter with official packages on CRAN. 
 
 ## Creating a Vignette
 

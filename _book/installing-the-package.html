@@ -263,40 +263,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="installing-the-package" class="section level1 hasAnchor" number="13">
 <h1><span class="header-section-number">13</span> Installing the Package<a href="installing-the-package.html#installing-the-package" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we’ll cover how to install your package and explain the difference between installing it and using the “Load All” feature in RStudio.</p>
-<p>Once you have developed your package and are ready to use it or share it with others, you’ll need to install it. RStudio provides a convenient way to install your package using the “Install and Restart” button.</p>
+<p>In this chapter, we’ll cover how to install your package and explain the
+difference between installing it and using the “Load All” feature in
+RStudio.</p>
+<p>Once you have developed your package and are ready to use it or share it
+with others, you’ll need to install it. RStudio provides a convenient
+way to install your package using the “Install and Restart” button.</p>
 <div id="install-and-restart-button" class="section level2 hasAnchor" number="13.1">
 <h2><span class="header-section-number">13.1</span> “Install and Restart” Button<a href="installing-the-package.html#install-and-restart-button" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>In RStudio, go to the “Build” tab.</li>
 <li>Click on the “Install and Restart” button.</li>
 </ol>
-<p>This will compile your package, including all functions, data, and documentation, and install it into your R library. After installation, you can load your package using the <code>library</code> function:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="installing-the-package.html#cb43-1" tabindex="-1"></a><span class="co"># Load your package</span></span>
-<span id="cb43-2"><a href="installing-the-package.html#cb43-2" tabindex="-1"></a><span class="fu">library</span>(myPackage)</span></code></pre></div>
+<p>This will compile your package, including all functions, data, and
+documentation, and install it into your R library. Finally, this will also load your newly installed package using the <code>library</code> function:</p>
+<p><br />
+</p>
+<p><img src="images/install_package-01.gif" /></p>
+<p><br />
+</p>
 </div>
 <div id="from-a-local-directory" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> From a Local Directory<a href="installing-the-package.html#from-a-local-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Alternatively, you can install your package from a local directory using the devtools package. Here’s how you can do it:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="installing-the-package.html#cb44-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;path/to/your/package&quot;</span>)</span></code></pre></div>
-<p>Replace “path/to/your/package” with the actual path to your package directory.</p>
+<p>Alternatively, you can install your package from a local directory using
+the devtools package. Here’s how you can do it:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="installing-the-package.html#cb43-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;path/to/your/package&quot;</span>)</span></code></pre></div>
+<p>Replace “path/to/your/package” with the actual path to your package
+directory.</p>
 </div>
 <div id="installing-from-github" class="section level2 hasAnchor" number="13.3">
 <h2><span class="header-section-number">13.3</span> Installing from GitHub<a href="installing-the-package.html#installing-from-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If your package is hosted on GitHub, you can install it directly from GitHub using:</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="installing-the-package.html#cb45-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;yourusername/yourrepository&quot;</span>)</span></code></pre></div>
-<p>Replace “yourusername/yourrepository” with your actual GitHub username and repository name.</p>
+<p>If your package is hosted on GitHub, you can install it directly from
+GitHub using:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="installing-the-package.html#cb44-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;yourusername/yourrepository&quot;</span>)</span></code></pre></div>
+<p>Replace “yourusername/yourrepository” with your actual GitHub username
+and repository name.</p>
 </div>
 <div id="installing-vs.-load-all" class="section level2 hasAnchor" number="13.4">
 <h2><span class="header-section-number">13.4</span> Installing vs. “Load All”<a href="installing-the-package.html#installing-vs.-load-all" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="installing-the-package-1" class="section level3 hasAnchor" number="13.4.1">
 <h3><span class="header-section-number">13.4.1</span> Installing the Package<a href="installing-the-package.html#installing-the-package-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When you install a package using the “Install and Restart” button or the install function, R compiles the package and its documentation, and places it in the library directory where other installed packages are located. Once installed, you can load the package using the library function, and it becomes available for use in any R session.</p>
+<p>When you install a package using the “Install and Restart” button or the
+install function, R compiles the package and its documentation, and
+places it in the library directory where other installed packages are
+located. Once installed, you can load the package using the library
+function, and it becomes available for use in any R session.</p>
 </div>
 <div id="using-load-all" class="section level3 hasAnchor" number="13.4.2">
 <h3><span class="header-section-number">13.4.2</span> Using “Load All”<a href="installing-the-package.html#using-load-all" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The “Load All” feature in RStudio, accessible via the <code>devtools::load_all()</code> function or through the “Build” tab by selecting “More” and then “Load All,” is a convenient way to load all functions and data from your package into the R environment without formally installing it. This is particularly useful during development because it allows you to test and debug your package quickly without going through the installation process.</p>
-<p>However, “Load All” is specific to your current working environment and does not compile the package or its documentation. Therefore, it is not a substitute for installing the package when you are ready to distribute it or use it in a different environment.</p>
+<p>The “Load All” feature in RStudio, accessible via the
+<code>devtools::load_all()</code> function or through the “Build” tab by selecting
+“More” and then “Load All,” is a convenient way to load all functions
+and data from your package into the R environment without formally
+installing it. This is particularly useful during development because it
+allows you to test and debug your package quickly without going through
+the installation process.</p>
+<p>However, “Load All” is specific to your current working environment and
+does not compile the package or its documentation. Therefore, it is not
+a substitute for installing the package when you are ready to distribute
+it or use it in a different environment.</p>
 <p><br />
 </p>
 <p><br />

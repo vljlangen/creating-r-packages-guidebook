@@ -311,24 +311,28 @@ DESCRIPTION file text. Click on the DESCRIPTION file in the bottom-right
 pane and replace its contents with these contents. Make sure to type in
 your name instead of mine.</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="metadata-and-license.html#cb25-1" tabindex="-1"></a>Package<span class="sc">:</span> myPackage</span>
-<span id="cb25-2"><a href="metadata-and-license.html#cb25-2" tabindex="-1"></a>Type<span class="sc">:</span> Package</span>
-<span id="cb25-3"><a href="metadata-and-license.html#cb25-3" tabindex="-1"></a>Title<span class="sc">:</span> My Awesome R Package</span>
-<span id="cb25-4"><a href="metadata-and-license.html#cb25-4" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="fl">1.0</span></span>
-<span id="cb25-5"><a href="metadata-and-license.html#cb25-5" tabindex="-1"></a>Author<span class="sc">:</span> Ville Langén</span>
-<span id="cb25-6"><a href="metadata-and-license.html#cb25-6" tabindex="-1"></a>Maintainer<span class="sc">:</span> Ville Langén <span class="sc">&lt;</span>email address here<span class="sc">&gt;</span></span>
+<span id="cb25-2"><a href="metadata-and-license.html#cb25-2" tabindex="-1"></a>Title<span class="sc">:</span> My Awesome R Package</span>
+<span id="cb25-3"><a href="metadata-and-license.html#cb25-3" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="fl">1.0</span></span>
+<span id="cb25-4"><a href="metadata-and-license.html#cb25-4" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
+<span id="cb25-5"><a href="metadata-and-license.html#cb25-5" tabindex="-1"></a>    <span class="fu">person</span>(<span class="st">&quot;Ville&quot;</span>, <span class="st">&quot;Langén&quot;</span>, , <span class="st">&quot;first.last@example.com&quot;</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>),</span>
+<span id="cb25-6"><a href="metadata-and-license.html#cb25-6" tabindex="-1"></a>           <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">&quot;YOUR-ORCID-ID&quot;</span>))</span>
 <span id="cb25-7"><a href="metadata-and-license.html#cb25-7" tabindex="-1"></a>Description<span class="sc">:</span> This package provides functions to work with movie data and calculate group means based on binary variables. It also includes an example dataset.</span>
 <span id="cb25-8"><a href="metadata-and-license.html#cb25-8" tabindex="-1"></a>License<span class="sc">:</span> MIT <span class="sc">+</span> file LICENSE</span>
 <span id="cb25-9"><a href="metadata-and-license.html#cb25-9" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
-<span id="cb25-10"><a href="metadata-and-license.html#cb25-10" tabindex="-1"></a>LazyData<span class="sc">:</span> true</span>
-<span id="cb25-11"><a href="metadata-and-license.html#cb25-11" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">7</span>.<span class="fl">1.1</span></span>
-<span id="cb25-12"><a href="metadata-and-license.html#cb25-12" tabindex="-1"></a>Imports<span class="sc">:</span> </span>
-<span id="cb25-13"><a href="metadata-and-license.html#cb25-13" tabindex="-1"></a>    ggplot2movies</span></code></pre></div>
-<p>Remember to write out dependencies, in this case ggplot2movies, because our function random_movie_recommendation() will use it.</p>
+<span id="cb25-10"><a href="metadata-and-license.html#cb25-10" tabindex="-1"></a>Roxygen<span class="sc">:</span> <span class="fu">list</span>(<span class="at">markdown =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-11"><a href="metadata-and-license.html#cb25-11" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">7</span>.<span class="fl">3.1</span></span>
+<span id="cb25-12"><a href="metadata-and-license.html#cb25-12" tabindex="-1"></a>LazyData<span class="sc">:</span> yes</span>
+<span id="cb25-13"><a href="metadata-and-license.html#cb25-13" tabindex="-1"></a>Imports<span class="sc">:</span> </span>
+<span id="cb25-14"><a href="metadata-and-license.html#cb25-14" tabindex="-1"></a>    ggplot2movies</span></code></pre></div>
 <p><br />
 </p>
-<p><img src="images/replace_description.gif" /></p>
+<p><img src="images/overwrite_description-01.gif" /></p>
 <p><br />
 </p>
+<p>Remember to write out dependencies (under “Imports”), in this case
+<code>ggplot2movies</code>, because our function <code>random_movie_recommendation()</code>
+will use it.</p>
+<p>Mind you that the <code>LazyData: true</code> line ensures that your <code>example_data</code> will be loaded automatically when the <code>library()</code> command is used.</p>
 </div>
 <div id="readme-file" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> README File<a href="metadata-and-license.html#readme-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -441,7 +445,8 @@ Markdown elements.</li>
 <p>By addressing these aspects of package development, we enhance the
 professionalism and usability of our package, making it more accessible
 to potential users and contributors.</p>
-<p>In the next section, we will incorporate into our package the functions and example data that we wrote earlier.</p>
+<p>In the next section, we will incorporate into our package the functions
+and example data that we wrote earlier.</p>
 <p><br />
 </p>
 <p><br />
