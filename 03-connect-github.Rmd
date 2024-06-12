@@ -180,6 +180,8 @@ You will be prompted to paste your PAT. Paste it and press Enter.
 After completing these steps, you will have set up a secure connection
 with GitHub using a Personal Access Token (PAT).
 
+---
+
 In the next chapter, we'll verify that the connection between your computer and GitHub is working.
 
 \

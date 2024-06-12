@@ -275,7 +275,7 @@ everything is configured properly.</p>
 <p>First, let’s check if your GitHub authentication is set up correctly.
 You can use the <code>gh::gh_whoami()</code> function to see the GitHub user that
 your R session is authenticated as.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="verifying-the-git-setup.html#cb17-1" tabindex="-1"></a>gh<span class="sc">::</span><span class="fu">gh_whoami</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="verifying-the-git-setup.html#cb1-1" tabindex="-1"></a>gh<span class="sc">::</span><span class="fu">gh_whoami</span>()</span></code></pre></div>
 <p>If your setup is correct, this function should return your GitHub
 username and other details about your GitHub account.</p>
 <p><br />
@@ -289,7 +289,7 @@ username and other details about your GitHub account.</p>
 <p>Next, we’ll check the Git configuration using the usethis::git_sitrep()
 function. This function provides a situational report on your Git
 configuration and GitHub connection.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="verifying-the-git-setup.html#cb18-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="verifying-the-git-setup.html#cb2-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div>
 <p>This function will output information about your Git configuration, such
 as:</p>
 <ul>
@@ -305,6 +305,7 @@ as:</p>
 </p>
 <p>Review the output to ensure that your Git and GitHub configurations are
 correctly set up.</p>
+<hr />
 <p>In the next chapter, we embark on the exciting journey of creating your package, where we’ll use the powerful <code>usethis::create_package()</code> function to kickstart the process.</p>
 <p><br />
 </p>

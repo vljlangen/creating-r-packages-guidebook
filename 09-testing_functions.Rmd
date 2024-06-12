@@ -103,6 +103,8 @@ by the `Likes_Coffee` variable). See visual guide below:
 
 \
 
+---
+
 In the next section, we will document our functions and example data
 properly.
 

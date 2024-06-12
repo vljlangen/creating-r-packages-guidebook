@@ -70,3 +70,5 @@ creating-a-vignette
 ensuring-vignettes-are-built
 viewing-the-vignettes
 pushing-to-github-1
+example-vignette-r-markdown-code
+building-vignettes

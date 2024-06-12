@@ -207,6 +207,8 @@ Update documentation for functions and datasets
 
 \
 
+---
+
 In the next chapter, we'll test how these documents work to ensure that
 the documentation accurately reflects the functionality of your package.
 

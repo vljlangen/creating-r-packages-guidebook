@@ -108,6 +108,8 @@ does not compile the package or its documentation. Therefore, it is not
 a substitute for installing the package when you are ready to distribute
 it or use it in a different environment.
 
+---
+
 In the next chapter, we'll delve into creating vignettes.
 
 \

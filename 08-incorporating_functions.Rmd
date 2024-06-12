@@ -137,6 +137,8 @@ Here is a visual guide:
 
 \
 
+---
+
 In the next section, we’ll focus on testing the functions and example data we have incorporated into our package.
 
 

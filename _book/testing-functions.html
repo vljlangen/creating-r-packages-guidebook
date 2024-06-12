@@ -278,7 +278,7 @@ All” button in the top-right pane of RStudio.</p>
 <h3><span class="header-section-number">10.1.1</span> Using <code>devtools::load_all()</code><a href="testing-functions.html#using-devtoolsload_all" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To load your package <code>using devtools::load_all()</code>, simply run the
 following code in your R console:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="testing-functions.html#cb31-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="testing-functions.html#cb1-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">load_all</span>()</span></code></pre></div>
 </div>
 <div id="using-the-load-all-button" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Using the Load All Button<a href="testing-functions.html#using-the-load-all-button" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -304,7 +304,7 @@ they work as expected.</p>
 <h3><span class="header-section-number">10.2.1</span> Testing random_movie_recommendation<a href="testing-functions.html#testing-random_movie_recommendation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To test the <code>random_movie_recommendation</code> function, simply call it in
 the R console:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="testing-functions.html#cb32-1" tabindex="-1"></a><span class="fu">random_movie_recommendation</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="testing-functions.html#cb2-1" tabindex="-1"></a><span class="fu">random_movie_recommendation</span>()</span></code></pre></div>
 <p>You should see a random movie title from the ggplot2movies dataset. See
 visual guide below:</p>
 <p><br />
@@ -317,7 +317,7 @@ visual guide below:</p>
 <h3><span class="header-section-number">10.2.2</span> Verifying the Example Data<a href="testing-functions.html#verifying-the-example-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can also verify that our example data has been correctly incorporated
 by simply viewing it:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="testing-functions.html#cb33-1" tabindex="-1"></a>example_data</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="testing-functions.html#cb3-1" tabindex="-1"></a>example_data</span></code></pre></div>
 <p>This should display the dataset we created earlier. See visual guide
 below:</p>
 <p><br />
@@ -330,7 +330,7 @@ below:</p>
 <h3><span class="header-section-number">10.2.3</span> Testing calculate_group_mean<a href="testing-functions.html#testing-calculate_group_mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To test the calculate_group_mean function, call it with the example_data
 dataset:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="testing-functions.html#cb34-1" tabindex="-1"></a><span class="fu">calculate_group_mean</span>(example_data, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Likes_Coffee&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="testing-functions.html#cb4-1" tabindex="-1"></a><span class="fu">calculate_group_mean</span>(example_data, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Likes_Coffee&quot;</span>)</span></code></pre></div>
 <p>This should return the mean age of the group who likes coffee (denoted
 by the <code>Likes_Coffee</code> variable). See visual guide below:</p>
 <p><br />
@@ -340,6 +340,7 @@ by the <code>Likes_Coffee</code> variable). See visual guide below:</p>
 </p>
 <p><br />
 </p>
+<hr />
 <p>In the next section, we will document our functions and example data
 properly.</p>
 <p><br />

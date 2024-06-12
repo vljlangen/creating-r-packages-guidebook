@@ -60,6 +60,8 @@ as:
 Review the output to ensure that your Git and GitHub configurations are
 correctly set up.
 
+---
+
 In the next chapter, we embark on the exciting journey of creating your package, where we'll use the powerful `usethis::create_package()` function to kickstart the process.
 
 \

@@ -205,6 +205,8 @@ By addressing these aspects of package development, we enhance the
 professionalism and usability of our package, making it more accessible
 to potential users and contributors.
 
+---
+
 In the next section, we will incorporate into our package the functions
 and example data that we wrote earlier.
 

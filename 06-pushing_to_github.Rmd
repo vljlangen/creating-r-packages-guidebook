@@ -133,6 +133,8 @@ Please see my animated example below:
 
 You have now successfully committed and pushed your package to GitHub!
 
+---
+
 In the following chapter, we will start working on special files such as `DESCRIPTION`, `README.md`, and others, which are essential for documenting and detailing your package.
 
 \

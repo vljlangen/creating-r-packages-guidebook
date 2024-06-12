@@ -351,7 +351,7 @@ and proceed to the next chapter.</p>
 <h3><span class="header-section-number">4.4.1</span> Creating a PAT in R<a href="setting-up-git-and-github.html#creating-a-pat-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Open your R console and run the following command to create a GitHub
 token:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="setting-up-git-and-github.html#cb15-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="setting-up-git-and-github.html#cb5-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div>
 <p>This command will take you back to GitHub in your web browser, where you
 signed up or logged in moments ago, and open a web page where you can
 generate a new PAT.</p>
@@ -387,10 +387,11 @@ time you see this video that PAT is already deleted.)</p>
 <h3><span class="header-section-number">4.4.2</span> Storing the PAT Using <code>gitcreds()</code><a href="setting-up-git-and-github.html#storing-the-pat-using-gitcreds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Back in your R console, run the following command to store your PAT
 securely:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="setting-up-git-and-github.html#cb16-1" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="setting-up-git-and-github.html#cb6-1" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div>
 <p>You will be prompted to paste your PAT. Paste it and press Enter.</p>
 <p>After completing these steps, you will have set up a secure connection
 with GitHub using a Personal Access Token (PAT).</p>
+<hr />
 <p>In the next chapter, we’ll verify that the connection between your computer and GitHub is working.</p>
 <p><br />
 </p>

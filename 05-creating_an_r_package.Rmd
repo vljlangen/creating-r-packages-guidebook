@@ -82,6 +82,7 @@ In the animated example seen below, I will create a package called
 
 \
 
+---
 
 In the following chapter, we will initialize a local Git repository, add and commit the files of our package to the repository, and push our package to GitHub.
 

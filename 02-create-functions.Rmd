@@ -109,6 +109,7 @@ somewhere on your computer.
 
 \
 
+---
 
 In the next chapter, we'll discuss how to set up Git and GitHub for version control and sharing your package.
 

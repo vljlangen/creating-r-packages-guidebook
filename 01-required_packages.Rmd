@@ -25,6 +25,8 @@ Once installed, load these packages into your R session using the library() func
 library(devtools)
 ```
 
+---
+
 Now that you have these packages installed and loaded, you're ready to proceed with the tutorial.
 
  
