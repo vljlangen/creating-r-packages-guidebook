@@ -72,3 +72,12 @@ viewing-the-vignettes
 pushing-to-github-1
 example-vignette-r-markdown-code
 building-vignettes
+creating-a-package-website-with-pkgdown
+generating-a-package-website-with-pkgdown
+hosting-your-package-website-on-github-pages
+building-a-website-with-pkgdown
+using-pkgdown
+hosting-your-package-on-github-pages
+github-pages-hosting
+configuring-github-pages
+correcting-.gitignore
