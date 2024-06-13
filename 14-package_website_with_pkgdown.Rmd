@@ -7,10 +7,10 @@ editor_options:
 # Building a Website with pkgdown
 
 Every decent package deserves a decent website. In this chapter, we'll
-explore how to use pkgdown to generate a comprehensive website for your
-R package. This website will include documentation, vignettes, function
-references, and more, making it easier for users and collaborators to
-explore and understand your package.
+explore how to use **pkgdown** to generate a comprehensive website for
+your R package. This website will include documentation, vignettes,
+function references, and more, making it easier for users and
+collaborators to explore and understand your package.
 
 ## Using pkgdown
 
@@ -25,7 +25,7 @@ install.packages("pkgdown")
 ```
 
 2.  **Streamline setup**: Ensure your package is configured correctly
-    for website generation by using usethis::use_pkgdown():
+    for website generation by using `usethis::use_pkgdown()`:
 
 ``` r
 usethis::use_pkgdown()
@@ -34,13 +34,15 @@ usethis::use_pkgdown()
 This command sets up the necessary infrastructure within your package to
 enable **pkgdown** to build the website seamlessly.
 
+Please see the screenshot of these commands below.
+
 \
 
 ![](images/pkgdown_affinity-01.png)
 
 \
 
-2.  **Generate the website**: Run the following command to generate the
+3.  **Generate the website**: Run the following command to generate the
     website:
 
 ``` r
@@ -50,10 +52,12 @@ pkgdown::build_site()
 This command compiles all the necessary documentation and vignettes into
 HTML files and organizes them into a structured website format.
 
-3.  **View the website:** After running `pkgdown::build_site()`, the
+4.  **View the website:** After running `pkgdown::build_site()`, the
     generated site will open automatically in your web browser. You can
     also preview it locally by opening the `docs/index.html` file in any
     web browser.
+
+Please see the video of these steps below.
 
 \
 
@@ -61,18 +65,32 @@ HTML files and organizes them into a structured website format.
 
 \
 
-
 ## Correcting .gitignore
 
-Before publishing your web page online, you'll need to take one more step: removing `docs` from `.gitignore`.
+Before publishing your web page online, you'll need to take one more
+step: removing `docs` from `.gitignore`.
 
-By default, `usethis::use_pkgdown()` adds the `docs` directory to your `.gitignore` file. This prevents GitHub from recognizing and deploying your website files. To rectify this, you'll need to remove the `docs` entry from `.gitignore`.
+By default, `usethis::use_pkgdown()` adds the `docs` directory to your
+`.gitignore` file. This prevents GitHub from recognizing and deploying
+your website files. To rectify this, you'll need to remove the `docs`
+entry from `.gitignore`.
 
-- Open the `.gitignore` file located in your package directory.
-- Delete the line that says `docs/`.
-- Save the `.gitignore` file.
+-   Open the `.gitignore` file located in your package directory.
+-   Delete the line that says `docs/`.
+-   Save the `.gitignore` file.
 
-Removing `docs` from `.gitignore` ensures that GitHub will include the `docs` directory when you push your changes.
+Removing `docs` from `.gitignore` ensures that GitHub will include the
+`docs` directory when you push your changes.
+
+Removing `docs` from `.gitignore` ensures that GitHub will include the
+docs directory when you push your changes. Please refer to the video
+below.
+
+\
+
+![](images/remove_docs_from_gitignore-01.gif)
+
+\
 
 ## GitHub Pages Hosting
 
@@ -82,6 +100,16 @@ Pages. Here’s how you can do it:
 1.  **Push changes to GitHub**: Make sure all your changes, including
     the generated `docs/` folder from **pkgdown**, are committed and
     pushed to your GitHub repository.
+
+\
+
+![](images/push_pkgdown_site-01.gif)
+
+\
+
+![](images/verify_docs_as_pushed-01.gif)
+
+\
 
 2.  **Configure GitHub Pages**:
 
@@ -93,10 +121,35 @@ Pages. Here’s how you can do it:
 -   Select `/docs` as the folder source.
 -   Click on "Save".
 
+\
+
+![](images/deploy_github_pages-01.gif)
+
+\
+
 3.  **Access your website**: After saving, GitHub Pages will publish
     your package website at `https://username.github.io/repo`, where
     `username` is your GitHub username and `repo` is the name of your
     repository.
+
+\
+
+![](images/browse_github_pages-01.gif)
+
+\
+
+An alternative way to access your website is to click on the "Deployments - github-pages" section on the right margin of your GitHub repository and then click on "github-pages".
+
+\
+
+
+![](images/alternative_way_of_browsing_pages-01.gif)
+
+\
+
+---
+
+In the next chapter, we'll conclude by wrapping up what we've learned in this tutorial.
 
 \
 

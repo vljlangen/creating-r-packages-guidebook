@@ -242,11 +242,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>14</b> Vignettes</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a></li>
-<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#ensuring-vignettes-are-built"><i class="fa fa-check"></i><b>14.2</b> Ensuring Vignettes are Built</a></li>
-<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#viewing-the-vignettes"><i class="fa fa-check"></i><b>14.3</b> Viewing the Vignettes</a></li>
-<li class="chapter" data-level="14.4" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.4</b> Pushing to GitHub</a></li>
+<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="vignettes.html"><a href="vignettes.html#example-vignette-r-markdown-code"><i class="fa fa-check"></i><b>14.1.1</b> Example Vignette R Markdown Code</a></li>
 </ul></li>
+<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#building-vignettes"><i class="fa fa-check"></i><b>14.2</b> Building Vignettes</a></li>
+<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.3</b> Pushing to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html"><i class="fa fa-check"></i><b>15</b> Building a Website with pkgdown</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#using-pkgdown"><i class="fa fa-check"></i><b>15.1</b> Using pkgdown</a></li>
+<li class="chapter" data-level="15.2" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#correcting-.gitignore"><i class="fa fa-check"></i><b>15.2</b> Correcting .gitignore</a></li>
+<li class="chapter" data-level="15.3" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#github-pages-hosting"><i class="fa fa-check"></i><b>15.3</b> GitHub Pages Hosting</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="epilogue.html"><a href="epilogue.html"><i class="fa fa-check"></i><b>16</b> Epilogue</a></li>
 </ul>
 
       </nav>
@@ -291,7 +300,7 @@ also load your newly installed package using the <code>library</code> function:<
 <h2><span class="header-section-number">13.2</span> From a Local Directory<a href="installing-the-package.html#from-a-local-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Alternatively, you can install your package from a local directory using
 the <code>devtools</code> package. Here’s how you can do it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="installing-the-package.html#cb1-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_local</span>(<span class="st">&quot;path/to/your/package&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="installing-the-package.html#cb43-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_local</span>(<span class="st">&quot;path/to/your/package&quot;</span>)</span></code></pre></div>
 <p>Replace “path/to/your/package” with the actual path to your package
 directory.</p>
 <p><br />
@@ -319,7 +328,7 @@ information:</p>
 <h2><span class="header-section-number">13.3</span> Installing from GitHub<a href="installing-the-package.html#installing-from-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If your package is hosted on GitHub, you can install it directly from
 GitHub using:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="installing-the-package.html#cb2-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;yourusername/yourrepository&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="installing-the-package.html#cb44-1" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;yourusername/yourrepository&quot;</span>)</span></code></pre></div>
 <p>Replace “yourusername/yourrepository” with your actual GitHub username
 and repository name.</p>
 <p><br />

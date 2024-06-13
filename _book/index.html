@@ -242,11 +242,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>14</b> Vignettes</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a></li>
-<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#ensuring-vignettes-are-built"><i class="fa fa-check"></i><b>14.2</b> Ensuring Vignettes are Built</a></li>
-<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#viewing-the-vignettes"><i class="fa fa-check"></i><b>14.3</b> Viewing the Vignettes</a></li>
-<li class="chapter" data-level="14.4" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.4</b> Pushing to GitHub</a></li>
+<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="vignettes.html"><a href="vignettes.html#example-vignette-r-markdown-code"><i class="fa fa-check"></i><b>14.1.1</b> Example Vignette R Markdown Code</a></li>
 </ul></li>
+<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#building-vignettes"><i class="fa fa-check"></i><b>14.2</b> Building Vignettes</a></li>
+<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.3</b> Pushing to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html"><i class="fa fa-check"></i><b>15</b> Building a Website with pkgdown</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#using-pkgdown"><i class="fa fa-check"></i><b>15.1</b> Using pkgdown</a></li>
+<li class="chapter" data-level="15.2" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#correcting-.gitignore"><i class="fa fa-check"></i><b>15.2</b> Correcting .gitignore</a></li>
+<li class="chapter" data-level="15.3" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#github-pages-hosting"><i class="fa fa-check"></i><b>15.3</b> GitHub Pages Hosting</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="epilogue.html"><a href="epilogue.html"><i class="fa fa-check"></i><b>16</b> Epilogue</a></li>
 </ul>
 
       </nav>
@@ -267,24 +276,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Creating R Packages: A Step-by-Step Guide</h1>
 <p class="author"><em>Ville Langén</em></p>
-<p class="date"><em>12.06.2024</em></p>
+<p class="date"><em>13.06.2024</em></p>
 </div>
 <div id="introduction" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Welcome to “Creating R Packages: A Step-by-Step Guide”. This book is designed to help beginners dive into the world of R package development. Whether you’re a data scientist, a statistician, or a hobbyist R programmer, this guide will provide you with the knowledge and skills to create your own R packages.</p>
-<p>In this book, you’ll learn how to:</p>
-<ul>
-<li>Set up your development environment</li>
-<li>Create the basic structure of an R package</li>
-<li>Write and document functions</li>
-<li>Add and document data</li>
-<li>Test your package to ensure reliability</li>
-<li>Build and check your package</li>
-<li>Share your package with others through GitHub</li>
-</ul>
-<p>Each chapter is designed to be practical and hands-on, with step-by-step instructions and examples. By the end of this book, you’ll have a fully functioning R package that you can share with the world.</p>
-<p>Throughout this tutorial, we’ll be using RStudio, a popular integrated development environment (IDE) for R, to perform various tasks.</p>
-<p>Let’s get started on your journey to becoming an R package developer!</p>
+<p>Welcome to this tutorial on developing R packages! Whether you’re new to package development or looking to refine your skills, this guide will equip you with the essential knowledge and practical steps to create, document, and share your R packages effectively.</p>
+<p>Throughout this tutorial, you’ll learn foundational aspects of package development using tools like <code>devtools</code>, <code>usethis</code>, and <code>roxygen2</code>. These tools streamline tasks from package creation to documentation and distribution. By following this tutorial, you’ll understand how to structure your package, write functions, thoroughly document them, and make your package installable and usable by others.</p>
+<p>The tutorial is structured sequentially, guiding you from setting up your development environment to publishing your package on GitHub. Each chapter focuses on a specific aspect of package development and builds upon the previous one, ensuring you grasp both the theory and practical implementation.</p>
+<p><strong><em>After first completing the tutorial in order, you’ll be well-equipped to revisit specific chapters as needed</em></strong>, addressing any further questions or specific tasks you encounter in your package development journey.</p>
+<p>By the end of this tutorial, you’ll have the skills to independently develop, document, and share your R packages, contributing valuable tools to the R community.</p>
+<p><br />
+</p>
 <p><br />
 </p>
 <p><br />

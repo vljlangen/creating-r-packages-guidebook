@@ -242,11 +242,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>14</b> Vignettes</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a></li>
-<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#ensuring-vignettes-are-built"><i class="fa fa-check"></i><b>14.2</b> Ensuring Vignettes are Built</a></li>
-<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#viewing-the-vignettes"><i class="fa fa-check"></i><b>14.3</b> Viewing the Vignettes</a></li>
-<li class="chapter" data-level="14.4" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.4</b> Pushing to GitHub</a></li>
+<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="vignettes.html"><a href="vignettes.html#example-vignette-r-markdown-code"><i class="fa fa-check"></i><b>14.1.1</b> Example Vignette R Markdown Code</a></li>
 </ul></li>
+<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#building-vignettes"><i class="fa fa-check"></i><b>14.2</b> Building Vignettes</a></li>
+<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.3</b> Pushing to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html"><i class="fa fa-check"></i><b>15</b> Building a Website with pkgdown</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#using-pkgdown"><i class="fa fa-check"></i><b>15.1</b> Using pkgdown</a></li>
+<li class="chapter" data-level="15.2" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#correcting-.gitignore"><i class="fa fa-check"></i><b>15.2</b> Correcting .gitignore</a></li>
+<li class="chapter" data-level="15.3" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#github-pages-hosting"><i class="fa fa-check"></i><b>15.3</b> GitHub Pages Hosting</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="epilogue.html"><a href="epilogue.html"><i class="fa fa-check"></i><b>16</b> Epilogue</a></li>
 </ul>
 
       </nav>
@@ -277,8 +286,8 @@ generate a license file using the
 should be replaced with our name or the name of the package author. This
 function creates a LICENSE file in the package directory containing the
 MIT License text.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="metadata-and-license.html#cb1-1" tabindex="-1"></a><span class="co"># Generating License File</span></span>
-<span id="cb1-2"><a href="metadata-and-license.html#cb1-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_mit_license</span>(<span class="st">&quot;Your Name&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="metadata-and-license.html#cb23-1" tabindex="-1"></a><span class="co"># Generating License File</span></span>
+<span id="cb23-2"><a href="metadata-and-license.html#cb23-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_mit_license</span>(<span class="st">&quot;Your Name&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
 <p>Please see my animated example below:</p>
@@ -299,8 +308,8 @@ license.</p>
 <p>If you don’t have a DESCRIPTION file yet, you can create one using the
 usethis::use_description() function. This function generates a basic
 DESCRIPTION file, which you can then edit to include additional details.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="metadata-and-license.html#cb2-1" tabindex="-1"></a><span class="co"># Modifying DESCRIPTION File</span></span>
-<span id="cb2-2"><a href="metadata-and-license.html#cb2-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_description</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="metadata-and-license.html#cb24-1" tabindex="-1"></a><span class="co"># Modifying DESCRIPTION File</span></span>
+<span id="cb24-2"><a href="metadata-and-license.html#cb24-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_description</span>()</span></code></pre></div>
 <p><br />
 </p>
 <p>Please see my animated example below:</p>
@@ -313,20 +322,20 @@ DESCRIPTION file, which you can then edit to include additional details.</p>
 DESCRIPTION file text. Click on the DESCRIPTION file in the bottom-right
 pane and replace its contents with these contents. Make sure to type in
 your name instead of mine.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="metadata-and-license.html#cb3-1" tabindex="-1"></a>Package<span class="sc">:</span> myPackage</span>
-<span id="cb3-2"><a href="metadata-and-license.html#cb3-2" tabindex="-1"></a>Title<span class="sc">:</span> My Awesome R Package</span>
-<span id="cb3-3"><a href="metadata-and-license.html#cb3-3" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="fl">1.0</span></span>
-<span id="cb3-4"><a href="metadata-and-license.html#cb3-4" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
-<span id="cb3-5"><a href="metadata-and-license.html#cb3-5" tabindex="-1"></a>    <span class="fu">person</span>(<span class="st">&quot;Ville&quot;</span>, <span class="st">&quot;Langén&quot;</span>, , <span class="st">&quot;first.last@example.com&quot;</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>),</span>
-<span id="cb3-6"><a href="metadata-and-license.html#cb3-6" tabindex="-1"></a>           <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">&quot;YOUR-ORCID-ID&quot;</span>))</span>
-<span id="cb3-7"><a href="metadata-and-license.html#cb3-7" tabindex="-1"></a>Description<span class="sc">:</span> This package provides functions to work with movie data and calculate group means based on binary variables. It also includes an example dataset.</span>
-<span id="cb3-8"><a href="metadata-and-license.html#cb3-8" tabindex="-1"></a>License<span class="sc">:</span> MIT <span class="sc">+</span> file LICENSE</span>
-<span id="cb3-9"><a href="metadata-and-license.html#cb3-9" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
-<span id="cb3-10"><a href="metadata-and-license.html#cb3-10" tabindex="-1"></a>Roxygen<span class="sc">:</span> <span class="fu">list</span>(<span class="at">markdown =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-11"><a href="metadata-and-license.html#cb3-11" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">7</span>.<span class="fl">3.1</span></span>
-<span id="cb3-12"><a href="metadata-and-license.html#cb3-12" tabindex="-1"></a>LazyData<span class="sc">:</span> yes</span>
-<span id="cb3-13"><a href="metadata-and-license.html#cb3-13" tabindex="-1"></a>Imports<span class="sc">:</span> </span>
-<span id="cb3-14"><a href="metadata-and-license.html#cb3-14" tabindex="-1"></a>    ggplot2movies</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="metadata-and-license.html#cb25-1" tabindex="-1"></a>Package<span class="sc">:</span> myPackage</span>
+<span id="cb25-2"><a href="metadata-and-license.html#cb25-2" tabindex="-1"></a>Title<span class="sc">:</span> My Awesome R Package</span>
+<span id="cb25-3"><a href="metadata-and-license.html#cb25-3" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="fl">1.0</span></span>
+<span id="cb25-4"><a href="metadata-and-license.html#cb25-4" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
+<span id="cb25-5"><a href="metadata-and-license.html#cb25-5" tabindex="-1"></a>    <span class="fu">person</span>(<span class="st">&quot;Ville&quot;</span>, <span class="st">&quot;Langén&quot;</span>, , <span class="st">&quot;first.last@example.com&quot;</span>, <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>),</span>
+<span id="cb25-6"><a href="metadata-and-license.html#cb25-6" tabindex="-1"></a>           <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">&quot;YOUR-ORCID-ID&quot;</span>))</span>
+<span id="cb25-7"><a href="metadata-and-license.html#cb25-7" tabindex="-1"></a>Description<span class="sc">:</span> This package provides functions to work with movie data and calculate group means based on binary variables. It also includes an example dataset.</span>
+<span id="cb25-8"><a href="metadata-and-license.html#cb25-8" tabindex="-1"></a>License<span class="sc">:</span> MIT <span class="sc">+</span> file LICENSE</span>
+<span id="cb25-9"><a href="metadata-and-license.html#cb25-9" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
+<span id="cb25-10"><a href="metadata-and-license.html#cb25-10" tabindex="-1"></a>Roxygen<span class="sc">:</span> <span class="fu">list</span>(<span class="at">markdown =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb25-11"><a href="metadata-and-license.html#cb25-11" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">7</span>.<span class="fl">3.1</span></span>
+<span id="cb25-12"><a href="metadata-and-license.html#cb25-12" tabindex="-1"></a>LazyData<span class="sc">:</span> yes</span>
+<span id="cb25-13"><a href="metadata-and-license.html#cb25-13" tabindex="-1"></a>Imports<span class="sc">:</span> </span>
+<span id="cb25-14"><a href="metadata-and-license.html#cb25-14" tabindex="-1"></a>    ggplot2movies</span></code></pre></div>
 <p><br />
 </p>
 <p><img src="images/overwrite_description-01.gif" /></p>
@@ -345,8 +354,8 @@ the usethis::use_readme_md() function. This function creates a README.md
 file in the package directory, which we can then edit to include
 relevant information about our package, including installation
 instructions, usage examples, and acknowledgments.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="metadata-and-license.html#cb4-1" tabindex="-1"></a><span class="co"># Generating README File</span></span>
-<span id="cb4-2"><a href="metadata-and-license.html#cb4-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_readme_md</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="metadata-and-license.html#cb26-1" tabindex="-1"></a><span class="co"># Generating README File</span></span>
+<span id="cb26-2"><a href="metadata-and-license.html#cb26-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_readme_md</span>()</span></code></pre></div>
 <p><br />
 </p>
 <p>Please see my animated example below:</p>

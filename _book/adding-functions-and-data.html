@@ -242,11 +242,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="14" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>14</b> Vignettes</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a></li>
-<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#ensuring-vignettes-are-built"><i class="fa fa-check"></i><b>14.2</b> Ensuring Vignettes are Built</a></li>
-<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#viewing-the-vignettes"><i class="fa fa-check"></i><b>14.3</b> Viewing the Vignettes</a></li>
-<li class="chapter" data-level="14.4" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.4</b> Pushing to GitHub</a></li>
+<li class="chapter" data-level="14.1" data-path="vignettes.html"><a href="vignettes.html#creating-a-vignette"><i class="fa fa-check"></i><b>14.1</b> Creating a Vignette</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="vignettes.html"><a href="vignettes.html#example-vignette-r-markdown-code"><i class="fa fa-check"></i><b>14.1.1</b> Example Vignette R Markdown Code</a></li>
 </ul></li>
+<li class="chapter" data-level="14.2" data-path="vignettes.html"><a href="vignettes.html#building-vignettes"><i class="fa fa-check"></i><b>14.2</b> Building Vignettes</a></li>
+<li class="chapter" data-level="14.3" data-path="vignettes.html"><a href="vignettes.html#pushing-to-github-1"><i class="fa fa-check"></i><b>14.3</b> Pushing to GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html"><i class="fa fa-check"></i><b>15</b> Building a Website with pkgdown</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#using-pkgdown"><i class="fa fa-check"></i><b>15.1</b> Using pkgdown</a></li>
+<li class="chapter" data-level="15.2" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#correcting-.gitignore"><i class="fa fa-check"></i><b>15.2</b> Correcting .gitignore</a></li>
+<li class="chapter" data-level="15.3" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#github-pages-hosting"><i class="fa fa-check"></i><b>15.3</b> GitHub Pages Hosting</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="epilogue.html"><a href="epilogue.html"><i class="fa fa-check"></i><b>16</b> Epilogue</a></li>
 </ul>
 
       </nav>
@@ -280,15 +289,15 @@ directory of our package.</p>
 <p>Please see visual guides below:</p>
 <p><br />
 </p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="adding-functions-and-data.html#cb1-1" tabindex="-1"></a><span class="co"># Adding the random movie recommendation function</span></span>
-<span id="cb1-2"><a href="adding-functions-and-data.html#cb1-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">&quot;random_movie_recommendation.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="adding-functions-and-data.html#cb27-1" tabindex="-1"></a><span class="co"># Adding the random movie recommendation function</span></span>
+<span id="cb27-2"><a href="adding-functions-and-data.html#cb27-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">&quot;random_movie_recommendation.R&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
 <p><img src="images/random_movie_function-01.gif" /></p>
 <p><br />
 </p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="adding-functions-and-data.html#cb2-1" tabindex="-1"></a><span class="co"># Adding the calculate group mean function</span></span>
-<span id="cb2-2"><a href="adding-functions-and-data.html#cb2-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">&quot;calculate_group_mean.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="adding-functions-and-data.html#cb28-1" tabindex="-1"></a><span class="co"># Adding the calculate group mean function</span></span>
+<span id="cb28-2"><a href="adding-functions-and-data.html#cb28-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_r</span>(<span class="st">&quot;calculate_group_mean.R&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
 <p><img src="images/calculate_group_mean_function.gif" /></p>
@@ -320,16 +329,16 @@ your example data.</li>
 as the last line, which converts the dataset into an <code>.rda</code> file and
 places it into the data/ folder.</p>
 <p>Here’s how you can do it:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="adding-functions-and-data.html#cb3-1" tabindex="-1"></a><span class="co"># Adding the example dataset</span></span>
-<span id="cb3-2"><a href="adding-functions-and-data.html#cb3-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>(<span class="st">&quot;example_data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="adding-functions-and-data.html#cb29-1" tabindex="-1"></a><span class="co"># Adding the example dataset</span></span>
+<span id="cb29-2"><a href="adding-functions-and-data.html#cb29-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>(<span class="st">&quot;example_data&quot;</span>)</span></code></pre></div>
 <p><br />
 </p>
 <p>After running this function, the script file (“example_data.R”) will be
 opened automatically. Paste the code that creates your example dataset
 into this file. At the end of the script, add the following line to save
 the dataset:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="adding-functions-and-data.html#cb4-1" tabindex="-1"></a><span class="co"># Add prepared data to package</span></span>
-<span id="cb4-2"><a href="adding-functions-and-data.html#cb4-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(example_data)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="adding-functions-and-data.html#cb30-1" tabindex="-1"></a><span class="co"># Add prepared data to package</span></span>
+<span id="cb30-2"><a href="adding-functions-and-data.html#cb30-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(example_data)</span></code></pre></div>
 <p><br />
 </p>
 <p>Here’s a visual guide:</p>

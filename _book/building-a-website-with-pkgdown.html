@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="vignettes.html"/>
-
+<link rel="next" href="epilogue.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -255,6 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.2" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#correcting-.gitignore"><i class="fa fa-check"></i><b>15.2</b> Correcting .gitignore</a></li>
 <li class="chapter" data-level="15.3" data-path="building-a-website-with-pkgdown.html"><a href="building-a-website-with-pkgdown.html#github-pages-hosting"><i class="fa fa-check"></i><b>15.3</b> GitHub Pages Hosting</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="epilogue.html"><a href="epilogue.html"><i class="fa fa-check"></i><b>16</b> Epilogue</a></li>
 </ul>
 
       </nav>
@@ -275,10 +276,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="building-a-website-with-pkgdown" class="section level1 hasAnchor" number="15">
 <h1><span class="header-section-number">15</span> Building a Website with pkgdown<a href="building-a-website-with-pkgdown.html#building-a-website-with-pkgdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Every decent package deserves a decent website. In this chapter, we’ll
-explore how to use pkgdown to generate a comprehensive website for your
-R package. This website will include documentation, vignettes, function
-references, and more, making it easier for users and collaborators to
-explore and understand your package.</p>
+explore how to use <strong>pkgdown</strong> to generate a comprehensive website for
+your R package. This website will include documentation, vignettes,
+function references, and more, making it easier for users and
+collaborators to explore and understand your package.</p>
 <div id="using-pkgdown" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> Using pkgdown<a href="building-a-website-with-pkgdown.html#using-pkgdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To create a website for your package using <strong>pkgdown</strong>, follow these
@@ -287,32 +288,34 @@ simple steps:</p>
 <li><strong>Install pkgdown</strong>: If you haven’t already installed <strong>pkgdown</strong>,
 you can do so using the following command:</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="building-a-website-with-pkgdown.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;pkgdown&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="building-a-website-with-pkgdown.html#cb51-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;pkgdown&quot;</span>)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Streamline setup</strong>: Ensure your package is configured correctly
-for website generation by using usethis::use_pkgdown():</li>
+for website generation by using <code>usethis::use_pkgdown()</code>:</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="building-a-website-with-pkgdown.html#cb2-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_pkgdown</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="building-a-website-with-pkgdown.html#cb52-1" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_pkgdown</span>()</span></code></pre></div>
 <p>This command sets up the necessary infrastructure within your package to
 enable <strong>pkgdown</strong> to build the website seamlessly.</p>
+<p>Please see the screenshot of these commands below.</p>
 <p><br />
 </p>
 <p><img src="images/pkgdown_affinity-01.png" /></p>
 <p><br />
 </p>
-<ol start="2" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li><strong>Generate the website</strong>: Run the following command to generate the
 website:</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="building-a-website-with-pkgdown.html#cb3-1" tabindex="-1"></a>pkgdown<span class="sc">::</span><span class="fu">build_site</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="building-a-website-with-pkgdown.html#cb53-1" tabindex="-1"></a>pkgdown<span class="sc">::</span><span class="fu">build_site</span>()</span></code></pre></div>
 <p>This command compiles all the necessary documentation and vignettes into
 HTML files and organizes them into a structured website format.</p>
-<ol start="3" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li><strong>View the website:</strong> After running <code>pkgdown::build_site()</code>, the
 generated site will open automatically in your web browser. You can
 also preview it locally by opening the <code>docs/index.html</code> file in any
 web browser.</li>
 </ol>
+<p>Please see the video of these steps below.</p>
 <p><br />
 </p>
 <p><img src="images/pkg_build_site-01.gif" /></p>
@@ -321,24 +324,47 @@ web browser.</li>
 </div>
 <div id="correcting-.gitignore" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Correcting .gitignore<a href="building-a-website-with-pkgdown.html#correcting-.gitignore" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Before publishing your web page online, you’ll need to take one more step: removing <code>docs</code> from <code>.gitignore</code>.</p>
-<p>By default, <code>usethis::use_pkgdown()</code> adds the <code>docs</code> directory to your <code>.gitignore</code> file. This prevents GitHub from recognizing and deploying your website files. To rectify this, you’ll need to remove the <code>docs</code> entry from <code>.gitignore</code>.</p>
+<p>Before publishing your web page online, you’ll need to take one more
+step: removing <code>docs</code> from <code>.gitignore</code>.</p>
+<p>By default, <code>usethis::use_pkgdown()</code> adds the <code>docs</code> directory to your
+<code>.gitignore</code> file. This prevents GitHub from recognizing and deploying
+your website files. To rectify this, you’ll need to remove the <code>docs</code>
+entry from <code>.gitignore</code>.</p>
 <ul>
 <li>Open the <code>.gitignore</code> file located in your package directory.</li>
 <li>Delete the line that says <code>docs/</code>.</li>
 <li>Save the <code>.gitignore</code> file.</li>
 </ul>
-<p>Removing <code>docs</code> from <code>.gitignore</code> ensures that GitHub will include the <code>docs</code> directory when you push your changes.</p>
+<p>Removing <code>docs</code> from <code>.gitignore</code> ensures that GitHub will include the
+<code>docs</code> directory when you push your changes.</p>
+<p>Removing <code>docs</code> from <code>.gitignore</code> ensures that GitHub will include the
+docs directory when you push your changes. Please refer to the video
+below.</p>
+<p><br />
+</p>
+<p><img src="images/remove_docs_from_gitignore-01.gif" /></p>
+<p><br />
+</p>
 </div>
 <div id="github-pages-hosting" class="section level2 hasAnchor" number="15.3">
 <h2><span class="header-section-number">15.3</span> GitHub Pages Hosting<a href="building-a-website-with-pkgdown.html#github-pages-hosting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One of the easiest ways to host your package website is using GitHub
 Pages. Here’s how you can do it:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Push changes to GitHub</strong>: Make sure all your changes, including
+<li><strong>Push changes to GitHub</strong>: Make sure all your changes, including
 the generated <code>docs/</code> folder from <strong>pkgdown</strong>, are committed and
-pushed to your GitHub repository.</p></li>
-<li><p><strong>Configure GitHub Pages</strong>:</p></li>
+pushed to your GitHub repository.</li>
+</ol>
+<p><br />
+</p>
+<p><img src="images/push_pkgdown_site-01.gif" /></p>
+<p><br />
+</p>
+<p><img src="images/verify_docs_as_pushed-01.gif" /></p>
+<p><br />
+</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Configure GitHub Pages</strong>:</li>
 </ol>
 <ul>
 <li>Go to your GitHub repository on the web.</li>
@@ -349,12 +375,30 @@ depending on your default branch.</li>
 <li>Select <code>/docs</code> as the folder source.</li>
 <li>Click on “Save”.</li>
 </ul>
+<p><br />
+</p>
+<p><img src="images/deploy_github_pages-01.gif" /></p>
+<p><br />
+</p>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Access your website</strong>: After saving, GitHub Pages will publish
 your package website at <code>https://username.github.io/repo</code>, where
 <code>username</code> is your GitHub username and <code>repo</code> is the name of your
 repository.</li>
 </ol>
+<p><br />
+</p>
+<p><img src="images/browse_github_pages-01.gif" /></p>
+<p><br />
+</p>
+<p>An alternative way to access your website is to click on the “Deployments - github-pages” section on the right margin of your GitHub repository and then click on “github-pages”.</p>
+<p><br />
+</p>
+<p><img src="images/alternative_way_of_browsing_pages-01.gif" /></p>
+<p><br />
+</p>
+<hr />
+<p>In the next chapter, we’ll conclude by wrapping up what we’ve learned in this tutorial.</p>
 <p><br />
 </p>
 <p><br />
@@ -378,8 +422,8 @@ BY-SA
           </div>
         </div>
       </div>
-<a href="vignettes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="vignettes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="epilogue.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

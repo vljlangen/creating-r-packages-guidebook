@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Required Packages | Creating R Packages: A Step-by-Step Guide</title>
+  <title>16 Epilogue | Creating R Packages: A Step-by-Step Guide</title>
   <meta name="description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Required Packages | Creating R Packages: A Step-by-Step Guide" />
+  <meta property="og:title" content="16 Epilogue | Creating R Packages: A Step-by-Step Guide" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Required Packages | Creating R Packages: A Step-by-Step Guide" />
+  <meta name="twitter:title" content="16 Epilogue | Creating R Packages: A Step-by-Step Guide" />
   
   <meta name="twitter:description" content="An easy-to-follow guide designed for beginners to learn how to create, document, test, and share R packages from scratch." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="creating-functions-and-datasets.html"/>
+<link rel="prev" href="building-a-website-with-pkgdown.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -273,16 +273,133 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="required-packages" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> Required Packages<a href="required-packages.html#required-packages" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>To follow along with this tutorial, you’ll need to have certain packages installed in your R environment. Specifically, we’ll install <code>devtools</code>.</p>
-<p>You can install it using the <code>install.packages()</code> function in R. Here’s how you can do it:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="required-packages.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
-<p>This command will also ensure that <code>usethis</code> is installed. It is is a very important package for package development in R, as it automates many setup tasks. When <code>usethis</code> is installed, another important package, <code>gh</code>, is automatically installed as well.</p>
-<p>Once installed, load these packages into your R session using the library() function:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="required-packages.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span></code></pre></div>
+<div id="epilogue" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">16</span> Epilogue<a href="epilogue.html#epilogue" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Congratulations on completing this comprehensive tutorial on creating R packages! Let’s reflect on the key topics and skills you’ve mastered throughout this journey:</p>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 1</strong>: Introduction</p>
+<ul>
+<li>You began by understanding the fundamentals of R packages and their importance in organizing and distributing your R code efficiently.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 2</strong>: Required Packages</p>
+<ul>
+<li>You learned about the essential packages <code>devtools</code> and <code>usethis</code> that streamline the package development process.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 3</strong>: Creating Functions and Datasets</p>
+<ul>
+<li>You practiced creating functions and datasets that would later be incorporated into your package.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 4</strong>: Setting Up Git and GitHub</p>
+<ul>
+<li>You set up version control for your package using Git and learned how to securely interact with GitHub repositories.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 5</strong>: Verifying the Git Setup</p>
+<ul>
+<li>You ensured that your Git setup was correct, configuring authentication and confirming proper Git configuration.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 6</strong>: Creating an R Package</p>
+<ul>
+<li>You used <code>usethis::create_package()</code> to initiate your package project, establishing the foundational structure for your R package.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 7</strong>: Committing and Pushing to GitHub</p>
+<ul>
+<li>You learned how to manage changes using Git commits and pushed your package code to GitHub, making it accessible for collaboration.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 8</strong>: Metadata and License</p>
+<ul>
+<li>You added essential metadata and licensing information to your package, enhancing its transparency and usability for users.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 9</strong>: Adding Functions and Data</p>
+<ul>
+<li>You incorporated the functions and the example dataset you previously developed into your package.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 10</strong>: Testing Functions</p>
+<ul>
+<li>You implemented testing strategies to ensure the reliability and correctness of your package functions.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 11</strong>: Documentation</p>
+<ul>
+<li>You leveraged <code>roxygen2</code> to document your package thoroughly, providing clear and informative documentation for functions and datasets.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 12</strong>: Testing Your Documentation</p>
+<ul>
+<li>You validated that the documentation works as intended.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 13</strong>: Installing the Package</p>
+<ul>
+<li>You explored various methods to install your package, both locally and from GitHub, understanding the nuances between installation and loading.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 14</strong>: Vignettes</p>
+<ul>
+<li>You created a detailed vignette to provide comprehensive examples and tutorials within your package.</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<ul>
+<li><p><strong>Chapter 15</strong>: Building a Website with pkgdown</p>
+<ul>
+<li>You built a professional website for your package using <code>pkgdown</code>, showcasing its documentation and vignettes effectively.</li>
+</ul></li>
+</ul>
 <hr />
-<p>Now that you have these packages installed and loaded, you’re ready to proceed with the tutorial.</p>
+<p>In conclusion, this tutorial has equipped you with the foundational knowledge and practical skills needed to develop, document, and share your own R packages. By following these steps, you’ve learned how to structure your package, document its functionality comprehensively, and distribute it efficiently to the R community.</p>
+<p>After completing this tutorial chronologically, you’ll find it easier to revisit specific sections as needed for problem-solving and further refinement of your R packages.</p>
+<p>As you continue your journey as an R developer, remember to explore advanced topics, engage with the R community for feedback and collaboration, and stay updated with the latest tools and best practices. Thank you for embarking on this learning journey with me!</p>
 <p><br />
 </p>
 <p><br />
@@ -290,7 +407,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br />
 </p>
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating R Packages: A Step-by-Step Guide</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville Langén</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
+<p><a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a></p>
 </p>
 
 </div>
@@ -299,8 +422,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="creating-functions-and-datasets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="building-a-website-with-pkgdown.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

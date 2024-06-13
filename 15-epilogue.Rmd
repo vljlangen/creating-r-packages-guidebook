@@ -1,0 +1,128 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Epilogue
+
+Congratulations on completing this comprehensive tutorial on creating R packages! Let's reflect on the key topics and skills you've mastered throughout this journey:
+
+\
+
+- **Chapter 1**: Introduction
+
+   - You began by understanding the fundamentals of R packages and their importance in organizing and distributing your R code efficiently.
+
+\
+
+- **Chapter 2**: Required Packages
+
+   - You learned about the essential packages `devtools` and `usethis` that streamline the package development process.
+
+\
+
+- **Chapter 3**: Creating Functions and Datasets
+
+   - You practiced creating functions and datasets that would later be incorporated into your package.
+   
+\
+
+- **Chapter 4**: Setting Up Git and GitHub
+
+   - You set up version control for your package using Git and learned how to securely interact with GitHub repositories.
+
+\
+
+- **Chapter 5**: Verifying the Git Setup
+
+   - You ensured that your Git setup was correct, configuring authentication and confirming proper Git configuration.
+
+\
+
+- **Chapter 6**: Creating an R Package
+
+   - You used `usethis::create_package()` to initiate your package project, establishing the foundational structure for your R package.
+
+\
+
+- **Chapter 7**: Committing and Pushing to GitHub
+
+  - You learned how to manage changes using Git commits and pushed your package code to GitHub, making it accessible for collaboration.
+
+\
+
+- **Chapter 8**: Metadata and License
+
+   - You added essential metadata and licensing information to your package, enhancing its transparency and usability for users.
+
+\
+
+- **Chapter 9**: Adding Functions and Data
+
+   - You incorporated the functions and the example dataset you previously developed into your package.
+
+\
+
+- **Chapter 10**: Testing Functions
+
+   - You implemented testing strategies to ensure the reliability and correctness of your package functions.
+
+\
+
+- **Chapter 11**: Documentation
+
+   - You leveraged `roxygen2` to document your package thoroughly, providing clear and informative documentation for functions and datasets.
+
+\
+
+- **Chapter 12**: Testing Your Documentation
+
+   - You validated that the documentation works as intended.
+
+\
+
+- **Chapter 13**: Installing the Package
+
+   - You explored various methods to install your package, both locally and from GitHub, understanding the nuances between installation and loading.
+
+\
+
+- **Chapter 14**: Vignettes
+
+   - You created a detailed vignette to provide comprehensive examples and tutorials within your package.
+
+\
+
+- **Chapter 15**: Building a Website with pkgdown
+
+   - You built a professional website for your package using `pkgdown`, showcasing its documentation and vignettes effectively.
+
+---
+
+In conclusion, this tutorial has equipped you with the foundational knowledge and practical skills needed to develop, document, and share your own R packages. By following these steps, you've learned how to structure your package, document its functionality comprehensively, and distribute it efficiently to the R community.
+
+After completing this tutorial chronologically, you'll find it easier to revisit specific sections as needed for problem-solving and further refinement of your R packages.
+
+As you continue your journey as an R developer, remember to explore advanced topics, engage with the R community for feedback and collaboration, and stay updated with the latest tools and best practices. Thank you for embarking on this learning journey with me!
+
+
+
+
+\
+
+\
+
+\
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+
+<a property="dct:title" rel="cc:attributionURL" href="https://creating-r-packages.netlify.app">Creating
+R Packages: A Step-by-Step Guide</a> by
+<a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.linkedin.com/in/ville-langen/">Ville
+Langén</a> is licensed under
+<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC
+BY-SA
+4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
