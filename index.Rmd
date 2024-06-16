@@ -20,13 +20,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Welcome to this tutorial on developing R packages! Whether you’re new to package development or looking to refine your skills, this guide will equip you with the essential knowledge and practical steps to create, document, and share your R packages effectively.
+Welcome to this tutorial on developing R packages! Whether you’re new to package development or looking to refine your skills, this guide will equip you with essential knowledge and practical steps.
 
-Throughout this tutorial, you’ll learn foundational aspects of package development using tools like `devtools`, `usethis`, and `roxygen2`. These tools streamline tasks from package creation to documentation and distribution. By following this tutorial, you’ll understand how to structure your package, write functions, thoroughly document them, and make your package installable and usable by others.
+Using tools like `devtools`, `usethis`, and `roxygen2`, you’ll learn how to structure your package, write functions, and document them thoroughly. The tutorial is arranged sequentially, guiding you from setting up your development environment to publishing your package on GitHub. Each chapter focuses on a specific aspect of package development and builds upon the previous one, ensuring you grasp both the theory and practical implementation.
 
-The tutorial is structured sequentially, guiding you from setting up your development environment to publishing your package on GitHub. Each chapter focuses on a specific aspect of package development and builds upon the previous one, ensuring you grasp both the theory and practical implementation.
-
-***After first completing the tutorial in order, you’ll be well-equipped to revisit specific chapters as needed***, addressing any further questions or specific tasks you encounter in your package development journey.
+***After first completing the tutorial in order, you’ll be well-equipped to revisit specific chapters as needed should you forget certain elements of package development.***
 
 By the end of this tutorial, you’ll have the skills to independently develop, document, and share your R packages, contributing valuable tools to the R community.
 
