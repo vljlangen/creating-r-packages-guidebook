@@ -44,7 +44,7 @@ package, such as the package's name, title, version, author details, and
 license.
 
 If you don't have a DESCRIPTION file yet, you can create one using the
-usethis::use_description() function. This function generates a basic
+`usethis::use_description()` function. This function generates a basic
 DESCRIPTION file, which you can then edit to include additional details.
 
 ``` r
@@ -102,7 +102,7 @@ Mind you that the `LazyData: true` line ensures that your `example_data` will be
 
 A README file is essential for providing an overview of the package, its
 functionality, and how to use it. We can generate a README file using
-the usethis::use_readme_md() function. This function creates a README.md
+the `usethis::use_readme_md()` function. This function creates a README.md
 file in the package directory, which we can then edit to include
 relevant information about our package, including installation
 instructions, usage examples, and acknowledgments.
@@ -131,25 +131,25 @@ the remote repository.
 
 Here’s how you can do it using the upper right pane of RStudio:
 
-1.  Open the Git Pane:
+1.  **Open the Git Pane**:
 
 -   In RStudio, you’ll see the Git tab in the upper right pane. Click on
     it to view your current repository status.
 
-2.  Stage Your Changes:
+2.  **Stage Your Changes**:
 
 -   You’ll see a list of files that have been modified. Check the boxes
     next to the files you want to stage for the commit (e.g.,
     DESCRIPTION, README.md, LICENSE).
 
-3.  Commit Your Changes:
+3.  **Commit Your Changes**:
 
 -   Click the "Commit" button. This will open a new window where you can
     review your changes.
 -   Enter a meaningful commit message summarizing the changes you made
     (e.g., "Create metadata and license files").
 
-4.  Push Your Changes to GitHub:
+4.  **Push Your Changes to GitHub**:
 
 -   After committing, click the "Push" button to send your changes to
     the remote repository on GitHub.
@@ -169,22 +169,22 @@ Here’s a visual guide:
 After committing and pushing your changes, you can view the updated
 metadata files and README on your GitHub repository. Follow these steps:
 
-1.  Navigate to Your GitHub Repository:
+1.  **Navigate to Your GitHub Repository**:
 
 -   Open your web browser and go to the GitHub repository where you have
     pushed your changes.
 
-2.  Refresh the Page:
+2.  **Refresh the Page**:
 
 -   Click the refresh button on your browser to reload the repository
     page and ensure the latest changes are visible.
 
-3.  View the Updated Files:
+3.  **View the Updated Files**:
 
 -   Scroll down to the file list in your repository. You should see the
     updated DESCRIPTION, README.md, and LICENSE files.
 
-4.  Check the README:
+4.  **Check the README**:
 
 -   Scroll down to see how the README.md file is rendered. GitHub
     automatically formats Markdown files, so you will see a nicely

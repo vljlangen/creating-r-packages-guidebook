@@ -22,7 +22,7 @@ devtools::load_all(".")
 
 ## Documentation for Functions
 
-You can view the documentation for a particular function by using the ?
+You can view the documentation for a particular function by using the `?`
 followed by the function name.
 
 In other words, these help files you have created function just like those you would encounter with official packages on CRAN.

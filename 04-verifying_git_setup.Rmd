@@ -33,7 +33,7 @@ username and other details about your GitHub account.
 
 ## Git Configuration
 
-Next, we'll check the Git configuration using the usethis::git_sitrep()
+Next, we'll check the Git configuration using the `usethis::git_sitrep()`
 function. This function provides a situational report on your Git
 configuration and GitHub connection.
 

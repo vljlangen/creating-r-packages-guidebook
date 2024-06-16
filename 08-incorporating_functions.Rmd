@@ -111,7 +111,7 @@ At this point, it is wise to commit and push all the changes to GitHub
 to keep your project up-to-date and ensure you have a backup of your
 progress. Follow these steps to do so:
 
-1.  Commit your changes:
+1.  **Commit your changes**:
 
 -   In RStudio, go to the top-right pane and click on the "Git" tab.
 -   You will see a list of the files that have been changed. Check the
@@ -122,7 +122,7 @@ progress. Follow these steps to do so:
     dataset".
 -   Click on the "Commit" button at the bottom right of the window.
 
-2.  Push your changes:
+2.  **Push your changes**:
 
 -   After committing, click on the "Push" button in the Git tab.
 -   This will upload your committed changes to your GitHub repository.

@@ -289,7 +289,7 @@ can copy and paste into your editor.</p>
 <div id="example-function-1" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Example Function 1<a href="creating-functions-and-datasets.html#example-function-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We’ll now create a simple function that randomly recommends a movie from
-the “ggplot2movies” dataset.</p>
+the <code>ggplot2movies</code> dataset.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="creating-functions-and-datasets.html#cb3-1" tabindex="-1"></a><span class="co"># Not to be included in the package but run here on this tutorial page</span></span>
 <span id="cb3-2"><a href="creating-functions-and-datasets.html#cb3-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(ggplot2movies)) {</span>
 <span id="cb3-3"><a href="creating-functions-and-datasets.html#cb3-3" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2movies&quot;</span>)</span>
@@ -308,13 +308,13 @@ the “ggplot2movies” dataset.</p>
 <span id="cb5-10"><a href="creating-functions-and-datasets.html#cb5-10" tabindex="-1"></a></span>
 <span id="cb5-11"><a href="creating-functions-and-datasets.html#cb5-11" tabindex="-1"></a><span class="co"># Example usage</span></span>
 <span id="cb5-12"><a href="creating-functions-and-datasets.html#cb5-12" tabindex="-1"></a><span class="fu">random_movie_recommendation</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Stockholm: Pride of Sweden&quot;</code></pre>
+<pre><code>## [1] &quot;Dung che sai duk&quot;</code></pre>
 </div>
 <div id="example-data-set" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Example Data Set<a href="creating-functions-and-datasets.html#example-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In addition to functions, it’s often helpful to include example datasets
 in your package to demonstrate how your functions can be used. We’ll now
-create a small example dataset called example_data and add it to our
+create a small example dataset called <code>example_data</code> and add it to our
 package.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="creating-functions-and-datasets.html#cb7-1" tabindex="-1"></a><span class="co"># Create example dataset</span></span>
 <span id="cb7-2"><a href="creating-functions-and-datasets.html#cb7-2" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -335,7 +335,7 @@ package.</p>
 <div id="example-function-2" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Example Function 2<a href="creating-functions-and-datasets.html#example-function-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This function calculates the mean of a numeric variable (like age) for
-rows where another variable (like ‘Likes_Coffee’) has the value TRUE. In
+rows where another variable (like <code>Likes_Coffee</code>) has the value TRUE. In
 our example dataset, it can be used to find the mean age of people who
 like coffee.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="creating-functions-and-datasets.html#cb9-1" tabindex="-1"></a>calculate_group_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(df, numeric_var, factor_var) {</span>

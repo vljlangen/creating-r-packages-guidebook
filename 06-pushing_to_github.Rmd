@@ -108,7 +108,7 @@ Please see my animated example below:
 ## Pushing to GitHub
 
 Once you have committed your files, you can push your package to GitHub
-using the usethis::use_github() function. This function creates a new
+using the `usethis::use_github()` function. This function creates a new
 GitHub repository and pushes your local Git repository to GitHub.
 
 Run the following command in your R console:

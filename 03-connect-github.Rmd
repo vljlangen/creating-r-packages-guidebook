@@ -8,9 +8,9 @@ editor_options:
 
 For distributing your package to your friends or colleagues and for
 backup purposes, it is always advisable to push your package to a code
-repository. In this tutorial, we will use the GitHub service and set up
-a secure connection between it and your computer using a Personal Access
-Token (PAT). If you already have this set up, you can jump right to the
+repository. In this tutorial, we will use the **GitHub** service and set up
+a secure connection between it and your computer using a **Personal Access
+Token (PAT)**. If you already have this set up, you can jump right to the
 next chapter. If you already have an SSH connection set up between your computer and GitHub, you can still set up a connection using a PAT. So, read on.
 
 And particularly if you didn't grasp much of what was mentioned above, please continue reading.
@@ -98,6 +98,8 @@ Follow these steps:
 [***After signing up or signing in to GitHub, do not sign
 out!***]{style="color: red;"}
 
+\
+
 Because in the next step, the user needs to be signed in to GitHub as we
 will create a Personal Access Token (PAT) from within RStudio.
 
@@ -146,7 +148,7 @@ Follow these steps:
 \
 
 
-![](images/mytoken-01.gif)
+![](images/mytoken.gif)
 
 \
 

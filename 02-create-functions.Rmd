@@ -22,7 +22,7 @@ can copy and paste into your editor.
 ## Example Function 1
 
 We'll now create a simple function that randomly recommends a movie from
-the "ggplot2movies" dataset.
+the `ggplot2movies` dataset.
 
 ```{r randommovie}
 
@@ -51,7 +51,7 @@ random_movie_recommendation()
 
 In addition to functions, it's often helpful to include example datasets
 in your package to demonstrate how your functions can be used. We'll now
-create a small example dataset called example_data and add it to our
+create a small example dataset called `example_data` and add it to our
 package.
 
 ```{r exampledata}
@@ -71,7 +71,7 @@ example_data
 ## Example Function 2
 
 This function calculates the mean of a numeric variable (like age) for
-rows where another variable (like 'Likes_Coffee') has the value TRUE. In
+rows where another variable (like `Likes_Coffee`) has the value TRUE. In
 our example dataset, it can be used to find the mean age of people who
 like coffee.
 

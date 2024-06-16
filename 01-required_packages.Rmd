@@ -18,7 +18,7 @@ install.packages("devtools")
 
 This command will also ensure that `usethis` is installed. It is is a very important package for package development in R, as it automates many setup tasks. When `usethis` is installed, another important package, `gh`, is automatically installed as well. 
 
-Once installed, load these packages into your R session using the library() function:
+Once installed, load these packages into your R session using the `library()` function:
 
 
 ```r
